@@ -1,0 +1,4365 @@
+<all>
+
+	<!-- HKUEB SingRemitt -->
+
+	<seg t="SingRemitt_2_Req" s="HKUEB" v="2" c="10" z="4">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+	</seg>
+
+	<seg t="SingRemitt_2_Par" s="HIUEBS" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="SingRemitt_Param">
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="SingRemitt_3_Req" s="HKUEB" v="3" c="10" z="4">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+	</seg>
+
+	<seg t="SingRemitt_3_Par" s="HIUEBS" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="SingRemitt_Param">
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="SingRemitt_4_Req" s="HKUEB" v="4" c="10" z="4">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+	</seg>
+
+	<seg t="SingRemitt_4_Par" s="HIUEBS" v="4">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="SingRemitt_Param">
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="SingRemitt_5_Req" s="HKUEB" v="5" c="10" z="4">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="99" f="dta" b="27" />
+		</deg>
+	</seg>
+
+	<seg t="SingRemitt_5_Par" s="HIUEBS" v="5">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="SingRemitt_Param">
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<!-- HKLAS SingDirDeb -->
+
+	<seg t="SingDirDeb_2_Req" s="HKLAS" v="2" c="10" z="15">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayerAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayerName_1" f="dta" b="27" />
+		<de t="PayerName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+	</seg>
+
+	<seg t="SingDirDeb_2_Par" s="HILASS" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="SingRemitt_Param">
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="SingDirDeb_3_Req" s="HKLAS" v="3" c="10" z="15">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayerAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayerName_1" f="dta" b="27" />
+		<de t="PayerName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+	</seg>
+
+	<seg t="SingDirDeb_3_Par" s="HILASS" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="SingRemitt_Param">
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="SingDirDeb_4_Req" s="HKLAS" v="4" c="10" z="15">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayerAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayerName_1" f="dta" b="27" />
+		<de t="PayerName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+	</seg>
+
+	<seg t="SingDirDeb_4_Par" s="HILASS" v="4">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="SingRemitt_Param">
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="SingDirDeb_5_Req" s="HKLAS" v="5" c="10" z="15">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayerAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayerName_1" f="dta" b="27" />
+		<de t="PayerName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="99" f="dta" b="27" />
+		</deg>
+	</seg>
+
+	<seg t="SingDirDeb_5_Par" s="HILASS" v="5">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="SingRemitt_Param">
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<!-- HKUMB Reclassification -->
+
+	<seg t="Reclassification_1_Req" s="HKUMB" v="1" c="10" z="5">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+	</seg>
+
+	<seg t="Reclassification_1_Par" s="HIUMBS" v="1">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="SingRemitt_Param">
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="Reclassification_2_Req" s="HKUMB" v="2" c="10" z="5">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="99" f="dta" b="27" />
+		</deg>
+	</seg>
+
+	<seg t="Reclassification_2_Par" s="HIUMBS" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="SingRemitt_Param">
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<!-- HKTUE SubmitPostdatedSingRemitt -->
+
+	<seg t="SubmitPostdatedSingRemitt_2_Req" s="HKTUE" v="2" c="10" z="22">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" />
+	</seg>
+
+	<seg t="SubmitPostdatedSingRemitt_2_Resp" s="HITUE" v="2">
+		<de t="OrderID" f="an" m="0" b="99" />
+	</seg>
+
+	<seg t="SubmitPostdatedSingRemitt_2_Par" s="HITUES" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="SubmitPostdatedSingRemitt_Param">
+			<de t="Min_LeadTime" f="num" b="4" />
+			<de t="Max_LeadTime" f="num" b="4" />
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="SubmitPostdatedSingRemitt_3_Req" s="HKTUE" v="3" c="10" z="22">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" />
+	</seg>
+
+	<seg t="SubmitPostdatedSingRemitt_3_Resp" s="HITUE" v="3">
+		<de t="OrderID" f="an" m="0" b="99" />
+	</seg>
+
+	<seg t="SubmitPostdatedSingRemitt_3_Par" s="HITUES" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="SubmitPostdatedSingRemitt_Param">
+			<de t="Min_LeadTime" f="num" b="4" />
+			<de t="Max_LeadTime" f="num" b="4" />
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="SubmitPostdatedSingRemitt_4_Req" s="HKTUE" v="4" c="10" z="22">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" />
+	</seg>
+
+	<seg t="SubmitPostdatedSingRemitt_4_Resp" s="HITUE" v="4">
+		<de t="OrderID" f="an" m="0" b="99" />
+	</seg>
+
+	<seg t="SubmitPostdatedSingRemitt_4_Par" s="HITUES" v="4">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="SubmitPostdatedSingRemitt_Param">
+			<de t="Min_LeadTime" f="num" b="4" />
+			<de t="Max_LeadTime" f="num" b="4" />
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<!-- HKTUB OutstandingPostdatedSingRemitt -->
+
+	<seg t="OutstandingPostdatedSingRemitt_1_Req" s="HKTUB" v="1">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="StartDate" f="dat" m="0" />
+		<de t="EndDate" f="dat" m="0" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="OutstandingPostdatedSingRemitt_1_Resp" s="HITUB" v="1">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" />
+		<de t="OrderID" f="an" m="0" b="99" />
+	</seg>
+
+	<seg t="OutstandingPostdatedSingRemitt_1_Par" s="HITUBS" v="1">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="OutstandingPostdatedSingRemitt_Param">
+			<de t="TimePeriod_Possible" f="jn" />
+		</deg>
+	</seg>
+
+	<seg t="OutstandingPostdatedSingRemitt_2_Req" s="HKTUB" v="2">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="StartDate" f="dat" m="0" />
+		<de t="EndDate" f="dat" m="0" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="OutstandingPostdatedSingRemitt_2_Resp" s="HITUB" v="2">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" />
+		<de t="OrderID" f="an" m="0" b="99" />
+	</seg>
+
+	<seg t="OutstandingPostdatedSingRemitt_2_Par" s="HITUBS" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="OutstandingPostdatedSingRemitt_Param">
+			<de t="TimePeriod_Possible" f="jn" />
+		</deg>
+	</seg>
+
+	<seg t="OutstandingPostdatedSingRemitt_3_Req" s="HKTUB" v="3">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="StartDate" f="dat" m="0" />
+		<de t="EndDate" f="dat" m="0" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="OutstandingPostdatedSingRemitt_3_Resp" s="HITUB" v="3">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" />
+		<de t="OrderID" f="an" m="0" b="99" />
+	</seg>
+
+	<seg t="OutstandingPostdatedSingRemitt_3_Par" s="HITUBS" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="OutstandingPostdatedSingRemitt_Param">
+			<de t="TimePeriod_Possible" f="jn" />
+		</deg>
+	</seg>
+
+	<!-- HKTUL CancelPostdatedSingRemitt -->
+
+	<seg t="CancelPostdatedSingRemitt_1_Req" s="HKTUL" v="1" c="10" z="40">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" />
+		<de t="OrderID" f="an" b="99" />
+	</seg>
+
+	<seg t="CancelPostdatedSingRemitt_1_Par" s="HITULS" v="1">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+	</seg>
+
+	<seg t="CancelPostdatedSingRemitt_2_Req" s="HKTUL" v="2" c="10" z="40">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" />
+		<de t="OrderID" f="an" b="99" />
+	</seg>
+
+	<seg t="CancelPostdatedSingRemitt_2_Par" s="HITULS" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+	</seg>
+
+	<seg t="CancelPostdatedSingRemitt_3_Req" s="HKTUL" v="3" c="10" z="40">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" />
+		<de t="OrderID" f="an" b="99" />
+	</seg>
+
+	<seg t="CancelPostdatedSingRemitt_3_Par" s="HITULS" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+	</seg>
+
+	<!-- HKSAL AcctBal -->
+
+	<seg t="AcctBal_3_Req" s="HKSAL" v="3">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="All_Acct" f="jn" />
+		<de t="AcctCcy" m="0" f="cur" a="3" b="3" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="AcctBal_3_Resp" s="HISAL" v="3">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="AcctName" f="an" b="30" />
+		<de t="AcctCcy" f="cur" a="3" b="3" />
+		<deg t="CurrentBal">
+			<de t="DebCred_Flag" f="code" b="10" />
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+			<de t="Date" f="dat" />
+			<de t="Time" m="0" f="tim" />
+		</deg>
+		<deg t="IncludingPendingTrans_Bal" m="0">
+			<de t="DebCred_Flag" f="code" b="10" />
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+			<de t="Date" f="dat" />
+			<de t="Time" m="0" f="tim" />
+		</deg>
+		<deg t="OverdraftLim" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="AvailableFunds" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="AlreadyDrawnOn_Amt" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+	</seg>
+
+	<seg t="AcctBal_3_Par" s="HISALS" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+	</seg>
+
+	<seg t="AcctBal_4_Req" s="HKSAL" v="4">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="All_Acct" f="jn" />
+		<de t="AcctCcy" m="0" f="cur" a="3" b="3" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="AcctBal_4_Resp" s="HISAL" v="4">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="AcctName" f="an" b="30" />
+		<de t="AcctCcy" f="cur" a="3" b="3" />
+		<deg t="CurrentBal">
+			<de t="DebCred_Flag" f="code" b="10" />
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+			<de t="Date" f="dat" />
+			<de t="Time" m="0" f="tim" />
+		</deg>
+		<deg t="IncludingPendingTrans_Bal" m="0">
+			<de t="DebCred_Flag" f="code" b="10" />
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+			<de t="Date" f="dat" />
+			<de t="Time" m="0" f="tim" />
+		</deg>
+		<deg t="OverdraftLim" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="AvailableFunds" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="AlreadyDrawnOn_Amt" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="Bal_BookingDate" m="0" f="dat" />
+		<de t="Bal_BookingTime" m="0" f="tim" />
+	</seg>
+
+	<seg t="AcctBal_4_Par" s="HISALS" v="4">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+	</seg>
+
+	<seg t="AcctBal_5_Req" s="HKSAL" v="5">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="All_Acct" f="jn" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="AcctBal_5_Resp" s="HISAL" v="5">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="AcctName" f="an" b="30" />
+		<de t="AcctCcy" f="cur" a="3" b="3" />
+		<deg t="CurrentBal">
+			<de t="DebCred_Flag" f="code" b="10" />
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+			<de t="Date" f="dat" />
+			<de t="Time" m="0" f="tim" />
+		</deg>
+		<deg t="IncludingPendingTrans_Bal" m="0">
+			<de t="DebCred_Flag" f="code" b="10" />
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+			<de t="Date" f="dat" />
+			<de t="Time" m="0" f="tim" />
+		</deg>
+		<deg t="OverdraftLim" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="AvailableFunds" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="AlreadyDrawnOn_Amt" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="Bal_BookingDate" m="0" f="dat" />
+		<de t="Bal_BookingTime" m="0" f="tim" />
+		<de t="MaturityDate" m="0" f="dat" />
+	</seg>
+
+	<seg t="AcctBal_5_Par" s="HISALS" v="5">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+	</seg>
+
+	<seg t="AcctBal_6_Req" s="HKSAL" v="6">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="All_Acct" f="jn" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="AcctBal_6_Resp" s="HISAL" v="6">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="AcctName" f="an" b="30" />
+		<de t="AcctCcy" f="cur" a="3" b="3" />
+		<deg t="CurrentBal">
+			<de t="DebCred_Flag" f="code" b="10" />
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+			<de t="Date" f="dat" />
+			<de t="Time" m="0" f="tim" />
+		</deg>
+		<deg t="IncludingPendingTrans_Bal" m="0">
+			<de t="DebCred_Flag" f="code" b="10" />
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+			<de t="Date" f="dat" />
+			<de t="Time" m="0" f="tim" />
+		</deg>
+		<deg t="OverdraftLim" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="AvailableFunds" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="AlreadyDrawnOn_Amt" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="Overdraft" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="Booking_Time" m="0">
+			<de t="Date" f="dat" />
+			<de t="Time" f="tim" />
+		</deg>
+		<de t="MaturityDate" m="0" f="dat" />
+	</seg>
+
+	<seg t="AcctBal_6_Par" s="HISALS" v="6">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+	</seg>
+
+	<!-- HKKAZ AcctMvmtsSpecifiedPeriod -->
+
+	<seg t="AcctMvmtsSpecifiedPeriod_3_Req" s="HKKAZ" v="3">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="AcctCcy" m="0" f="cur" />
+		<de t="StartDate" m="0" f="dat" />
+		<de t="EndDate" m="0" f="dat" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="AcctMvmtsSpecifiedPeriod_3_Resp" s="HIKAZ" v="3">
+		<de t="BookedTrans" f="bin" />
+		<de t="NonbookedTrans" m="0" f="bin" />
+	</seg>
+
+	<seg t="AcctMvmtsSpecifiedPeriod_3_Par" s="HIKAZS" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="AcctMvmtsSpecifiedPeriod_Param">
+			<de t="AcctMvmtData_Cutoff" f="num" b="4" />
+			<de t="Max_Entries_Allowed" f="jn" />
+		</deg>
+	</seg>
+
+	<seg t="AcctMvmtsSpecifiedPeriod_4_Req" s="HKKAZ" v="4">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="AcctCcy" m="0" f="cur" />
+		<de t="StartDate" m="0" f="dat" />
+		<de t="EndDate" m="0" f="dat" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="AcctMvmtsSpecifiedPeriod_4_Resp" s="HIKAZ" v="4">
+		<de t="BookedTrans" f="bin" />
+		<de t="NonbookedTrans" m="0" f="bin" />
+	</seg>
+
+	<seg t="AcctMvmtsSpecifiedPeriod_4_Par" s="HIKAZS" v="4">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="AcctMvmtsSpecifiedPeriod_Param">
+			<de t="AcctMvmtData_Cutoff" f="num" b="4" />
+			<de t="Max_Entries_Allowed" f="jn" />
+		</deg>
+	</seg>
+
+	<seg t="AcctMvmtsSpecifiedPeriod_5_Req" s="HKKAZ" v="5">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="All_Acct" f="jn" />
+		<de t="StartDate" m="0" f="dat" />
+		<de t="EndDate" m="0" f="dat" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="AcctMvmtsSpecifiedPeriod_5_Resp" s="HIKAZ" v="5">
+		<de t="BookedTrans" f="bin" />
+		<de t="NonbookedTrans" m="0" f="bin" />
+	</seg>
+
+	<seg t="AcctMvmtsSpecifiedPeriod_5_Par" s="HIKAZS" v="5">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="AcctMvmtsSpecifiedPeriod_Param">
+			<de t="AcctMvmtData_Cutoff" f="num" b="4" />
+			<de t="Max_Entries_Allowed" f="jn" />
+			<de t="All_Acct_Allowed" f="jn" />
+		</deg>
+	</seg>
+
+	<seg t="AcctMvmtsSpecifiedPeriod_6_Req" s="HKKAZ" v="6">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="All_Acct" f="jn" />
+		<de t="StartDate" m="0" f="dat" />
+		<de t="EndDate" m="0" f="dat" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="AcctMvmtsSpecifiedPeriod_6_Resp" s="HIKAZ" v="6">
+		<de t="BookedTrans" f="bin" />
+		<de t="NonbookedTrans" m="0" f="bin" />
+	</seg>
+
+	<seg t="AcctMvmtsSpecifiedPeriod_6_Par" s="HIKAZS" v="6">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="AcctMvmtsSpecifiedPeriod_Param">
+			<de t="AcctMvmtData_Cutoff" f="num" b="4" />
+			<de t="Max_Entries_Allowed" f="jn" />
+			<de t="All_Acct_Allowed" f="jn" />
+		</deg>
+	</seg>
+
+	<!-- HKDAE SetupStandingOrder -->
+
+	<seg t="SetupStandingOrder_2_Req" s="HKDAE" v="2" c="10" z="34">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" n="0" />
+		<de t="OrderID" f="an" m="0" n="0" b="99" />
+		<deg t="StandingOrder_Details">
+			<de t="Execute_FirstTimeOn" f="dat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="dat" m="0" />
+		</deg>
+	</seg>
+
+	<seg t="SetupStandingOrder_2_Resp" s="HIDAE" v="2">
+		<de t="OrderID" f="an" m="0" b="99" />
+	</seg>
+
+	<seg t="SetupStandingOrder_2_Par" s="HIDAES" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="SetupStandingOrder_Param">
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Min_LeadTime" f="num" b="4" />
+			<de t="Max_LeadTime" f="num" b="4" />
+			<de t="PeriodLen_InMonths" f="dig" b="24" />
+			<de t="Month_Days_Available" f="dig" b="64" />
+			<de t="PeriodLen_InWeeks" m="0" f="dig" b="104" />
+			<de t="Week_Days_Available" m="0" f="dig" b="7" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="SetupStandingOrder_3_Req" s="HKDAE" v="3" c="10" z="34">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" n="0" />
+		<de t="OrderID" f="an" m="0" n="0" b="99" />
+		<deg t="StandingOrder_Details">
+			<de t="Execute_FirstTimeOn" f="dat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="dat" m="0" />
+		</deg>
+	</seg>
+
+	<seg t="SetupStandingOrder_3_Resp" s="HIDAE" v="3">
+		<de t="OrderID" f="an" m="0" b="99" />
+	</seg>
+
+	<seg t="SetupStandingOrder_3_Par" s="HIDAES" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="SetupStandingOrder_Param">
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Min_LeadTime" f="num" b="4" />
+			<de t="Max_LeadTime" f="num" b="4" />
+			<de t="PeriodLen_InMonths" f="dig" b="24" />
+			<de t="Month_Days_Available" f="dig" b="64" />
+			<de t="PeriodLen_InWeeks" m="0" f="dig" b="104" />
+			<de t="Week_Days_Available" m="0" f="dig" b="7" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="SetupStandingOrder_4_Req" s="HKDAE" v="4" c="10" z="34">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" n="0" />
+		<de t="OrderID" f="an" m="0" n="0" b="99" />
+		<deg t="StandingOrder_Details">
+			<de t="Execute_FirstTimeOn" f="vdat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="vdat" m="0" />
+		</deg>
+	</seg>
+
+	<seg t="SetupStandingOrder_4_Resp" s="HIDAE" v="4">
+		<de t="OrderID" f="an" m="0" b="99" />
+	</seg>
+
+	<seg t="SetupStandingOrder_4_Par" s="HIDAES" v="4">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="SetupStandingOrder_Param">
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Min_LeadTime" f="num" b="4" />
+			<de t="Max_LeadTime" f="num" b="4" />
+			<de t="PeriodLen_InMonths" f="dig" b="24" />
+			<de t="Month_Days_Available" f="dig" b="64" />
+			<de t="PeriodLen_InWeeks" m="0" f="dig" b="104" />
+			<de t="Week_Days_Available" m="0" f="dig" b="7" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="SetupStandingOrder_5_Req" s="HKDAE" v="5" c="10" z="34">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<deg t="StandingOrder_Details">
+			<de t="Execute_FirstTimeOn" f="vdat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="vdat" m="0" />
+		</deg>
+	</seg>
+
+	<seg t="SetupStandingOrder_5_Resp" s="HIDAE" v="5">
+		<de t="OrderID" f="an" m="0" b="99" />
+	</seg>
+
+	<seg t="SetupStandingOrder_5_Par" s="HIDAES" v="5">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="SetupStandingOrder_Param">
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="Min_LeadTime" f="num" b="4" />
+			<de t="Max_LeadTime" f="num" b="4" />
+			<de t="PeriodLen_InMonths" f="dig" b="24" />
+			<de t="Month_Days_Available" f="dig" b="64" />
+			<de t="PeriodLen_InWeeks" m="0" f="dig" b="104" />
+			<de t="Week_Days_Available" m="0" f="dig" b="7" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<!-- HKDAB AllStandingOrders -->
+
+	<seg t="AllStandingOrders_1_Req" s="HKDAB" v="1">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="OrderID" f="an" m="0" b="99" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="AllStandingOrders_1_Resp" s="HIDAB" v="1">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" />
+		<de t="OrderID" f="an" m="0" b="99" />
+		<deg t="StandingOrder_Details">
+			<de t="Execute_FirstTimeOn" f="dat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="dat" m="0" />
+		</deg>
+		<deg t="Interruption" m="0">
+			<de t="AnnualInterruption" f="jn" />
+			<de t="Interruption_From" f="dat" m="0" />
+			<de t="Interruption_To" f="dat" m="0" />
+			<de t="PaymtSkipped_No" f="num" m="0" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="AllStandingOrders_1_Par" s="HIDABS" v="1">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+	</seg>
+
+	<seg t="AllStandingOrders_2_Req" s="HKDAB" v="2">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="OrderID" f="an" m="0" b="99" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="AllStandingOrders_2_Resp" s="HIDAB" v="2">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" />
+		<de t="OrderID" f="an" m="0" b="99" />
+		<deg t="StandingOrder_Details">
+			<de t="Execute_FirstTimeOn" f="dat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="dat" m="0" />
+		</deg>
+		<deg t="Interruption" m="0">
+			<de t="AnnualInterruption" f="jn" />
+			<de t="Interruption_From" f="dat" m="0" />
+			<de t="Interruption_To" f="dat" m="0" />
+			<de t="PaymtSkipped_No" f="num" m="0" b="2" />
+			<gdg t="DifferingAmt" m="0">
+				<de t="Value" f="wrt" m="0" b="15" />
+				<de t="Currency" f="cur" m="0" a="3" b="3" />
+			</gdg>
+		</deg>
+	</seg>
+
+	<seg t="AllStandingOrders_2_Par" s="HIDABS" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+	</seg>
+
+	<seg t="AllStandingOrders_3_Req" s="HKDAB" v="3">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="OrderID" f="an" m="0" b="99" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="AllStandingOrders_3_Resp" s="HIDAB" v="3">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" />
+		<de t="OrderID" f="an" m="0" b="99" />
+		<deg t="StandingOrder_Details">
+			<de t="Execute_FirstTimeOn" f="dat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="dat" m="0" />
+		</deg>
+		<deg t="Interruption" m="0">
+			<de t="AnnualInterruption" f="jn" />
+			<de t="Interruption_From" f="dat" m="0" />
+			<de t="Interruption_To" f="dat" m="0" />
+			<de t="PaymtSkipped_No" f="num" m="0" b="2" />
+			<gdg t="DifferingAmt" m="0">
+				<de t="Value" f="wrt" m="0" b="15" />
+				<de t="Currency" f="cur" m="0" a="3" b="3" />
+			</gdg>
+		</deg>
+	</seg>
+
+	<seg t="AllStandingOrders_3_Par" s="HIDABS" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+	</seg>
+
+	<seg t="AllStandingOrders_4_Req" s="HKDAB" v="4">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="OrderID" f="an" m="0" b="99" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="AllStandingOrders_4_Resp" s="HIDAB" v="4">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" />
+		<de t="OrderID" f="an" m="0" b="99" />
+		<deg t="StandingOrder_Details">
+			<de t="Execute_FirstTimeOn" f="dat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="dat" m="0" />
+		</deg>
+		<deg t="Interruption" m="0">
+			<de t="AnnualInterruption" f="jn" />
+			<de t="Interruption_From" f="dat" m="0" />
+			<de t="Interruption_To" f="dat" m="0" />
+			<de t="PaymtSkipped_No" f="num" m="0" b="2" />
+			<gdg t="DifferingAmt" m="0">
+				<de t="Value" f="wrt" m="0" b="15" />
+				<de t="Currency" f="cur" m="0" a="3" b="3" />
+			</gdg>
+		</deg>
+	</seg>
+
+	<seg t="AllStandingOrders_4_Par" s="HIDABS" v="4">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+	</seg>
+
+	<!-- HKDAL CancelStandingOrder -->
+
+	<seg t="CancelStandingOrder_1_Req" s="HKDAL" v="1" c="10" z="40">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" n="0" />
+		<de t="OrderID" f="an" m="0" b="99" />
+		<deg t="StandingOrder_Details">
+			<de t="Execute_FirstTimeOn" f="dat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="dat" m="0" />
+		</deg>
+	</seg>
+
+	<seg t="CancelStandingOrder_1_Par" s="HIDALS" v="1">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="CancelStandingOrder_Param">
+			<de t="Min_LeadTime" f="num" b="4" />
+			<de t="Max_LeadTime" f="num" b="4" />
+			<de t="PostdatedCancel_Possible" f="jn" />
+		</deg>
+	</seg>
+
+	<seg t="CancelStandingOrder_2_Req" s="HKDAL" v="2" c="10" z="40">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" n="0" />
+		<de t="OrderID" f="an" m="0" b="99" />
+		<deg t="StandingOrder_Details">
+			<de t="Execute_FirstTimeOn" f="dat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="dat" m="0" />
+		</deg>
+	</seg>
+
+	<seg t="CancelStandingOrder_2_Par" s="HIDALS" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="CancelStandingOrder_Param">
+			<de t="Min_LeadTime" f="num" b="4" />
+			<de t="Max_LeadTime" f="num" b="4" />
+			<de t="PostdatedCancel_Possible" f="jn" />
+		</deg>
+	</seg>
+
+	<seg t="CancelStandingOrder_3_Req" s="HKDAL" v="3" c="10" z="40">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" n="0" />
+		<de t="OrderID" f="an" m="0" b="99" />
+		<deg t="StandingOrder_Details">
+			<de t="Execute_FirstTimeOn" f="dat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="dat" m="0" />
+		</deg>
+	</seg>
+
+	<seg t="CancelStandingOrder_3_Par" s="HIDALS" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="CancelStandingOrder_Param">
+			<de t="Min_LeadTime" f="num" b="4" />
+			<de t="Max_LeadTime" f="num" b="4" />
+			<de t="PostdatedCancel_Possible" f="jn" />
+		</deg>
+	</seg>
+
+	<seg t="CancelStandingOrder_4_Req" s="HKDAL" v="4" c="10" z="40">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" n="0" />
+		<de t="OrderID" f="an" m="0" b="99" />
+		<deg t="StandingOrder_Details">
+			<de t="Execute_FirstTimeOn" f="dat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="dat" m="0" />
+		</deg>
+	</seg>
+
+	<seg t="CancelStandingOrder_4_Par" s="HIDALS" v="4">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="CancelStandingOrder_Param">
+			<de t="Min_LeadTime" f="num" b="4" />
+			<de t="Max_LeadTime" f="num" b="4" />
+			<de t="PostdatedCancel_Possible" f="jn" />
+		</deg>
+	</seg>
+
+	<!-- HKDAN ModifyStandingOrder -->
+
+	<seg t="ModifyStandingOrder_2_Req" s="HKDAN" v="2" c="10" z="43">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" n="0" />
+		<de t="OrderID" f="an" b="99" />
+		<deg t="StandingOrder_Details">
+			<de t="Execute_FirstTimeOn" f="dat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="dat" m="0" />
+		</deg>
+	</seg>
+
+	<seg t="ModifyStandingOrder_2_Resp" s="HIDAN" v="2">
+		<de t="OrderID" f="an" b="99" />
+		<de t="OrderID_Old" f="an" m="0" b="99" />
+	</seg>
+
+	<seg t="ModifyStandingOrder_2_Par" s="HIDANS" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="ModifyStandingOrder_Param">
+			<de t="PostdatedModifications_No" f="num" b="1" />
+			<de t="Min_LeadTime" f="num" b="4" />
+			<de t="Max_LeadTime" f="num" b="4" />
+			<de t="PayeeAcct_Modifiable" f="jn" />
+			<de t="PayeeName_Modifiable" f="jn" />
+			<de t="Amt_Modifiable" f="jn" />
+			<de t="TextKey_Modifiable" f="jn" />
+			<de t="PaymtPurpose_Modifiable" f="jn" />
+			<de t="First_ScheduledDate_Mod" f="jn" />
+			<de t="TimeUnit_Modifiable" f="jn" />
+			<de t="PeriodLen_Modifiable" f="jn" />
+			<de t="ExecDay_Modifiable" f="jn" />
+			<de t="LastScheduledDate_Modif" f="jn" />
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="PeriodLen_InMonths" f="dig" b="24" />
+			<de t="Month_Days_Available" f="dig" b="64" />
+			<de t="PeriodLen_InWeeks" m="0" f="dig" b="104" />
+			<de t="Week_Days_Available" m="0" f="dig" b="7" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="ModifyStandingOrder_3_Req" s="HKDAN" v="3" c="10" z="43">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" n="0" />
+		<de t="OrderID" f="an" b="99" />
+		<deg t="StandingOrder_Details">
+			<de t="Execute_FirstTimeOn" f="dat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="dat" m="0" />
+		</deg>
+	</seg>
+
+	<seg t="ModifyStandingOrder_3_Resp" s="HIDAN" v="3">
+		<de t="OrderID" f="an" b="99" />
+		<de t="OrderID_Old" f="an" m="0" b="99" />
+	</seg>
+
+	<seg t="ModifyStandingOrder_3_Par" s="HIDANS" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="ModifyStandingOrder_Param">
+			<de t="PostdatedModifications_No" f="num" b="1" />
+			<de t="Min_LeadTime" f="num" b="4" />
+			<de t="Max_LeadTime" f="num" b="4" />
+			<de t="PayeeAcct_Modifiable" f="jn" />
+			<de t="PayeeName_Modifiable" f="jn" />
+			<de t="Amt_Modifiable" f="jn" />
+			<de t="TextKey_Modifiable" f="jn" />
+			<de t="PaymtPurpose_Modifiable" f="jn" />
+			<de t="First_ScheduledDate_Mod" f="jn" />
+			<de t="TimeUnit_Modifiable" f="jn" />
+			<de t="PeriodLen_Modifiable" f="jn" />
+			<de t="ExecDay_Modifiable" f="jn" />
+			<de t="LastScheduledDate_Modif" f="jn" />
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="PeriodLen_InMonths" f="dig" b="24" />
+			<de t="Month_Days_Available" f="dig" b="64" />
+			<de t="PeriodLen_InWeeks" m="0" f="dig" b="104" />
+			<de t="Week_Days_Available" m="0" f="dig" b="7" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="ModifyStandingOrder_4_Req" s="HKDAN" v="4" c="10" z="43">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" n="0" />
+		<de t="OrderID" f="an" b="99" />
+		<deg t="StandingOrder_Details">
+			<de t="Execute_FirstTimeOn" f="dat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="dat" m="0" />
+		</deg>
+	</seg>
+
+	<seg t="ModifyStandingOrder_4_Resp" s="HIDAN" v="4">
+		<de t="OrderID" f="an" b="99" />
+		<de t="OrderID_Old" f="an" m="0" b="99" />
+	</seg>
+
+	<seg t="ModifyStandingOrder_4_Par" s="HIDANS" v="4">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="ModifyStandingOrder_Param">
+			<de t="PostdatedModifications_No" f="num" b="1" />
+			<de t="Min_LeadTime" f="num" b="4" />
+			<de t="Max_LeadTime" f="num" b="4" />
+			<de t="PayeeAcct_Modifiable" f="jn" />
+			<de t="PayeeName_Modifiable" f="jn" />
+			<de t="Amt_Modifiable" f="jn" />
+			<de t="TextKey_Modifiable" f="jn" />
+			<de t="PaymtPurpose_Modifiable" f="jn" />
+			<de t="First_ScheduledDate_Mod" f="jn" />
+			<de t="TimeUnit_Modifiable" f="jn" />
+			<de t="PeriodLen_Modifiable" f="jn" />
+			<de t="ExecDay_Modifiable" f="jn" />
+			<de t="LastScheduledDate_Modif" f="jn" />
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="PeriodLen_InMonths" f="dig" b="24" />
+			<de t="Month_Days_Available" f="dig" b="64" />
+			<de t="PeriodLen_InWeeks" m="0" f="dig" b="104" />
+			<de t="Week_Days_Available" m="0" f="dig" b="7" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="ModifyStandingOrder_5_Req" s="HKDAN" v="5" c="10" z="43">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PayeeAcct" m="0">
+			<de t="AcctNo" f="an" b="30" p="1" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PayeeName_1" f="dta" m="0" b="27" />
+		<de t="PayeeName_2" m="0" f="dta" b="27" />
+		<deg t="Amount" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TextKey" f="dig" m="0" a="2" b="2" />
+		<de t="TextKeyExt" m="0" f="dig" a="3" b="3" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="999" f="dta" b="27" />
+		</deg>
+		<de t="ScheduledDate" f="dat" m="0" n="0" />
+		<de t="OrderID" f="an" b="99" />
+		<deg t="StandingOrder_Details" m="0">
+			<de t="Execute_FirstTimeOn" f="dat" />
+			<de t="TimeUnit" f="an" b="1" />
+			<de t="PeriodLen" f="num" b="2" />
+			<de t="ExecDay" f="num" b="2" />
+			<de t="LastScheduledDate" f="dat" m="0" />
+		</deg>
+	</seg>
+
+	<seg t="ModifyStandingOrder_5_Resp" s="HIDAN" v="5">
+		<de t="OrderID" f="an" b="99" />
+		<de t="OrderID_Old" f="an" m="0" b="99" />
+	</seg>
+
+	<seg t="ModifyStandingOrder_5_Par" s="HIDANS" v="5">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="ModifyStandingOrder_Param">
+			<de t="PostdatedModifications_No" f="num" b="1" />
+			<de t="Min_LeadTime" f="num" b="4" />
+			<de t="Max_LeadTime" f="num" b="4" />
+			<de t="PayeeAcct_Modifiable" f="jn" />
+			<de t="PayeeName_Modifiable" f="jn" />
+			<de t="Amt_Modifiable" f="jn" />
+			<de t="TextKey_Modifiable" f="jn" />
+			<de t="PaymtPurpose_Modifiable" f="jn" />
+			<de t="First_ScheduledDate_Mod" f="jn" />
+			<de t="TimeUnit_Modifiable" f="jn" />
+			<de t="PeriodLen_Modifiable" f="jn" />
+			<de t="ExecDay_Modifiable" f="jn" />
+			<de t="LastScheduledDate_Modif" f="jn" />
+			<de t="MaxNo_PaymtPurposeLines" f="num" b="2" />
+			<de t="PeriodLen_InMonths" f="dig" b="24" />
+			<de t="Month_Days_Available" f="dig" b="64" />
+			<de t="PeriodLen_InWeeks" m="0" f="dig" b="104" />
+			<de t="Week_Days_Available" m="0" f="dig" b="7" />
+			<de t="Supported_TextKeys" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<!-- HKAOM InternationalRemittNonNotify -->
+
+	<seg t="InternationalRemittNonNotify_1_Req" s="HKAOM" v="1" c="20" z="9">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="OrderingCustName_AZV" f="an" b="140" />
+		<deg t="PayeeAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="Payee_IBAN" m="0" f="an" b="34" p="1" />
+		<de t="Payee_InstName_AZV" f="an" b="140" />
+		<de t="PayeeName_AZV" f="an" b="140" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="CostBearer" f="num" b="1" />
+		<de t="PaymtPurpose_AZV" m="0" f="an" b="140" />
+	</seg>
+
+	<seg t="InternationalRemittNonNotify_1_Par" s="HIAOMS" v="1">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="InternationalRemittNonNotify_Param">
+			<de t="IBAN_Possible" f="jn" />
+			<de t="CountryInfo_Wo_Decl" f="an" m="0" n="99" b="99" />
+		</deg>
+	</seg>
+
+	<seg t="InternationalRemittNonNotify_2_Req" s="HKAOM" v="2" c="20" z="9">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="OrderingCustName_AZV" f="an" b="140" />
+		<deg t="PayeeAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="Payee_IBAN" m="0" f="an" b="34" p="1" />
+		<de t="Payee_InstName_AZV" f="an" b="140" />
+		<de t="PayeeName_AZV" f="an" b="140" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="CostBearer" f="num" b="1" />
+		<de t="PaymtPurpose_AZV" m="0" f="an" b="140" />
+	</seg>
+
+	<seg t="InternationalRemittNonNotify_2_Par" s="HIAOMS" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="InternationalRemittNonNotify_Param">
+			<de t="IBAN_Possible" f="jn" />
+			<de t="CountryInfo_Wo_Decl" f="an" m="0" n="99" b="99" />
+		</deg>
+	</seg>
+
+	<!-- HKSTP EuroSTPPaymt -->
+
+	<seg t="EuroSTPPaymt_1_Req" s="HKSTP" v="1" c="20" z="9">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="DTAZV_DataRec" f="bin" />
+	</seg>
+
+	<seg t="EuroSTPPaymt_1_Par" s="HISTPS" v="1">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="EuroSTPPaymt_Param">
+			<de t="MaxNo_Trecs" f="num" b="4" />
+			<de t="AllowedCountry_STP" m="0" n="99" f="an" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="EuroSTPPaymt_2_Req" s="HKSTP" v="2" c="20" z="9">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="DTAZV_DataRec" f="bin" />
+	</seg>
+
+	<seg t="EuroSTPPaymt_2_Par" s="HISTPS" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="EuroSTPPaymt_Param">
+			<de t="MaxNo_Trecs" f="num" b="4" />
+			<de t="AllowedCountry_STP" m="0" n="99" f="an" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="EuroSTPPaymt_3_Req" s="HKSTP" v="3" c="20" z="9">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="DTAZV_Handbook" f="num" a="4" b="4" />
+		<de t="DTAZV_DataRec" f="bin" />
+	</seg>
+
+	<seg t="EuroSTPPaymt_3_Par" s="HISTPS" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="EuroSTPPaymt_Param">
+			<de t="DTAZV_Handbook" f="num" a="4" b="4" />
+			<de t="MaxNo_Trecs" f="num" b="4" />
+			<de t="StpLim" f="wrt" b="15" />
+			<de t="NotifyLim" f="wrt" b="15" />
+			<de t="AllowedCountry_STP" m="0" n="99" f="an" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<!-- HKAUB InternationalRemitt -->
+
+	<seg t="InternationalRemitt_2_Req" s="HKAUB" v="2" c="20" z="10">
+		<de t="DTAZV_DataRec" f="bin" />
+	</seg>
+
+	<seg t="InternationalRemitt_2_Par" s="HIAUBS" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="InternationalRemitt_Param">
+			<de t="MaxNo_Trecs" f="num" b="4" />
+		</deg>
+	</seg>
+
+	<seg t="InternationalRemitt_3_Req" s="HKAUB" v="3" c="20" z="10">
+		<de t="DTAZV_DataRec" f="bin" />
+	</seg>
+
+	<seg t="InternationalRemitt_3_Par" s="HIAUBS" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="InternationalRemitt_Param">
+			<de t="MaxNo_Trecs" f="num" b="4" />
+		</deg>
+	</seg>
+
+	<seg t="InternationalRemitt_4_Req" s="HKAUB" v="4" c="20" z="10">
+		<de t="DTAZV_DataRec" f="bin" />
+	</seg>
+
+	<seg t="InternationalRemitt_4_Par" s="HIAUBS" v="4">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="InternationalRemitt_Param">
+			<de t="MaxNo_Trecs" f="num" b="4" />
+		</deg>
+	</seg>
+
+	<seg t="InternationalRemitt_5_Req" s="HKAUB" v="5" c="20" z="10">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="DTAZV_DataRec" f="bin" />
+	</seg>
+
+	<seg t="InternationalRemitt_5_Par" s="HIAUBS" v="5">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="InternationalRemitt_Param">
+			<de t="MaxNo_Trecs" f="num" b="4" />
+		</deg>
+	</seg>
+
+	<seg t="InternationalRemitt_6_Req" s="HKAUB" v="6" c="20" z="10">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="DTAZV_DataRec" f="bin" />
+	</seg>
+
+	<seg t="InternationalRemitt_6_Par" s="HIAUBS" v="6">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="InternationalRemitt_Param">
+			<de t="MaxNo_Trecs" f="num" b="4" />
+		</deg>
+	</seg>
+
+	<seg t="InternationalRemitt_7_Req" s="HKAUB" v="7" c="20" z="10">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="DTAZV_DataRec" f="bin" />
+	</seg>
+
+	<seg t="InternationalRemitt_7_Par" s="HIAUBS" v="7">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="InternationalRemitt_Param">
+			<de t="MaxNo_Trecs" f="num" b="4" />
+		</deg>
+	</seg>
+
+	<seg t="InternationalRemitt_8_Req" s="HKAUB" v="8" c="20" z="10">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="DTAZV_Handbook" f="num" a="4" b="4" />
+		<de t="DTAZV_DataRec" f="bin" />
+	</seg>
+
+	<seg t="InternationalRemitt_8_Par" s="HIAUBS" v="8">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="InternationalRemitt_Param">
+			<de t="DTAZV_Handbook" f="num" a="4" b="4" />
+			<de t="MaxNo_Trecs" f="num" b="4" />
+			<de t="NotifyLimit" f="wrt" />
+			<de t="NotifySupported" f="an" m="0" b="16" />
+			<de t="DirectionsSupported" f="an" m="0" b="64" />
+			<de t="MaxDirections" f="num" m="0" b="1" />
+			<de t="AllowedPaymentTypes" f="an" m="0" b="64" />
+		</deg>
+	</seg>
+
+	<!-- HKKDM CustMsg -->
+
+	<seg t="CustMsg_2_Req" s="HKKDM" v="2">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="AcctCcy" m="0" f="cur" a="3" b="3" />
+		<de t="PlainTextMsg" f="txt" b="2048" />
+		<de t="Subject" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="CustMsg_2_Par" s="HIKDMS" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="CustMsg_Param">
+			<de t="Max_Len" f="num" b="4" />
+		</deg>
+	</seg>
+
+	<seg t="CustMsg_3_Req" s="HKKDM" v="3">
+		<deg t="OrderingCustAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="AcctCcy" m="0" f="cur" a="3" b="3" />
+		<de t="PlainTextMsg" f="txt" b="2048" />
+		<de t="Subject" m="0" f="an" b="35" />
+		<de t="PayeeAddr" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="CustMsg_3_Par" s="HIKDMS" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="CustMsg_Param">
+			<de t="Max_Len" f="num" b="4" />
+		</deg>
+	</seg>
+
+	<seg t="CustMsg_4_Req" s="HKKDM" v="4">
+		<deg t="OrderingCustAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PlainTextMsg" f="txt" b="2048" />
+		<de t="Subject" m="0" f="an" b="35" />
+		<de t="PayeeAddr" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="CustMsg_4_Par" s="HIKDMS" v="4">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<deg t="CustMsg_Param">
+			<de t="Max_Len" f="num" b="4" />
+		</deg>
+	</seg>
+
+	<seg t="CustMsg_5_Req" s="HKKDM" v="5">
+		<deg t="OrderingCustAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="PlainTextMsg" f="txt" b="2048" />
+		<de t="Subject" m="0" f="an" b="35" />
+		<de t="PayeeAddr" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="CustMsg_5_Par" s="HIKDMS" v="5">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="CustMsg_Param">
+			<de t="Max_Len" f="num" b="4" />
+		</deg>
+	</seg>
+
+	<!-- HKESU EUStandRemitt -->
+
+	<seg t="EUStandRemitt_1_Req" s="HKESU" v="1" c="20" z="9">
+		<de t="OrderingCust_IBAN" f="an" b="34" />
+		<de t="OrderingCustName_AZV_short" f="an" b="27" />
+		<de t="Payee_IBAN" f="an" b="34" p="1" />
+		<de t="BIC_BankPayee" f="an" b="11" />
+		<de t="PayeeName_AZV_short" f="an" b="35" />
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="PaymtPurpose_AZV_short" m="0" n="2" f="an" b="35" />
+	</seg>
+
+	<seg t="EUStandRemitt_1_Par" s="HIESUS" v="1">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+	</seg>
+
+	<!-- HKSPA SEPA Account Information -->
+
+	<seg t="SepaAcctInfo_1_Req" s="HKSPA" v="1">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+	</seg>
+
+	<seg t="SepaAcctInfo_1_Resp" s="HISPA" v="1">
+		<deg t="SepaAcct" m="0" n="999">
+			<de t="IsSepaAcct" f="jn" />
+			<de t="IBAN" m="0" f="an" b="34" />
+			<de t="BIC" m="0" f="an" b="11" />
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+	</seg>
+
+	<seg t="SepaAcctInfo_1_Par" s="HISPAS" v="1">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="SepaAcctInfo_Param">
+			<de t="SingleAcctInfo_Allowed" f="jn" />
+			<de t="DomesticAcct_Allowed" f="jn" />
+			<de t="StructRemittInfo_Allowed" f="jn" />
+			<de t="Supported_SepaFormats" f="an" b="256" m="0" n="99" />
+		</deg>
+	</seg>
+
+	<seg t="SepaAcctInfo_2_Req" s="HKSPA" v="2">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="SepaAcctInfo_2_Resp" s="HISPA" v="2">
+		<deg t="SepaAcct" m="0" n="999">
+			<de t="IsSepaAcct" f="jn" />
+			<de t="IBAN" m="0" f="an" b="34" />
+			<de t="BIC" m="0" f="an" b="11" />
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+	</seg>
+
+	<seg t="SepaAcctInfo_2_Par" s="HISPAS" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="SepaAcctInfo_Param">
+			<de t="SingleAcctInfo_Allowed" f="jn" />
+			<de t="DomesticAcct_Allowed" f="jn" />
+			<de t="StructRemittInfo_Allowed" f="jn" />
+			<de t="Max_Entries_Allowed" f="jn" />
+			<de t="Supported_SepaFormats" f="an" b="256" m="0" n="99" />
+		</deg>
+	</seg>
+
+	<!-- HKCCS SEPA Single Remittance  -->
+
+	<seg t="SepaSingRemitt_1_Req" s="HKCCS" v="1" c="22" z="9">
+		<deg t="OrderingCustAcct">
+			<de t="IBAN" m="0" f="an" b="34" />
+			<de t="BIC" m="0" f="an" b="11" />
+			<de t="AcctNo" m="0" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID" m="0">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="SepaDesc" f="an" b="256" />
+		<de t="SepaPainMsg" f="xml" />
+	</seg>
+
+	<seg t="SepaSingRemitt_1_Par" s="HICCSS" v="1">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+	</seg>
+
+	<!-- HKFGB FixedtermDepositInventory -->
+
+	<seg t="FixedtermDepositInventory_2_Req" s="HKFGB" v="2" >
+		<deg t="DepositAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="ContractRef" m="0" f="an" b="30"/>
+		<de t="All_Acct" f="jn" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="FixedtermDepositInventory_2_Resp" s="HIFGB" v="2" >
+		<deg t="DepositAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="ContractRef" m="0" f="an" b="30"/>
+		<deg t="DepositAmt">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="FixedTermDepositTerms">
+			<de t="DepositDate" f="dat" />
+			<de t="ExpireDate" f="dat" />
+			<de t="IntRate" f="wrt" b="15" />
+			<de t="IntMethod" f="an" b="1" />
+			<gdg t="Min_Deposit" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<gdg t="Max_Deposit" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="TermsID" m="0" f="an" b="30" />
+			<de t="TermsName" m="0" f="an" b="30" />
+		</deg>
+		<deg t="ToBeDebitedAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="OwnAcct" f="jn" />
+		<de t="ReinvestmentCode" f="num" b="1" />
+		<de t="AcctStatement_Delivery" m="0" f="num" b="1" />
+		<deg t="MaturityAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="EarnedIntAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="TermsCond_Ver" m="0">
+			<de t="TermsVer" f="an" b="10" />
+			<de t="TransmissionDate" f="dat" />
+			<de t="Transmission_Time" f="tim" />
+		</deg>
+		<deg t="ExpectedEarnedInt" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="FixedTermDepositStat" f="num" b="1" />
+		<deg t="Renewal" m="0">
+			<de t="RenewalExtPerion" f="num" b="3" />
+			<gdg t="DepositAmt_New">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="OnRenewal_ReinvestmtCode" f="num" b="1" />
+		</deg>
+	</seg>
+
+	<seg t="FixedtermDepositInventory_2_Par" s="HIFGBS" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+	</seg>
+	
+	<seg t="FixedtermDepositInventory_3_Req" s="HKFGB" v="3" >
+		<deg t="DepositAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="ContractRef" m="0" f="an" b="30"/>
+		<de t="All_Acct" f="jn" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="FixedtermDepositInventory_3_Resp" s="HIFGB" v="3" >
+		<deg t="DepositAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="ContractRef" m="0" f="an" b="30"/>
+		<deg t="DepositAmt">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="FixedTermDepositTerms">
+			<de t="DepositDate" f="dat" />
+			<de t="ExpireDate" f="dat" />
+			<de t="IntRate" f="wrt" b="15" />
+			<de t="IntMethod" f="an" b="1" />
+			<gdg t="Min_Deposit" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<gdg t="Max_Deposit" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="TermsID" m="0" f="an" b="30" />
+			<de t="TermsName" m="0" f="an" b="30" />
+		</deg>
+		<deg t="ToBeDebitedAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="OwnAcct" f="jn" />
+		<de t="ReinvestmentCode" f="num" b="1" />
+		<de t="AcctStatement_Delivery" m="0" f="num" b="1" />
+		<deg t="MaturityAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="EarnedIntAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="TermsCond_Ver" m="0">
+			<de t="TermsVer" f="an" b="10" />
+			<de t="TransmissionDate" f="dat" />
+			<de t="Transmission_Time" f="tim" />
+		</deg>
+		<deg t="ExpectedEarnedInt" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="FixedTermDepositStat" f="num" b="1" />
+		<deg t="Renewal" m="0">
+			<de t="RenewalExtPerion" f="num" b="3" />
+			<gdg t="DepositAmt_New">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="OnRenewal_ReinvestmtCode" f="num" b="1" />
+		</deg>
+	</seg>
+
+	<seg t="FixedtermDepositInventory_3_Par" s="HIFGBS" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+	</seg>
+	
+	<seg t="FixedtermDepositInventory_4_Req" s="HKFGB" v="4" >
+		<deg t="DepositAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="ContractRef" m="0" f="an" b="30"/>
+		<de t="All_Acct" f="jn" />
+		<de t="MaxNo_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="FixedtermDepositInventory_4_Resp" s="HIFGB" v="4" >
+		<deg t="DepositAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="ContractRef" m="0" f="an" b="30"/>
+		<deg t="DepositAmt">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="FixedTermDepositTerms">
+			<de t="DepositDate" f="dat" />
+			<de t="ExpireDate" f="dat" />
+			<de t="IntRate" f="wrt" b="15" />
+			<de t="IntMethod" f="an" b="1" />
+			<gdg t="Min_Deposit" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<gdg t="Max_Deposit" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="TermsID" m="0" f="an" b="30" />
+			<de t="TermsName" m="0" f="an" b="30" />
+		</deg>
+		<deg t="ToBeDebitedAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="OwnAcct" f="jn" />
+		<de t="ReinvestmentCode" f="num" b="1" />
+		<de t="AcctStatement_Delivery" m="0" f="num" b="1" />
+		<deg t="MaturityAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="EarnedIntAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="TermsCond_Ver" m="0">
+			<de t="TermsVer" f="an" b="10" />
+			<de t="TransmissionDate" f="dat" />
+			<de t="Transmission_Time" f="tim" />
+		</deg>
+		<deg t="ExpectedEarnedInt" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="FixedTermDepositStat" f="num" b="1" />
+		<deg t="Renewal" m="0">
+			<de t="RenewalExtPerion" f="num" b="3" />
+			<gdg t="DepositAmt_New">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="OnRenewal_ReinvestmtCode" f="num" b="1" />
+		</deg>
+	</seg>
+
+	<seg t="FixedtermDepositInventory_4_Par" s="HIFGBS" v="4">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+	</seg>
+
+	<!-- HIKOM CommSettings_Reply -->
+	
+	<seg t="CommSettings_Reply_2" s="HIKOM" v="2">
+		<deg t="BankID">
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="StdLang" f="num" b="3" />
+		<deg t="CommunicationsSettings" n="9">
+			<de t="CommunicationsService" f="num" b="2" />
+			<de t="CommunicationsAddress" f="an" b="512" />
+			<de t="CommunicationsAddr_Suffix" m="0" f="an" b="512" />
+			<de t="FilterFunction" m="0" f="an" a="3" b="3" />
+			<de t="FilterFunction_Ver" m="0" f="num" b="3" />
+		</deg>
+	</seg>
+	
+	<seg t="CommSettings_Reply_3" s="HIKOM" v="3">
+		<deg t="BankID">
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="StdLang" f="code" b="10" />
+		<deg t="CommunicationsSettings" n="9">
+			<de t="CommunicationsService" f="num" b="10" />
+			<de t="CommunicationsAddress" f="an" b="512" />
+			<de t="CommunicationsAddr_Suffix" m="0" f="an" b="512" />
+			<de t="FilterFunction" m="0" f="an" a="3" b="3" />
+			<de t="FilterFunction_Ver" m="0" f="num" b="3" />
+		</deg>
+	</seg>
+	
+	<seg t="CommSettings_Reply_4" s="HIKOM" v="4">
+		<deg t="BankID">
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="StdLang" f="code" b="10" />
+		<deg t="CommunicationsSettings" n="9">
+			<de t="CommunicationsService" f="num" b="10" />
+			<de t="CommunicationsAddress" f="an" b="512" />
+			<de t="CommunicationsAddr_Suffix" m="0" f="an" b="512" />
+			<de t="FilterFunction" m="0" f="an" a="3" b="3" />
+			<de t="FilterFunction_Ver" m="0" f="num" b="3" />
+		</deg>
+	</seg>
+
+	<!-- HIUPD AcctInfo -->
+	
+	<seg t="AcctInfo_3" s="HIUPD" v="3">
+		<deg t="Account">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="CustID" f="an" b="30" />
+		<de t="AcctCcy" m="0" f="cur" a="3" b="3" />
+		<de t="Name_1" f="an" b="35" />
+		<de t="Name_2" m="0" f="an" b="35" />
+		<de t="AcctName" m="0" f="an" b="30" />
+		<deg t="SpendingLim" m="0">
+			<de t="LimType" f="an" b="1" />
+			<gdg t="LimAmt">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="LimDays" m="0" f="num" b="3" />
+		</deg>
+		<deg t="BusinessTrans_Allowed" m="0" n="999">
+			<de t="BusinessTrans" f="an" b="6" />
+			<de t="SigNeeded_Nr" f="num" b="2" />
+			<de t="LimType" m="0" f="an" b="1" />
+			<gdg t="LimAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="LimDays" m="0" f="num" b="3" />
+		</deg>
+	</seg>
+	
+	<seg t="AcctInfo_4" s="HIUPD" v="4">
+		<deg t="Account">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="CustID" f="an" b="30" />
+		<de t="AcctCcy" m="0" f="cur" a="3" b="3" />
+		<de t="AcctHolder_Name_1" f="an" b="35" />
+		<de t="AcctHolder_Name_2" m="0" f="an" b="35" />
+		<de t="AcctName" m="0" f="an" b="30" />
+		<deg t="SpendingLim" m="0">
+			<de t="LimType" f="an" b="1" />
+			<gdg t="LimAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="LimDays" m="0" f="num" b="3" />
+		</deg>
+		<deg t="BusinessTrans_Allowed" m="0" n="999">
+			<de t="BusinessTrans" f="an" b="6" />
+			<de t="SigNeeded_Nr" f="num" b="2" />
+			<de t="LimType" m="0" f="an" b="1" />
+			<gdg t="LimAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="LimDays" m="0" f="num" b="3" />
+		</deg>
+	</seg>
+	
+	<seg t="AcctInfo_5" s="HIUPD" v="5">
+		<deg t="Account">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="CustID" f="an" b="30" />
+		<de t="AcctType" m="0" f="num" b="2" />
+		<de t="AcctCcy" m="0" f="cur" a="3" b="3" />
+		<de t="AccountHolderName_1" f="an" b="27" />
+		<de t="AccountHolderName_2" m="0" f="an" b="27" />
+		<de t="AcctName" m="0" f="an" b="30" />
+		<deg t="SpendingLim" m="0">
+			<de t="LimType" f="an" b="1" />
+			<gdg t="LimAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="LimDays" m="0" f="num" b="3" />
+		</deg>
+		<deg t="BusinessTrans_Allowed" m="0" n="999">
+			<de t="BusinessTrans" f="an" b="6" />
+			<de t="SigNeeded_Nr" f="num" b="2" />
+			<de t="LimType" m="0" f="an" b="1" />
+			<gdg t="LimAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="LimDays" m="0" f="num" b="3" />
+		</deg>
+	</seg>
+	
+	<seg t="AcctInfo_6" s="HIUPD" v="6">
+		<deg t="Account">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="IBAN" m="0" f="an" b="35" />
+		<de t="CustID" f="an" b="30" />
+		<de t="AcctType" m="0" f="num" b="2" />
+		<de t="AcctCcy" m="0" f="cur" a="3" b="3" />
+		<de t="AccountHolderName_1" f="an" b="27" />
+		<de t="AccountHolderName_2" m="0" f="an" b="27" />
+		<de t="AcctName" m="0" f="an" b="30" />
+		<deg t="SpendingLim" m="0">
+			<de t="LimType" f="an" b="1" />
+			<gdg t="LimAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="LimDays" m="0" f="num" b="3" />
+		</deg>
+		<deg t="BusinessTrans_Allowed" m="0" n="999">
+			<de t="BusinessTrans" f="an" b="6" />
+			<de t="SigNeeded_Nr" f="num" b="2" />
+			<de t="LimType" m="0" f="an" b="1" />
+			<gdg t="LimAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="LimDays" m="0" f="num" b="3" />
+		</deg>
+		<de t="AddInfo" m="0" f="an" b="2048" />
+	</seg>
+
+	<!-- HKWPD PortfList -->
+	
+	<seg t="PortfList_2_Req" s="HKWPD" v="2">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="MaxNr_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="PortfList_2_Resp" s="HIWPD" v="2">
+		<de t="PortfSecurities_List" f="bin" />
+	</seg>
+
+	<seg t="PortfList_3_Req" s="HKWPD" v="3">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="MaxNr_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="PortfList_3_Resp" s="HIWPD" v="3">
+		<de t="PortfSecurities_List" f="bin" />
+	</seg>
+
+	<seg t="PortfList_4_Req" s="HKWPD" v="4">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="MaxNr_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="PortfList_4_Resp" s="HIWPD" v="4">
+		<de t="PortfSecurities_List" f="bin" />
+	</seg>
+
+	<seg t="PortfList_5_Req" s="HKWPD" v="5">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="PortfolioSecur_List_Ccy" m="0" f="cur" a="3" b="3" />
+		<de t="ExchRateQuality" m="0" f="wrt" b="1" />
+		<de t="MaxNr_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="PortfList_5_Resp" s="HIWPD" v="5">
+		<de t="PortfSecurities_List" f="bin" />
+	</seg>
+
+	<seg t="PortfList_6_Req" s="HKWPD" v="6">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="PortfolioSecur_List_Ccy" m="0" f="cur" a="3" b="3" />
+		<de t="ExchRateQuality" m="0" f="wrt" b="1" />
+		<de t="MaxNr_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+	
+	<seg t="PortfList_6_Resp" s="HIWPD" v="6">
+		<de t="PortfSecurities_List" f="bin" />
+	</seg>
+
+	<!-- HKWPD ImportantInfo -->
+	
+	<seg t="ImportantInfo_1_Req" s="HKWPH" v="1">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<deg t="ImportantInfo" m="0" n="99">
+			<de t="ImportantInfo_Type" f="num" b="1" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<seg t="ImportantInfo_1_Resp" s="HIWPH" v="1">
+		<deg t="ImportantInfo" m="0" n="99">
+			<de t="ImportantInfo_Type" f="num" b="1" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat"  />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<seg t="ImportantInfo_2_Req" s="HKWPH" v="2">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<deg t="ImportantInfo" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<seg t="ImportantInfo_2_Resp" s="HIWPH" v="2">
+		<deg t="ImportantInfo" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<seg t="ImportantInfo_3_Req" s="HKWPH" v="3">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<deg t="ImportantInfo_Ref" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+		</deg>
+	</seg>
+	
+	<seg t="ImportantInfo_3_Resp" s="HIWPH" v="3">
+		<deg t="ImportantInfo" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<!-- HKWSO PortfOrderStat -->
+	
+	<seg t="PortfOrderStat_1_Req" s="HKWSO" v="1">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="OrderInfo_Wanted" f="jn" b="1" />
+		<de t="Provide_AdditionalInfo" f="jn" b="1" />
+		<de t="PresentUserOrdersOnly" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Period_From" m="0" f="dat" />
+		<de t="Period_To" m="0" f="dat" />
+		<deg t="OrderFilter" m="0">
+			<de t="OpenOrders" f="jn" b="1" />
+			<de t="FilledOrders" f="jn" b="1" />
+			<de t="SettledOrders" f="jn" b="1" />
+			<de t="CancelledOrders" f="jn" b="1" />
+		</deg>
+		<de t="MaxNr_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="PortfOrderStat_1_Resp" s="HIWSO" v="1">
+		<deg t="Portf" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="Status" f="wrt" b="10" />
+		<de t="Splitting" f="jn" b="1" />
+		<de t="PortfOrder_Modifiable" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Exce_Wish" m="0" f="num" b="2" />
+		<deg t="RegDateTime" m="0">
+			<de t="RegDate" f="dat" />
+			<de t="RegTime" m="0" f="tim" />
+		</deg>
+		<deg t="PortfOrder_Info" m="0">
+			<de t="OrderRecord" f="bin" />
+			<de t="ConfirmationRefusal_Date" m="0" f="dat" />
+			<de t="ConfirmationRefusal_Time" m="0" f="tim" />
+		</deg>
+		<de t="Exec_Notice" m="0" f="bin" />
+		<de t="SecurityBooking" m="0" f="bin" />
+	</seg>
+
+	<seg t="PortfOrderStat_2_Req" s="HKWSO" v="2">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="All_Portfolios" f="jn" b="1" />
+		<de t="Provide_AdditionalInfo" f="jn" b="1" />
+		<de t="PresentUserOrdersOnly" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Period_From" m="0" f="dat" />
+		<de t="Period_To" m="0" f="dat" />
+		<deg t="OrderFilter" m="0">
+			<de t="OpenOrders" f="jn" b="1" />
+			<de t="FilledOrders" f="jn" b="1" />
+			<de t="SettledOrders" f="jn" b="1" />
+			<de t="CancelledOrders" f="jn" b="1" />
+		</deg>
+		<de t="MaxNr_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="PortfOrderStat_2_Resp" s="HIWSO" v="2">
+		<deg t="Portf">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="Status" m="0" f="num" b="2" />
+		<de t="Splitting" f="jn" b="1" />
+		<de t="PortfOrder_Modifiable" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Exce_Wish" m="0" f="num" b="2" />
+		<deg t="RegDateTime" m="0">
+			<de t="RegDate" f="dat" />
+			<de t="RegTime" m="0" f="tim" />
+		</deg>
+		<deg t="ValidityDate" m="0">
+			<de t="Date" f="dat"/>
+			<de t="Time" m="0" f="tim" />
+		</deg>
+		<de t="Exec_Notice" m="0" f="bin" />
+		<de t="SecurityBooking" m="0" f="bin" />
+	</seg>
+
+	<seg t="PortfOrderStat_3_Req" s="HKWSO" v="3">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="All_Portfolios" f="jn" b="1" />
+		<de t="Provide_AdditionalInfo" f="jn" b="1" />
+		<de t="PresentUserOrdersOnly" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Period_From" m="0" f="dat" />
+		<de t="Period_To" m="0" f="dat" />
+		<deg t="OrderFilter" m="0">
+			<de t="OpenOrders" f="jn" b="1" />
+			<de t="FilledOrders" f="jn" b="1" />
+			<de t="SettledOrders" f="jn" b="1" />
+			<de t="CancelledOrders" f="jn" b="1" />
+		</deg>
+		<de t="MaxNr_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+	
+	<seg t="PortfOrderStat_3_Resp" s="HIWSO" v="3">
+		<deg t="Portf">
+			<de t="Acctor" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="Status" m="0" f="num" b="2" />
+		<de t="Splitting" f="jn" b="1" />
+		<de t="PortfOrder_Modifiable" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<deg t="RegDate_Time" m="0">
+			<de t="Date" f="dat" />
+			<de t="Time" f="tim" />
+		</deg>
+		<deg t="ValidityDat" m="0">
+			<de t="Date" f="dat" />
+			<de t="Time" f="tim" />
+		</deg>
+		<de t="Exec_Notice" m="0" f="bin" />
+		<de t="SecurityBooking" m="0" f="bin" />
+	</seg>
+
+	<!-- HKWPO SubmitPortfOrder -->
+	
+	<seg t="SubmitPortfOrder_1_Req" s="HKWPO" v="1">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="PortfOrder" m="0" f="bin" />
+		<de t="Exce_Wish" m="0" f="num" b="2" />
+		<de t="FixedPriceOfferNr" m="0" f="num" b="30" />
+		<deg t="Remark" m="0">
+			<de t="Text" m="0" f="an" b="99" />
+			<de t="PhoneNr" m="0" f="an" b="35" />
+		</deg>
+		<deg t="ImportantInfo" n="99">
+			<de t="ImportantInfo_Type" f="num" b="1" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<seg t="SubmitPortfOrder_1_Res" s="HIWPO" v="1">
+		<de t="Order_ToBeResubmitted" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Split_PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Status" m="0" f="num" b="2" />
+		<de t="OrderComments" m="0" f="txt" b="2048" />
+		<deg t="ImportantInfo" m="0" n="99">
+			<de t="ImportantInfo_Type" f="num" b="1" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<seg t="SubmitPortfOrder_2_Req" s="HKWPO" v="2">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="PortfOrder" m="0" f="bin" />
+		<de t="Additional_SchedulingAlt" m="0" f="num" b="2" />
+		<deg t="ClearAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<deg t="ImportantInfo_Ref" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+		</deg>
+	</seg>
+
+	<seg t="SubmitPortfOrder_2_Res" s="HIWPO" v="2">
+		<de t="Order_ToBeResubmitted" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Split_PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Status" m="0" f="num" b="2" />
+		<de t="OrderComments" m="0" f="txt" b="2048" />
+		<de t="Exec_Notice" m="0" f="bin" />
+		<de t="SecurityBooking" m="0" f="bin" />
+		<deg t="ImportantInfo" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<seg t="SubmitPortfOrder_3_Req" s="HKWPO" v="3">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="PortfOrder" m="0" f="bin" />
+		<deg t="ClearAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<deg t="ImportantInfo_Ref" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+		</deg>
+	</seg>
+	
+	<seg t="SubmitPortfOrder_3_Res" s="HIWPO" v="3">
+		<de t="Order_ToBeResubmitted" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Split_PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Status" m="0" f="num" b="2" />
+		<de t="OrderComments" m="0" f="txt" b="2048" />
+		<de t="Exec_Notice" m="0" f="bin" />
+		<de t="SecurityBooking" m="0" f="bin" />
+		<deg t="ImportantInfo" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<!-- HKWOA ModifyPortfOrder -->
+	
+	<seg t="ModifyPortfOrder_1_Req" s="HKWOA" v="1">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Lim_Type" m="0" f="an" a="4" b="4" />
+		<deg t="Limit" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="TimeLim_Type" m="0" f="an" a="4" b="4" />
+		<de t="TimeLim" m="0" f="dat" />
+		<deg t="RefAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="NonminalVal" m="0" f="wrt" b="15" />
+		<deg t="Remark" m="0">
+			<de t="Text" m="0" f="an" b="99" />
+			<de t="PhoneNr" m="0" f="an" b="35" />
+		</deg>
+		<deg t="ImportantInfo" n="99">
+			<de t="ImportantInfo_Type" f="num" b="1" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<seg t="ModifyPortfOrder_1_Res" s="HIWOA" v="1">
+		<de t="Order_ToBeResubmitted" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="OrderID_Old" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="PortfOrderNr_Old" m="0" f="an" b="99" />
+		<de t="DE_1429" m="0" f="num" b="2" />
+		<de t="OrderComments" m="0" f="txt" b="2048" />
+		<deg t="ImportantInfo" m="0" n="99">
+			<de t="ImportantInfo_Type" f="num" b="1" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<seg t="ModifyPortfOrder_2_Req" s="HKWOA" v="2">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Lim_Type" m="0" f="an" a="4" b="4" />
+		<deg t="PriceLim" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="PercentLim" m="0" f="wrt" b="15" />
+		<de t="TimeLim_Type" m="0" f="an" a="4" b="4" />
+		<de t="TimeLim" m="0" f="dat" />
+		<deg t="ClearAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="NonminalVal" m="0" f="wrt" b="15" />
+		<gdg t="Remark">
+			<de t="PhoneNr" m="0" f="an" b="35" />
+		</gdg>
+		<deg t="ImportantInfo_Ref" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+		</deg>
+	</seg>
+
+	<seg t="ModifyPortfOrder_2_Res" s="HIWOA" v="2">
+		<de t="Order_ToBeResubmitted" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="OrderID_Old" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="PortfOrderNr_Old" m="0" f="an" b="99" />
+		<de t="Status" m="0" f="num" b="2" />
+		<de t="OrderComments" m="0" f="txt" b="2048" />
+		<deg t="ImportantInfo" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<seg t="ModifyPortfOrder_3_Req" s="HKWOA" v="3">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Lim_Type" m="0" f="an" a="4" b="4" />
+		<deg t="PriceLim" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<de t="PercentLim" m="0" f="wrt" b="15" />
+		<de t="TimeLim_Type" m="0" f="an" a="4" b="4" />
+		<de t="TimeLim" m="0" f="dat" />
+		<deg t="ClearAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="NonminalVal" m="0" f="wrt" b="15" />
+		<gdg t="Remark">
+			<de t="PhoneNr" m="0" f="an" b="35" />
+		</gdg>
+		<deg t="ImportantInfo_Ref" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+		</deg>
+	</seg>
+	
+	<seg t="ModifyPortfOrder_3_Res" s="HIWOA" v="3">
+		<de t="Order_ToBeResubmitted" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="OrderID_Old" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="PortfOrderNr_Old" m="0" f="an" b="99" />
+		<de t="Status" m="0" f="num" b="2" />
+		<de t="OrderComments" m="0" f="txt" b="2048" />
+		<deg t="ImportantInfo" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<!-- HKWPS CancelPortfOrder -->
+	
+	<seg t="CancelPortfOrder_1_Req" s="HKWPS" v="1">
+		<deg t="OrderingCustAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<deg t="ImportantInfo" n="99">
+			<de t="ImportantInfo_Type" f="num" b="1" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<seg t="CancelPortfOrder_1_Res" s="HIWPS" v="1">
+		<de t="Order_ToBeResubmitted" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="DE_1429" m="0" f="num" b="2" />
+		<de t="OrderComments" m="0" f="txt" b="2048" />
+		<deg t="ImportantInfo" m="0" n="99">
+			<de t="ImportantInfo_Type" f="num" b="1" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<seg t="CancelPortfOrder_2_Req" s="HKWPS" v="2">
+		<deg t="OrderingCustAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<deg t="ImportantInfo_Ref" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+		</deg>
+	</seg>
+
+	<seg t="CancelPortfOrder_2_Res" s="HIWPS" v="2">
+		<de t="Order_ToBeResubmitted" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Status" m="0" f="num" b="2" />
+		<de t="OrderComments" m="0" f="txt" b="2048" />
+		<deg t="ImportantInfo" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<seg t="CancelPortfOrder_3_Req" s="HKWPS" v="3">
+		<deg t="OrderingCustAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<deg t="ImportantInfo_Ref" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+		</deg>
+	</seg>
+
+	<seg t="CancelPortfOrder_3_Res" s="HIWPS" v="3">
+		<de t="Order_ToBeResubmitted" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Status" m="0" f="num" b="2" />
+		<de t="OrderComments" m="0" f="txt" b="2048" />
+		<deg t="ImportantInfo" m="0" n="99">
+			<de t="ImportantInfo_Type" f="wrt" b="10" />
+			<de t="ImportantInfo_Category" m="0" f="an" b="30" />
+			<de t="Date" f="dat" />
+			<de t="VersionNr" f="num" b="3" />
+			<de t="Securities_Notes" m="0" f="txt" b="2048" />
+		</deg>
+	</seg>
+
+	<!-- HKWOH PortfOrderHistory -->
+	
+	<seg t="PortfOrderHistory_1_Req" s="HKWOH" v="1">
+		<deg t="OrderingCustAcct" m="0">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="MaxNr_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="PortfOrderHistory_1_Resp" s="HIWOH" v="1">
+		<de t="Status" m="0" f="num" b="2" />
+		<deg t="PortfOrder_Info">
+			<de t="OrderRecord" f="bin" />
+			<de t="ConfirmationRefusal_Date" m="0" f="dat" />
+			<de t="ConfirmationRefusal_Time" m="0" f="tim" />
+		</deg>
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+	</seg>
+
+	<seg t="PortfOrderHistory_2_Req" s="HKWOH" v="2">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="All_Portfolios" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="MaxNr_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+
+	<seg t="PortfOrderHistory_2_Resp" s="HIWOH" v="2">
+		<de t="Status" m="0" f="num" b="2" />
+		<de t="OrderSplit" f="jn" b="1" />
+		<de t="PortfOrder" f="bin" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="Additional_SchedulingAlt" m="0" f="num" b="2" />
+		<deg t="ValidityDate" m="0">
+			<de t="Date" f="dat" />
+			<de t="Time" m="0" f="tim" />
+		</deg>
+	</seg>
+
+	<seg t="PortfOrderHistory_3_Req" s="HKWOH" v="3">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="All_Portfolios" f="jn" b="1" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<de t="MaxNr_Entries" m="0" f="num" b="4" />
+		<de t="ScrollRef" m="0" f="an" b="35" />
+	</seg>
+	
+	<seg t="PortfOrderHistory_3_Resp" s="HIWOH" v="3">
+		<de t="Status" m="0" f="num" b="2" />
+		<de t="OrderSplit" f="jn" b="1" />
+		<de t="PortfOrder" f="bin" />
+		<de t="OrderID" m="0" f="an" b="99" />
+		<de t="PortfOrderNr" m="0" f="an" b="99" />
+		<deg t="ValidityDat" m="0">
+			<de t="Date" f="dat" />
+			<de t="Time" f="tim" />
+		</deg>
+	</seg>
+
+	<!-- HKSSP KeyBlock -->
+	
+	<seg t="KeyBlock_2_Req" s="HKSSP" v="2">
+		<de t="MsgRef_Coded" f="num" b="1" />
+		<de t="FunctionType_Code" f="num" b="3" />
+		<deg t="KeyName">
+			<gdg t="Bank_ID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+			<de t="UserID" f="an" b="30" />
+			<de t="KeyType" f="an" b="1" />
+			<de t="KeyNr" f="num" b="3" />
+			<de t="KeyVer" f="num" b="3" />
+		</deg>
+		<de t="BlockingCode" f="code" b="3" />
+		<deg t="SecurityDateTime" m="0">
+			<de t="DateTimeInd_Coded" f="dig" b="10" />
+			<de t="Date" m="0" f="dat" />
+			<de t="Time" m="0" f="tim" />
+		</deg>
+		<deg t="Certificate" m="0">
+			<de t="CertificateType" f="num" b="10" />
+			<de t="CertificateContent" f="bin" b="2048" />
+		</deg>
+	</seg>
+
+	<seg t="KeyBlock_2_Resp" s="HISSP" v="2">
+		<de t="MsgRef_Coded" f="num" b="10" />
+		<de t="ChangeoverCheckRef" f="num" b="30" />
+		<de t="MsgRefNr" f="num" b="4" />
+		<de t="FunctionType_Code" f="wrt" b="10" />
+		<deg t="KeyName">
+			<gdg t="Bank_ID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+			<de t="UserID" f="num" b="30" />
+			<de t="KeyType" f="dig" b="10" />
+			<de t="KeyNr" f="num" b="3" />
+			<de t="KeyVer" f="num" b="3" />
+		</deg>
+		<de t="BlockingCode" f="code" b="10" />
+		<deg t="SecurityDateTime">
+			<de t="DateTimeInd_Coded" f="dig" b="10" />
+			<de t="Date" m="0" f="dat" />
+			<de t="Time" m="0" f="tim" />
+		</deg>
+		<deg t="Certificate" m="0">
+			<de t="CertificateType" f="num" b="10" />
+			<de t="CertificateContent" f="bin" b="2048" />
+		</deg>
+	</seg>
+
+	<seg t="KeyBlock_3_Req" s="HKSSP" v="3">
+		<de t="MsgRef_Coded" f="num" b="1" />
+		<de t="FunctionType_Code" f="num" b="3" />
+		<deg t="KeyName">
+			<gdg t="Bank_ID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+			<de t="UserID" f="an" b="30" />
+			<de t="KeyType" f="an" b="1" />
+			<de t="KeyNr" f="num" b="3" />
+			<de t="KeyVer" f="num" b="3" />
+		</deg>
+		<de t="BlockingCode" f="num" b="3" />
+		<deg t="SecurityDateTime" m="0">
+			<de t="DateTimeInd_Coded" f="dig" b="10" />
+			<de t="Date" m="0" f="dat" />
+			<de t="Time" m="0" f="tim" />
+		</deg>
+		<deg t="Certificate" m="0">
+			<de t="CertificateType" f="num" b="10" />
+			<de t="CertificateContent" f="bin" b="2048" />
+		</deg>
+	</seg>
+	
+	<seg t="KeyBlock_3_Resp" s="HISSP" v="3">
+		<de t="MsgRef_Coded" f="num" b="10" />
+		<de t="ChangeoverCheckRef" f="num" b="30" />
+		<de t="MsgRefNr" f="num" b="4" />
+		<de t="FunctionType_Code" f="wrt" b="10" />
+		<deg t="KeyName">
+			<gdg t="Bank_ID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+			<de t="UserID" f="num" b="30" />
+			<de t="KeyType" f="dig" b="10" />
+			<de t="KeyNr" f="num" b="3" />
+			<de t="KeyVer" f="num" b="3" />
+		</deg>
+		<de t="BlockingCode" f="code" b="10" />
+		<deg t="SecurityDateTime">
+			<de t="DateTimeInd_Coded" f="dig" b="10" />
+			<de t="Date" m="0" f="dat" />
+			<de t="Time" m="0" f="tim" />
+		</deg>
+		<deg t="Certificate" m="0">
+			<de t="CertificateType" f="num" b="10" />
+			<de t="CertificateContent" f="bin" b="2048" />
+		</deg>
+	</seg>
+
+	<!-- HIBPA GenericBankParam -->
+
+	<seg t="GenericBankParam_2_Resp" s="HIBPA" v="2">
+		<de t="BpdVersion" f="num" b="3" />
+		<deg t="BankID">
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="BankName" f="an" b="60" />
+		<de t="MaxNoOrderTypes" f="num" b="3" />
+		<deg t="SupportedLanguages">
+			<de t="SupportedLang" f="num" b="3" n="9" />
+		</deg>
+		<deg t="SupportedVersions">
+			<de t="Version" f="num" b="3" n="9" />
+		</deg>
+		<de t="MaxMsgSize" m="0" f="num" b="4" />
+	</seg>
+
+	<seg t="GenericBankParam_3_Resp" s="HIBPA" v="3">
+		<de t="BpdVersion" f="num" b="3" />
+		<deg t="BankID">
+			<de t="CountryCode" f="code" a="3" b="3" />
+			<de t="BankCode" m="0" f="an" b="30" />
+		</deg>
+		<de t="BankName" f="an" b="60" />
+		<de t="MaxNoOrderTypes" f="num" b="3" />
+		<deg t="SupportedLanguages">
+			<de t="SupportedLang" f="num" b="3" n="9" />
+		</deg>
+		<deg t="SupportedVersions">
+			<de t="Version" f="num" b="3" n="9" />
+		</deg>
+		<de t="MaxMsgSize" m="0" f="num" b="4" />
+		<de t="MinTimeout" m="0" f="num" b="4" />
+		<de t="MaxTimeout" m="0" f="num" b="4" />
+	</seg>
+
+	<!-- HIRMG MsgLevelResp -->
+
+	<seg t="MsgLevelResp_2_Resp" s="HIRMG" v="2">
+		<deg t="MsgRespState" n="99">
+			<de t="RespCode" f="dig" a="4" b="4" />
+			<de t="ElementRef" m="0" f="an" b="7" />
+			<de t="RespText" f="an" b="80" />
+			<de t="RespParam" m="0" n="10" f="an" b="35" />
+		</deg>
+	</seg>
+
+	<!-- HIRMS SegmLevelResp -->
+
+	<seg t="SegmLevelResp_2_Resp" s="HIRMS" v="2">
+		<deg t="RequestRespState" n="99">
+			<de t="RespCode" f="dig" a="4" b="4" />
+			<de t="ElementRef" m="0" f="an" b="7" />
+			<de t="RespText" f="an" b="80" />
+			<de t="RespParam" m="0" n="10" f="an" b="35" />
+		</deg>
+	</seg>
+
+	<!-- HKLSW SubmitDirDebReject -->
+
+	<seg t="SubmitDirDebReject_1_Req" s="HKLSW" v="1" c="10" z="16">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="Booking_Time">
+			<de t="Date" f="dat" />
+			<de t="Time" f="tim" m="0" />
+		</deg>
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="ClientName_1" f="an" b="27" />
+		<de t="ClientName_2" m="0" f="an" b="27" />
+		<de t="Primanot" m="0" f="an" b="10" />
+	</seg>
+
+	<seg t="SubmitDirDebReject_1_Par" s="HILSWS" v="1">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="SubmitDirDebReject_Param">
+			<gdg t="ReturnPrice" m="0">
+				<de t="Value" f="wrt" m="0" b="15" />
+				<de t="Currency" f="cur" m="0" a="3" b="3" />
+			</gdg>
+			<de t="Returnable_TextKey" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<seg t="SubmitDirDebReject_2_Req" s="HKLSW" v="2" c="10" z="16">
+		<deg t="OrderingCustAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="Booking_Time">
+			<de t="Date" f="dat" />
+			<de t="Time" f="tim" m="0" />
+		</deg>
+		<deg t="Amount">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="PayeeAcct">
+			<de t="AcctNo" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="ClientName_1" f="an" b="27" />
+		<de t="ClientName_2" m="0" f="an" b="27" />
+		<de t="Primanot" m="0" f="an" b="10" />
+		<deg t="PaymtPurpose" m="0">
+			<de t="PaymtPurposeLine" m="0" n="99" f="dta" b="27" />
+		</deg>
+		<de t="OrderID" f="an" m="0" b="99" />
+	</seg>
+
+	<seg t="SubmitDirDebReject_2_Par" s="HILSWS" v="2">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="SubmitDirDebReject_Param">
+			<gdg t="ReturnPrice" m="0" >
+				<de t="Value" f="wrt" m="0" b="15" />
+				<de t="Currency" f="cur" m="0" a="3" b="3" />
+			</gdg>
+			<de t="Returnable_TextKey" n="99" f="dig" a="2" b="2" />
+		</deg>
+	</seg>
+
+	<!-- HKVDB BlankFormOrder -->
+
+	<seg t="BlankFormOrder_3_Par" s="HIVDBS" v="3">
+		<de t="MaxNoOrders" f="num" b="3" />
+		<de t="MinNoSig" f="num" b="1" />
+		<de t="SecClass" f="num" b="1" />
+		<deg t="BlankFormOrder_Param">
+			<gdg t="Form" m="1" n="99">
+				<de t="FormCode" f="num" b="2" />
+				<de t="FormName" f="an" b="35" />
+				<de t="PrintAddr_Allowed" f="jn"/>				
+			</gdg>
+		</deg>
+	</seg>
+
+	<!-- HIKIF AcctDetails -->
+
+	<seg t="AcctDetails_4_Resp" s="HIKIF" v="4">
+		<deg t="Account">
+			<de t="IBAN" m="0" f="an" b="34" />
+			<de t="BIC" m="0" f="an" b="11" />
+			<de t="AcctNo" m="0" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<de t="AcctType" f="num" b="2" />
+		<de t="AccountHolderName_1" f="an" b="27" />
+		<de t="AccountHolderName_2" m="0" f="an" b="27" />
+		<de t="AcctName" m="0" f="an" b="30" />
+		<de t="AcctCcy" m="0" f="cur" a="3" b="3" />
+		<de t="OpeningDate" m="0" f="dat" />
+		<de t="IntCharges" m="0" f="wrt" b="15" />
+		<de t="CredInt" m="0" f="wrt" b="15" />
+		<de t="OverdraftInt" m="0" f="wrt" b="15" />
+		<deg t="OverdraftLim" m="0">
+			<de t="Value" f="wrt" b="15" />
+			<de t="Currency" f="cur" a="3" b="3" />
+		</deg>
+		<deg t="RefAcct" m="0">
+			<de t="IBAN" m="0" f="an" b="34" />
+			<de t="BIC" m="0" f="an" b="11" />
+			<de t="AcctNo" m="0" f="an" b="30" />
+			<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+			<gdg t="BankID">
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="PostAddr" m="0">
+			<de t="Name_1" f="an" b="35" />
+			<de t="Name_2" m="0" f="an" b="35" />
+			<de t="Street" f="an" b="35" />
+			<de t="ZIPCode" f="an" b="10" />
+			<de t="City" f="an" b="35" />
+			<de t="Country" f="code" a="3" b="3" />
+			<de t="PhoneNo" m="0" f="an" b="35" />
+			<de t="FaxNo" m="0" f="an" b="35" />
+			<de t="EmailAddress" m="0" f="an" b="35" />
+		</deg>
+		<de t="DispatchType_AcctStatement" m="0" f="code" b="1" />
+		<de t="TurnusAcctStatement" m="0" f="code" b="1" />
+		<de t="AdditionalInfo" m="0" f="txt" b="2048" />
+		<deg t="AuthorisedToDraw" m="0" n="9">
+			<de t="Name_1" f="an" b="35" />
+			<de t="Name_2" m="0" f="an" b="35" />
+			<de t="AuthorisedToDraw_Code" m="0" f="code" b="1" />
+			<de t="AuthorisationToDraw" m="0" f="code" b="1" />
+			<gdg t="AuthorisationToDraw_Amt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="User_RiskClass" m="0" f="an" b="2"/>
+		</deg>
+		<de t="AcctPurpose" m="0" f="an" b="30" />
+		<deg t="TimeStamp" m="0">
+			<de t="Date" f="dat" />
+			<de t="Time" m="0" f="tim" />
+		</deg>
+		<deg t="SavingsAcctDetails" m="0">
+			<de t="DepositDate" m="0" f="dat" />
+			<de t="ExpireDate" m="0" f="dat" />
+			<gdg t="SavingsRateAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<gdg t="AlreadyPaidAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<gdg t="PendingAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="LastRateDue" m="0" f="dat" />
+			<de t="Notes" m="0" f="txt" b="2048" />
+			<de t="CurrentBonus" m="0" f="wrt" />
+			<de t="CancelPeriod" m="0" f="num" b="2" />
+			<de t="CancelExcludePeriod" m="0" f="num" b="2" />
+			<gdg t="BonusGrades" m="0" n="99">
+				<de t="Year" m="0" f="num" b="2" />
+				<de t="IntRate" m="0" f="wrt" />
+			</gdg>
+			<gdg t="ConditionGrades" m="0" n="99">
+				<de t="IntRate" m="0" f="wrt" />
+				<de t="FromAmt" m="0" f="wrt" />
+				<de t="FromAmtCcy" m="0" f="cur" a="3" b="3" />
+				<de t="ToAmt" m="0" f="wrt" />
+				<de t="ToAmtCcy" m="0" f="cur" a="3" b="3" />
+			</gdg>
+		</deg>
+		<deg t="FixedTermAcctDetails" m="0">
+			<gdg t="DepositAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="DepositDate" m="0" f="dat" />
+			<de t="ExpireDate" m="0" f="dat" />
+			<de t="IntRate" m="0" f="wrt" />
+			<de t="IntMethod" m="0" f="an" b="1" />
+			<de t="ReinvestmentCode" m="0" f="num" b="1" />
+			<de t="IntPeriod" m="0" f="code" b="1" />
+			<de t="IntDate" m="0" f="dig" a="4" b="4" />
+			<de t="Duration" m="0" f="num" b="3" />
+			<de t="AmortizationBegin" m="0" f="dat" />
+			<de t="AmortizationPeriod" m="0" f="code" b="1" />
+			<de t="AmortizationDate" m="0" f="dig" a="4" b="4" />
+			<gdg t="AmortizationAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<gdg t="PresentValue" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<gdg t="FinalValue" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<gdg t="MaturityAcct" m="0">
+				<de t="IBAN" m="0" f="an" b="34" />
+				<de t="BIC" m="0" f="an" b="11" />
+				<de t="AcctNo" m="0" f="an" b="30" />
+				<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+			<gdg t="EarnedIntAcct" m="0">
+				<de t="IBAN" m="0" f="an" b="34" />
+				<de t="BIC" m="0" f="an" b="11" />
+				<de t="AcctNo" m="0" f="an" b="30" />
+				<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+		</deg>
+		<deg t="CreditAcctDetails" m="0">
+			<gdg t="AllottedAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<gdg t="AvailAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<gdg t="TotalAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<gdg t="ClearAcct" m="0">
+				<de t="IBAN" m="0" f="an" b="34" />
+				<de t="BIC" m="0" f="an" b="11" />
+				<de t="AcctNo" m="0" f="an" b="30" />
+				<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+			<de t="IntRate" m="0" f="wrt" />
+			<de t="IntRateExpire" m="0" f="dat" />
+			<de t="IntRateNominal" m="0" f="wrt" />
+			<de t="IntRateEffective" m="0" f="wrt" />
+			<de t="AmortizationValue" m="0" f="wrt" />
+			<gdg t="Arrears" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<gdg t="AggreedLoanRate" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<gdg t="MonthlyLoanRate" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<gdg t="AmortizationAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="PaymtPeriod" m="0" f="code" b="1" />
+			<de t="PaymtDate" m="0" f="dig" a="4" b="4" />
+			<de t="AmortizationPeriod" m="0" f="code" b="1" />
+			<de t="AmortizationDate" m="0" f="dig" a="4" b="4" />
+			<de t="IntPeriod" m="0" f="code" b="1" />
+			<de t="IntDate" m="0" f="dig" a="4" b="4" />
+			<de t="DueTotal" m="0" f="dat" />
+			<de t="Duration" m="0" f="num" b="3" />
+			<gdg t="AvalAmt" m="0">
+				<de t="Value" f="wrt" b="15" />
+				<de t="Currency" f="cur" a="3" b="3" />
+			</gdg>
+			<de t="ValidFrom" m="0" f="dat" />
+			<de t="AvalProvision" m="0" f="wrt" />
+			<de t="TimeLimited" m="0" f="jn" />
+			<de t="LimitedUntil" m="0" f="dat" />
+			<gdg t="CreditorAcct" m="0">
+				<de t="IBAN" m="0" f="an" b="34" />
+				<de t="BIC" m="0" f="an" b="11" />
+				<de t="AcctNo" m="0" f="an" b="30" />
+				<de t="SubAcctCharacteristic" m="0" f="an" b="30" />
+				<de t="CountryCode" f="code" a="3" b="3" />
+				<de t="BankCode" m="0" f="an" b="30" />
+			</gdg>
+			<de t="CreditorName" m="0" f="an" b="35" />
+		</deg>
+	</seg>
+</all>

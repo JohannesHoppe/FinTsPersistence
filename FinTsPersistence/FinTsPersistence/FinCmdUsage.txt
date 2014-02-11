@@ -1,0 +1,444 @@
+﻿
+Subsembly FinTS Tools: Command Line Utility
+Copyright © 2006-2014 Subsembly GmbH
+
+Eine Weitergabe der Subsembly FinTS Tools ist nur mit schriftlicher
+Genehmigung der Subsembly GmbH gestattet. Es wird keinerlei Gewähr für
+bestimmte Funktionalität oder Haftung für durch Nutzung der Subsembly
+FinTS Tools entstandenen Schäden übernommen. Die Nutzung der Subsembly
+FinTS Tools für private Zwecke ist kostenlos. Für eine kommerzielle
+Nutzung muss eine Lizenz gemäß aktuell gültiger Preisliste erworben werden.
+
+Das Subsembly FinTS Command Line Utility basiert auf der Subsembly
+FinTS API und unterstützt HBCI 2.0.1, HBCI 2.1, HBCI 2.2 und FinTS 3.0.
+Als Sicherheitsverfahren werden unterstützt: DDV mit Chipkarte, RDH
+mit Schlüsseldatei oder Chipkarte, und PIN/TAN. Folgende Chipkarten
+werden unterstützt: Giesecke + Devrient STARCOS HBCI, VR-NetWorld V1,
+VR-Networld V2 (SECCOS), DDV Typ 0 und Typ 1. Folgende
+Schlüsseldateiformate werden unterstützt: DDBAC .RDH (Quicken, WISO
+Mein Geld, ...), SIZ .KEY (StarMoney, VR-NetWorld), RDH2 mit langen
+Schlüsseln (DDBAC, StarMoney, VR-NetWorld) und ALF BanCo. Folgende
+TAN-Verfahren werden unterstützt: klassisch, iTAN Prozessvariante 1
+und Prozessvariante 2, Sm@art-TAN und Sm@rt-TAN plus.
+
+Das Kommando wird generell wie folgt aufgerufen:
+
+FinCmd <action> -<argname> <argvalue> ...
+
+Folgende Werte für <action> sind möglich (Eine genaue Beschreibung
+der möglichen Aktionen finden Sie weiter unten):
+
+    sync                       Nur Synchronisierung des Bankzugangs
+    balance                    Abfrage des aktuellen Kontostands
+    statement                  Kontoumsatzdaten herunterladen
+    remitt                     Einzelüberweisung ausführen
+    xml                        Auftrag im FinTS 4.0 XML-Format
+    sepa                       Auftrag im SEPA XML-Format
+
+Die Ausgabe kann getrennt in Daten (out.txt) und Protokollierung
+(log.txt) wie folgt umgeleitet werden:
+
+FinCmd >out.txt 2>log.txt ...
+
+Ein ausführlicher HBCI Trace kann in eine Datei über den Parameter -trace
+geschrieben werden.
+
+Bankzugang
+----------
+
+Für jede Aktion muss durch die Parameter eine Bankverbindung bestehend
+aus einem Bankzugang und einem Bankkonto spezifiziert werden.
+Zusätzlich gibt es weitere Parameter für die verschiedenen Aktionen.
+
+Der Bankzugang muss auf eine der folgenden Arten angegeben werden:
+a) Parameter -contactfile mit dem Dateinamen des gespeicherten
+Bankzugangs; b) Parameter -contactname mit dem Namen des Bankzugangs;
+oder c) die kompletten PIN/TAN Zugangsdaten (Eine genaue Beschreibung
+der Parameter finden Sie weiter unten):
+
+a) Gespeicherter Bankzugang
+
+Die Datei mit den Daten des Bankzugangs kann mit dem Subsembly FinTS
+Admin angelegt und dort exportiert werden.
+
+    -contactfile             * Dateiname des Bankzugangs
+    -pin                     * PIN oder Passwort des Bankzugangs
+
+b) Benannter Bankzugang aus dem FinTS Admin
+
+Der Bankzugang muss unter diesem Namen vorher im Subsembly FinTS
+Admin angelegt worden sein.
+
+    -contactname             * Name des Bankzugangs
+    -pin                     * PIN oder Passwort des Bankzugangs
+
+c) Komplette PIN/TAN Zugangsdaten
+
+    -commaddress             * Komplette URL des Bankservers
+    -fintsversion              Zu verwendende FinTS Version
+    -tanprocedure              Zu verwendendes TAN-Verfahren
+    -tanmedianame              Bezeichnung des TAN-Mediums
+    -bankcode                * Bankleitzahl des Bankzugangs
+    -userid                  * HBCI Benutzerkennung des Bankzugangs
+    -custid                    Zu verwendende HBCI Kunden-ID
+    -pin                     * PIN oder Passwort des Bankzugangs
+
+Parameterübersicht
+------------------
+
+Das Bankkonto der gewünschten Bankverbindung muss durch folgende
+Parameter festgelegt werden (Eine genaue Beschreibung der Parameter
+finden Sie weiter unten):
+
+    -acctbankcode              Bankleitzahl der Bankverbindung
+    -acctno                  * Kontonummer der Bankverbindung
+    -acctcurrency              Kontowährung der Bankverbindung
+
+Folgende Parameter sind für die Aktion "statement" möglich (Eine genaue
+Beschreibung der Parameter finden Sie weiter unten):
+
+    -fromdate                  Startdatum für Kontoumsatzdaten
+    -format                    Legt das Format der Ausgabe fest
+
+Folgende Parameter sind für die Aktion "remitt" möglich
+(Eine genaue Beschreibung der Parameter finden Sie weiter unten):
+
+    -payeename               * Name des Empfängers/Zahlungspflichtigen
+    -payeeacctno             * Konto des Empfängers/Zahlungspflichtigen
+    -payeebankcode           * BLZ des Empfängers/Zahlungspflichtigen
+    -amount                  * Betrag im Format 0000,00
+    -textkey                   Textschlüssel
+    -textkeyext                Textschlüsselergänzung
+    -purpose                 * Verwendungszweck
+
+Folgende Parameter sind für die Aktion "xml" möglich (Eine genaue
+Beschreibung der Parameter finden Sie weiter unten):
+
+    -xmlfile                 * Dateiname der XML-Datei
+
+Folgende Parameter sind für die Aktion "sepa" möglich (Eine genaue
+Beschreibung der Parameter finden Sie weiter unten):
+
+    -xmlfile                 * Dateiname der SEPA XML-Datei
+
+Für alle TAN-pflichtigen Aufträge muss entweder eine TAN, oder eine Datei
+mit TAN-Nummern angegeben werden:
+
+    -tan                       TAN für den Auftrag
+    -tanlist                   Textdatei mit TAN-Nummern
+
+Die mit * markierten Parameter müssen jeweils angegeben werden. Alle
+anderen Parameter sind optional.
+
+
+Beschreibung der Aktionen
+-------------------------
+
+sync
+    Führt nur eine Synchronisierung des Bankzugangs durch.
+
+balance
+    Der aktuelle Kontostand der Bankverbindung wird abgefragt und im
+    CSV-Format ausgegeben.
+
+statement
+    Die Umsatzdaten der Bankverbindung werden abgerufen und im gewählten
+    Format ausgegeben. Das Anfangsdatum kann über den Parameter -fromdate
+    eingestellt werden, das Format über den Parameter -format.
+
+remitt
+    Eine Einzelüberweisung wird ausgeführt. Bei Verwendung des PIN/TAN-
+    Verfahrens muss eine TAN angegeben werden.
+    ACHTUNG: Hierbei wird eine "alte" Einzelüberweisung mit Kontonummer
+    und BLZ ausgeführt, welche von den meisten Banken nicht mehr
+    unterstützt wird.
+
+xml
+    Eine Datei mit einem Auftrag im FinTS 4.0 XML-Format wird eingereicht.
+    FinCmd konvertiert die XML-Daten in das für die jeweilige HBCI-Version
+    (2.0.1, 2.1, 2.2, 3.0) erforderliche Format. Als Element-Tag für den
+    Auftrag werden folgende Tags unterstützt:
+
+        SingRemitt (HKUEB)
+        SingRemitt_2_Req
+        SingRemitt_3_Req
+        SingRemitt_4_Req
+        SingRemitt_5_Req
+
+        SingDirDeb (HKLAS)
+        SingDirDeb_2_Req
+        SingDirDeb_3_Req
+        SingDirDeb_4_Req
+        SingDirDeb_5_Req
+
+        Reclassification (HKUMB)
+        Reclassification_1_Req
+        Reclassification_2_Req
+
+        SubmitPostdatedSingRemitt (HKTUE)
+        SubmitPostdatedSingRemitt_2_Req
+        SubmitPostdatedSingRemitt_3_Req
+        SubmitPostdatedSingRemitt_4_Req
+
+        OutstandingPostdatedSingRemitt (HKTUB)
+        OutstandingPostdatedSingRemitt_1_Req
+        OutstandingPostdatedSingRemitt_2_Req
+        OutstandingPostdatedSingRemitt_3_Req
+
+        CancelPostdatedSingRemitt (HKTUL)
+        CancelPostdatedSingRemitt_1_Req
+        CancelPostdatedSingRemitt_2_Req
+        CancelPostdatedSingRemitt_3_Req
+
+        AcctBal (HKSAL)
+        AcctBal_3_Req
+        AcctBal_4_Req
+        AcctBal_5_Req
+        AcctBal_6_Req
+
+        AcctMvmtsSpecifiedPeriod (HKKAZ)
+        AcctMvmtsSpecifiedPeriod_3_Req
+        AcctMvmtsSpecifiedPeriod_4_Req
+        AcctMvmtsSpecifiedPeriod_5_Req
+        AcctMvmtsSpecifiedPeriod_6_Req
+
+        SetupStandingOrder (HKDAE)
+        SetupStandingOrder_2_Req
+        SetupStandingOrder_3_Req
+        SetupStandingOrder_4_Req
+        SetupStandingOrder_5_Req
+
+        AllStandingOrders (HKDAB)
+        AllStandingOrders_1_Req
+        AllStandingOrders_2_Req
+        AllStandingOrders_3_Req
+        AllStandingOrders_4_Req
+
+        CancelStandingOrder (HKDAL)
+        CancelStandingOrder_1_Req
+        CancelStandingOrder_2_Req
+        CancelStandingOrder_3_Req
+        CancelStandingOrder_4_Req
+
+        ModifyStandingOrder (HKDAN)
+        ModifyStandingOrder_2_Req
+        ModifyStandingOrder_3_Req
+        ModifyStandingOrder_4_Req
+        ModifyStandingOrder_5_Req
+        
+        InternationalRemittNonNotify (HKAOM)
+        InternationalRemittNonNotify_1_Req
+        InternationalRemittNonNotify_2_Req
+        
+        EuroSTPPaymt (HKSTP)
+        EuroSTPPaymt_1_Req
+        EuroSTPPaymt_2_Req
+        EuroSTPPaymt_3_Req
+        
+        InternationalRemitt (HKAUB)
+        InternationalRemitt_2_Req
+        InternationalRemitt_3_Req
+        InternationalRemitt_4_Req
+        InternationalRemitt_5_Req
+        InternationalRemitt_6_Req
+        InternationalRemitt_7_Req
+        InternationalRemitt_8_Req
+        
+        CustMsg (HKKDM)
+        CustMsg_2_Req
+        CustMsg_3_Req
+        CustMsg_4_Req
+        CustMsg_5_Req
+        
+        EUStandRemitt (HKESU)
+        EUStandRemitt_1_Req
+
+        SepaAcctInfo (HKSPA)
+        SepaAcctInfo_1_Req
+        SepaAcctInfo_2_Req
+
+        SepaSingRemitt(HKCCS)
+        SepaSingRemitt_1_Req
+
+    Bei XML-Tags mit Versionsnummer wird ein Segment mit genau dieser Version
+    erzeugt. Bei einem generischen Tag, wird von FinCmd die bestmögliche
+    Segmentversion automatisch gewählt. Den erforderlichen Aufbau der XML-Daten
+    können Sie der FinTS 4.0 Spezifikation entnehmen.
+
+    Das obligatorische FinTS 4.0 Element <OrderingCustAcct> kann im
+    Auftrags-XML entfallen. FinCmd setzt an dieser Stelle in jedem Fall das
+    Konto der gewählten Bankverbindung ein.
+
+    Die Antwortdaten werden ebenfalls in das FinTS 4.0 XML-Format
+    konvertiert und auf der Konsole ausgegeben.
+
+sepa
+    Ein SEPA Credit Transfer oder SEPA Direct Debit wird eingereicht. Alle
+    für den Auftrag erforderlichen Informationen sind bereits in der SEPA
+    XML-Datei enthalten, so dass keine weiteren zusätzlichen Parameter
+    angegeben werden müssen.
+
+    Abhängig von der gegebenen SEPA XML-Datei wird eines der folgenden HBCI
+    Auftragssegmente erzeugt: HKCCS, HKCSE, HKCCM, HKCME, HKDSE, HKDSC, HKBSE,
+    HKDME, HKDMC oder HKBME.
+
+Beschreibung der Parameter
+--------------------------
+
+-contactfile
+    Vollständiger Pfad und Dateiname der XML-Datei mit dem
+    gespeicherten Bankzugang. Diese Datei kann mit dem Subsembly FinTS
+    Admin erzeugt und exportiert werden.
+
+-contactname
+    Name des mit dem Subsembly FinTS Admin angelegten Bankzugangs.
+    Bitte beachten Sie, dass der FinTS Admin die Bankzugänge jeweils
+    für den angemeldeten Benutzer separat verwaltet.
+
+-pin
+    Je nach Art des Bankzugangs entweder die Online-PIN, die
+    Chipkarten-PIN oder das Passwort der Schlüsseldatei. Dieser
+    Parameter muss übergeben werden. Eine PIN kann beinahe beliebig,
+    also auch ein alfanumerischer String sein. Eine leere PIN ist nicht
+    möglich.
+
+-commaddress
+    Die komplette HTTP-Adresse des HBCI/FinTS-Bankservers
+    einschließlich "https:", z.B.
+    "https://hbci11.fiducia.de/cgi-bin/hbciservlet". Die korrekte
+    Adresse erfahren Sie bei Ihrem Kreditinstitut.
+
+-fintsversion
+     Version des zu verwendenden FinTS Protokolls. Für HBCI 2.0.1 muss
+     201 angegeben werden, für HBCI 2.1 210, für HBCI 2.2 220 und für
+      FinTS 3.0 300. Der Standardwert ist 300 für FinTS 3.0.
+
+-tanprocedure
+    Optional das zu verwendende TAN-Verfahren. Dieser Parameter kann
+    weggelassen werden, wenn das klassische TAN-Verfahren verwendet werden
+    soll. Für das iTAN-Verfahren muss hier die technische Identifikation
+    des Verfahrens, meist einfach "iTAN", übergeben werden. Weitere
+    Beispiele sind "mtan1" bis "mtan4" für das Mobile-TAN-Verfahren der
+    Postbank, oder "CR01" für das iTAN-Verfahren bei der
+    HypoVereinsbank.
+
+-tanmedianame
+    Optional kann über diesen Parameter eine "Bezeichnung des TAN-Mediums"
+    übergeben werden, sofern diese erforderlich ist.
+
+-bankcode
+    Die Bankleitzahl des Kreditinstituts. Diese muss aus genau acht
+    Ziffern bestehen.
+
+-userid
+    Die HBCI/FinTS-Benutzerkennung der Person die mit der Bank in Kontakt
+    treten möchte. Je nach Kreditsintitut kann dies auch die Girokontonummer
+    oder ein anderes Identifizierungsmerkmal, wie z.B. der VR-NetKey, sein.
+    Dieser Parameter muss übergeben werden.
+
+-custid
+    Die HBCI/FinTS-Kunden-ID des Kunden für den der Auftrag ausgeführt werden
+    soll. Kann meist entfallen. Wenn diese nicht angegeben wird, dann wird
+    versucht die Kunden-ID aus den UPD zu ermitteln. Falls das nicht möglich
+    ist wird die Benutzerkennung als Kunden-ID verwendet. Bei manchen Banken
+    muss hier eine spezielle Kunden-ID oder gar die Girokontonummer übergeben
+    werden.
+
+-acctbankcode
+    Die Bankleitzahl des Kontos der gewünschten Bankverbindung. Dieser
+    Parameter kann angegeben werden, wenn die Bankleitzahl der
+    Bankverbindung von der Bankleitzahl des Bankzugangs abweicht. Dies
+    ist bei einigen Banken möglich. Standardmäßig wird die Bankleitzahl
+    des Bankzugangs verwendet.
+
+-acctno
+    Die Kontonummer des Kontos der gewünschten Bankverbindung. Darf
+    führende Nullen enthalten und darf bis zu 30 Zeichen lang sein.
+    Beim internen Kontonummernvergleich werden führende Nullen generell
+    ignoriert.
+
+-acctcurrency
+    ISO-Währungscode der Währung des Kontos der gewünschten
+    Bankverbindung. Dieser Parameter ist erforderlich, weil bei einigen
+    Banken verschiedene Währungskonten unter der gleichen Kontonummer
+    geführt werden. Der Standardwert für diesen Parameter ist "EUR" für
+    Euro.
+
+-fromdate
+    Wird als Aktion ein Download der Kontoumsatzdaten gewünscht, dann
+    kann über diesen Parameter das Anfangsdatum der Abfrage übergeben
+    werden. Das Datum muss im Format JJJJ-MM-TT angegeben werden. Wird
+    kein Datum angegeben, so werden alle vorhandenen Umsatzdaten
+    abgerufen.
+
+-format
+    Legt das Ausgabeformat der Umsatzdaten fest. Möglich sind folgende
+    Angaben:
+    csv - Daten werden im CSV-Format ausgegeben
+    mt940 - Es werden die original MT-940-Daten ausgegeben
+    mt942 - Es werden die original MT-942-Daten ausgegeben
+    csv942 - Es werden die vorgemerkten Umsätze im CSV-Format ausgegeben.
+    Standardmäßig werden die Daten im CSV-Format ausgegeben.
+
+-payeename
+    Der Name des Überweisungsempfängers bzw. des Zahlungspflichtigen
+    bei einer Lastschrift. Maximal 27 Zeichen. Werden vor der
+    Übertragung automatisch in Großbuchstaben gewandelt.
+
+-payeeacctno
+    Kontonummer des Überweisungsempfängers bzw. des Zahlungspflichtigen
+    bei einer Lastschrift.
+
+-payeebankcode
+    Bankleitzahl des Überweisungsempfängers bzw. des Zahlungspflichtigen
+    bei einer Lastschrift.
+
+-amount
+    Betrag der Überwiesen bzw. per Lastschrift eingezogen werden soll.
+    Dieser muss im Format 100000,00 angegeben werden.
+
+-textkey
+    Textschlüssel der für die Überweisung bzw. Lastschrift verwendet
+    werden soll. Standardwert ist "51" für Überweisungen und "05" für
+    Lastschriften.
+
+-textkeyext
+    Textschlüsselergänzung die für die Überweisung bzw. Lastschrift
+    verwendet werden soll. Standardwert ist "000".
+
+-purpose
+    Verwendungszweck für Überweisung bzw. Lastschrift. Es dürfen
+    maximal zwei mit "|" getrennte Zeilen mit jeweils maximal 27
+    Zeichen angegeben werden. Umlaute sollten möglichst vermieden
+    werden. Der Text wird vor der Übertragung automatisch in
+    Großbuchstaben gewandelt.
+
+-tan
+    Bei Verwendung des klassischen PIN/TAN-Verfahrens kann für
+    TAN-pflichtige Aufträge eine TAN angegeben werden. Wird keine
+    TAN angegeben, oder wird ein 2-Schritt TAN-Verfahren eingesetzt,
+    so wird eine benötigte TAN an der Konsole abgefragt.
+    
+    Bei Verwendung eines 2-Schritt TAN-Verfahrens sollte unbedingt
+    vorher mit dem Subsembly FinTS Admin ein Bankzugang angelegt
+    und per Option -contactname referenziert werden!
+
+-tanlist
+    Wird das indizierte TAN-Verfahren verwendet, so kann statt einer
+    TAN-Nummer eine komplette Datei mit TAN-Nummern angegeben werden.
+    Die angegebene Textdatei muss genau eine TAN, je Textzeile enthalten.
+    In der Zeile steht immer zuerst die Indexnummer gefolgt von einem
+    Komma und der eigentlichen TAN. Die Indexnummer wird als Zahl
+    eingelesen und muss deshalb auch als Zahl integretierbar sein.
+    Führende Nullen spielen keine Rolle.
+
+-xmlfile
+    Dateiname des XML-Dokuments mit dem einzurichenden Auftrag. Je nach
+    gewählter Aktion muss das XML-Dokument einen Einzelauftrag entsprechend
+    der FinTS 4.0 Spezifikation enthalten oder eine SEPA Payment Initiation
+    Message (siehe auch Aktionsbeschreibung weiter oben).
+
+-trace
+    Dateiname einer Datei für das HBCI Protokoll. Nur wenn dieser
+    Parameter angegeben wird, wird das gesamte HBCI Protokoll in diese
+    Datei geschrieben. Eine evtl. vorhandene Datei wird überschrieben.
