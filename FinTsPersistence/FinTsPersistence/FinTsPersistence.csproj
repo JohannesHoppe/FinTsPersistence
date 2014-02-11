@@ -7,10 +7,10 @@
     <ProjectGuid>{9CF2D002-5F67-401C-A6F9-3864B310A23D}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>FinCmd.ico</ApplicationIcon>
+    <ApplicationIcon>Database.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>FinCmd</AssemblyName>
+    <AssemblyName>FinTsPersistence</AssemblyName>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
@@ -18,15 +18,18 @@
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Subsembly</RootNamespace>
+    <RootNamespace>FinTsPersistence</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject>FinCmd.FinCmdMain</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -52,6 +55,7 @@
     <ErrorReport>prompt</ErrorReport>
     <PlatformTarget>x86</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -76,17 +80,37 @@
     <DebugType>none</DebugType>
     <ErrorReport>prompt</ErrorReport>
     <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.3.0\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Subsembly.FinTS">
+      <HintPath>..\Assemblies\Subsembly.FinTS.dll</HintPath>
+    </Reference>
+    <Reference Include="Subsembly.Sepa">
+      <HintPath>..\Assemblies\Subsembly.Sepa.dll</HintPath>
+    </Reference>
+    <Reference Include="Subsembly.Swift">
+      <HintPath>..\Assemblies\Subsembly.Swift.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.cs">
+    <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Csv\CsvFile.cs" />
@@ -119,23 +143,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="IFinCmdTanSource.cs" />
-    <Content Include="FinCmd.ico" />
-    <EmbeddedResource Include="FinCmdUsage.txt" />
+    <Content Include="Database.ico" />
     <EmbeddedResource Include="syntax.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Subsembly.Sepa\Subsembly.Sepa3\Subsembly.Sepa3.csproj">
-      <Project>{AAE9988A-CDC4-4426-AE8D-36F302A9B02E}</Project>
-      <Name>Subsembly.Sepa3</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Subsembly.Swift\Subsembly.Swift\Subsembly.Swift.csproj">
-      <Project>{9D4CBD79-B675-4A6A-8442-F4C1A04DF534}</Project>
-      <Name>Subsembly.Swift</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Subsembly.FinTS\Subsembly.FinTS.csproj">
-      <Project>{2C8BBDEF-F439-4877-8722-642D4582B820}</Project>
-      <Name>Subsembly.FinTS</Name>
-    </ProjectReference>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
@@ -144,4 +157,5 @@
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
 </Project>
