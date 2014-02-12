@@ -13,7 +13,7 @@ using Subsembly.Csv;
 using Subsembly.FinTS;
 using Subsembly.Swift;
 
-namespace FinCmd
+namespace FinTsPersistence
 {
 	public class FinCmdStatement : FinCmdBase
 	{

@@ -10,7 +10,7 @@ using System.Collections.Specialized;
 using Subsembly.FinTS;
 using Subsembly.Swift;
 
-namespace FinCmd
+namespace FinTsPersistence
 {
 	/// <summary>
 	/// 

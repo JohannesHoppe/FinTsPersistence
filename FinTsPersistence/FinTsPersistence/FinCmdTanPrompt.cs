@@ -7,7 +7,7 @@
 using System;
 using Subsembly.FinTS;
 
-namespace FinCmd
+namespace FinTsPersistence
 {
 	/// <summary>
 	/// 

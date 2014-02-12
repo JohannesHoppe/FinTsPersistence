@@ -10,7 +10,7 @@ using System.IO;
 
 using Subsembly.FinTS;
 
-namespace FinCmd
+namespace FinTsPersistence
 {
 	/// <summary>
 	/// 

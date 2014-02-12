@@ -12,7 +12,7 @@ using System.Text;
 using Subsembly.FinTS;
 using Subsembly.Swift;
 
-namespace FinCmd
+namespace FinTsPersistence
 {
 	public class FinCmdBalance : FinCmdBase
 	{

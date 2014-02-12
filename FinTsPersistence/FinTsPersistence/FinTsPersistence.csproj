@@ -20,7 +20,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>FinTsPersistence</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <StartupObject>FinCmd.FinCmdMain</StartupObject>
+    <StartupObject>FinTsPersistence.FinTsPersistence</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -110,6 +110,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cmd\CommandLineHelper.cs" />
+    <Compile Include="Cmd\ExtractedArguments.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -122,7 +124,7 @@
     <Compile Include="FinCmdBase.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FinCmdMain.cs">
+    <Compile Include="FinTsPersistence.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FinCmdRemittDebit.cs">
@@ -144,6 +146,7 @@
     </Compile>
     <Compile Include="IFinCmdTanSource.cs" />
     <Content Include="Database.ico" />
+    <EmbeddedResource Include="FinTsPersistenceUsage.txt" />
     <EmbeddedResource Include="syntax.xml" />
   </ItemGroup>
   <ItemGroup>

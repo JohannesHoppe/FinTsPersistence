@@ -9,7 +9,7 @@ using System.Collections.Specialized;
 
 using Subsembly.FinTS;
 
-namespace FinCmd
+namespace FinTsPersistence
 {
 	/// <summary>
 	/// 

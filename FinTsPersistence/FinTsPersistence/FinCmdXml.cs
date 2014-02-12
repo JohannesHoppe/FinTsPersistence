@@ -15,7 +15,7 @@ using System.Xml;
 using Subsembly.FinTS;
 using Subsembly.Swift;
 
-namespace FinCmd
+namespace FinTsPersistence
 {
 	public class FinCmdXml : FinCmdBase
 	{

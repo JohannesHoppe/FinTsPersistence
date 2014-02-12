@@ -14,7 +14,7 @@ using Subsembly.FinTS;
 using Subsembly.Sepa;
 using Subsembly.Swift;
 
-namespace FinCmd
+namespace FinTsPersistence
 {
 	public class FinCmdSepa : FinCmdBase
 	{
