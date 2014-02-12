@@ -27,8 +27,7 @@ namespace FinTsPersistence
                 var extractedArguments = CommandLineHelper.ExtractArguments(vsArgs);
                 CommandLineHelper.CheckForPinOrResume(extractedArguments.Arguments);
 
-                FinTsPersistence aMain = new FinTsPersistence();
-                result = aMain.DoAction(extractedArguments.Action, extractedArguments.Arguments);
+                result = DoAction(extractedArguments.Action, extractedArguments.Arguments);
             }
             catch (ArgumentException ex)
             {
@@ -44,7 +43,7 @@ namespace FinTsPersistence
             return result;
         }
 
-        internal int DoAction(string sAction, StringDictionary vsArgsDict)
+        static int DoAction(string sAction, StringDictionary vsArgsDict)
         {
             // In jedem Fall wird die PIN oder der Dialogkontext zur Fortführung benötigt.
             string sPIN = vsArgsDict["-pin"];

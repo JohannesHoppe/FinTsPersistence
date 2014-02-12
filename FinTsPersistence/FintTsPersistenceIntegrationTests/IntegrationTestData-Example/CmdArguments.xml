@@ -1,0 +1,6 @@
+﻿<?xml version="1.0"?>
+<CmdArguments>
+  <Pin>12345</Pin>
+  <Acctno>1234567890</Acctno>
+  <Acctbankcode>12345678</Acctbankcode>
+</CmdArguments>

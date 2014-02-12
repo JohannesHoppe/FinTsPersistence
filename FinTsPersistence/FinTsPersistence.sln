@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{44D2EF
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FintTsPersistenceIntegrationTests", "FintTsPersistenceIntegrationTests\FintTsPersistenceIntegrationTests.csproj", "{E9200B62-222B-42C4-A06A-E49AC8380273}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{36755424-A6F6-409E-AFC5-9DD9C74A7A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36755424-A6F6-409E-AFC5-9DD9C74A7A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36755424-A6F6-409E-AFC5-9DD9C74A7A8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9200B62-222B-42C4-A06A-E49AC8380273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9200B62-222B-42C4-A06A-E49AC8380273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9200B62-222B-42C4-A06A-E49AC8380273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9200B62-222B-42C4-A06A-E49AC8380273}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

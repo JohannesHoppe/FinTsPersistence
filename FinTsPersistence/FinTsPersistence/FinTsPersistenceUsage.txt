@@ -1,6 +1,10 @@
-﻿Command Line Utility
+﻿
+--------------------------------------------------------------------
+FinTsPersistence - Command Line Utility
 
-This is a highly modified version of FinCmd which has only one action: "persist".
+This is a modified version of FinCmd which
+has one new action: "persist".
+
 Please refer to the FinCmd manual to learn the usage of the required
 parameters to establish a connection to your bank.
 
