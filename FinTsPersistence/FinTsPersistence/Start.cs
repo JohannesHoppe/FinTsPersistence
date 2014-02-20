@@ -1,10 +1,6 @@
 using System;
-using System.Collections.Specialized;
-using System.Diagnostics;
-using System.IO;
 using FinTsPersistence.Bootstrap;
 using FinTsPersistence.Interfaces;
-using Subsembly.FinTS;
 
 namespace FinTsPersistence
 {   
