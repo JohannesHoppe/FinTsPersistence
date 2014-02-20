@@ -20,7 +20,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>FinTsPersistence</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <StartupObject>FinTsPersistence.FinTsPersistence</StartupObject>
+    <StartupObject>FinTsPersistence.Start</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -110,41 +110,46 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cmd\CommandLineHelper.cs" />
-    <Compile Include="Cmd\ExtractedArguments.cs" />
+    <Compile Include="Bootstrap\ActionFactory.cs" />
+    <Compile Include="Bootstrap\CommandLineHelper.cs" />
+    <Compile Include="Bootstrap\ExtractedArguments.cs" />
+    <Compile Include="Bootstrap\ContainerConfig.cs" />
+    <Compile Include="Interfaces\IActionFactory.cs" />
+    <Compile Include="Interfaces\IFinTsPersistence.cs" />
+    <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Csv\CsvFile.cs" />
     <Compile Include="Csv\CsvParser.cs" />
     <Compile Include="Csv\CsvValues.cs" />
-    <Compile Include="FinCmdBalance.cs">
+    <Compile Include="Actions\ActionBalance.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FinCmdBase.cs">
+    <Compile Include="Actions\ActionBase.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FinTsPersistence.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FinCmdRemittDebit.cs">
+    <Compile Include="Actions\ActionRemittDebit.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FinCmdSepa.cs" />
-    <Compile Include="FinCmdStatement.cs">
+    <Compile Include="Actions\ActionSepa.cs" />
+    <Compile Include="Actions\ActionStatement.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FinCmdSync.cs" />
-    <Compile Include="FinCmdTan.cs" />
-    <Compile Include="FinCmdTanList.cs" />
-    <Compile Include="FinCmdTanPrompt.cs" />
-    <Compile Include="FinCmdXml.cs">
+    <Compile Include="Actions\ActionSync.cs" />
+    <Compile Include="Tan\FinCmdTan.cs" />
+    <Compile Include="Tan\FinCmdTanList.cs" />
+    <Compile Include="Tan\FinCmdTanPrompt.cs" />
+    <Compile Include="Actions\ActionXml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="IFinCmd.cs">
+    <Compile Include="Interfaces\IAction.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="IFinCmdTanSource.cs" />
+    <Compile Include="Interfaces\IFinCmdTanSource.cs" />
     <Content Include="Database.ico" />
     <EmbeddedResource Include="FinTsPersistenceUsage.txt" />
     <EmbeddedResource Include="syntax.xml" />

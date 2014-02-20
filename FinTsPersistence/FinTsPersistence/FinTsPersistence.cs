@@ -2,50 +2,27 @@ using System;
 using System.Collections.Specialized;
 using System.Diagnostics;
 using System.IO;
-using FinTsPersistence.Cmd;
+using FinTsPersistence.Bootstrap;
+using FinTsPersistence.Interfaces;
+using FinTsPersistence.Tan;
 using Subsembly.FinTS;
 
 namespace FinTsPersistence
-{   
+{
     /// <summary>
     /// Modified version of Subsembly FinCmd - with currently only one action: persist
     /// FinTsPersistence {action} -{argname1} {argvalue1} ...
     /// </summary>
-    public class FinTsPersistence
+    public class FinTsPersistence : IFinTsPersistence
     {
-        private static IContainer Container { get; set; }
+        private readonly IActionFactory actionFactory;
 
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>   
-        public static int Main(string[] vsArgs)
+        public FinTsPersistence(IActionFactory actionFactory)
         {
-            int result = -1;
-
-            try
-            {
-                CommandLineHelper.CheckAmountOfParameters(vsArgs);
-
-                var extractedArguments = CommandLineHelper.ExtractArguments(vsArgs);
-                CommandLineHelper.CheckForPinOrResume(extractedArguments.Arguments);
-
-                result = DoAction(extractedArguments.Action, extractedArguments.Arguments);
-            }
-            catch (ArgumentException ex)
-            {
-                Console.Error.WriteLine(ex.Message);
-                CommandLineHelper.ShowUsage();
-            }     
-            catch (Exception ex)
-            {
-                CommandLineHelper.DisplayException(ex);
-            }
-
-            CommandLineHelper.WaitForEnterOnDebug();
-            return result;
+            this.actionFactory = actionFactory;
         }
 
-        static int DoAction(string sAction, StringDictionary vsArgsDict)
+        public int DoAction(string sAction, StringDictionary vsArgsDict)
         {
             // In jedem Fall wird die PIN oder der Dialogkontext zur Fortführung benötigt.
             string sPIN = vsArgsDict["-pin"];
@@ -97,17 +74,15 @@ namespace FinTsPersistence
 
             string sSuspend = vsArgsDict["-suspend"];
 
-            // Die IFinCmd Implementierung für die gewünschte Aktion erstellen.
+            // Die IAction Implementierung für die gewünschte Aktion erstellen.
 
-            IFinCmd aCmd = _GetCmd(sAction);
+            IAction aCmd = actionFactory.GetAction(sAction);
             if (aCmd == null)
             {
                 CommandLineHelper.ShowUsage();
                 Console.Error.WriteLine("Aktion {0} nicht bekannt!", sAction);
                 return -1;
             }
-
-            //
 
             if (!aCmd.Parse(sAction, vsArgsDict))
             {
@@ -117,9 +92,8 @@ namespace FinTsPersistence
             // Zuerst ermitteln wir den Bankkontakt aus den übergebenen Parametern. Danach
             // erstellen wir damit einen FinService.
 
-            FinContact aContact = null;
+            FinContact aContact;
             FinDialog aDialog = null;
-            FinService aService = null;
 
             if (sResume != null)
             {
@@ -136,13 +110,11 @@ namespace FinTsPersistence
                 }
             }
 
-            aService = _GetService(aContact, aDialog, vsArgsDict);
+            FinService aService = _GetService(aContact, aDialog, vsArgsDict);
             if (aService == null)
             {
                 return -1;
             }
-
-            //
 
             int nResult = -2;
 
@@ -150,19 +122,17 @@ namespace FinTsPersistence
             {
                 aService.ClearDocket();
 
-                //
-
                 if (sAction == "sync")
                 {
                     if (!aService.Synchronize(sPIN))
                     {
                         nResult = -3;
-                        goto _done;
+                        //goto _done;
                     }
                 }
                 else
                 {
-                    // Mit dem FinService und dem IFinCmd die gewünschte Aktion durchführen.
+                    // Mit dem FinService und dem IAction die gewünschte Aktion durchführen.
 
                     if (!aService.Online)
                     {
@@ -172,8 +142,6 @@ namespace FinTsPersistence
                             goto _done;
                         }
                     }
-
-                    //
 
                     if (aService.Online)
                     {
@@ -236,21 +204,14 @@ namespace FinTsPersistence
             finally
             {
                 aService.Dispose();
-                aService = null;
             }
 
             return nResult;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="vsArgsDict"></param>
-        /// <returns></returns>
-
         static FinContact _GetContact(StringDictionary vsArgsDict)
         {
-            FinContact aContact = null;
+            FinContact aContact;
 
             string sContactFile = vsArgsDict["-contactfile"];
             string sContactName = vsArgsDict["-contactname"];
@@ -308,14 +269,6 @@ namespace FinTsPersistence
             return aContact;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="aContact"></param>
-        /// <param name="aDialog"></param>
-        /// <param name="vsArgsDict"></param>
-        /// <returns></returns>
-
         static FinService _GetService(
             FinContact aContact,
             FinDialog aDialog,
@@ -367,65 +320,11 @@ namespace FinTsPersistence
 
             // Die Bankverbindung ist jetzt vollständig spezifiziert und wir können ein
             // FinService Objekt dafür anlegen.
-
-            FinService aService;
-
-            if (aDialog != null)
-            {
-                aService = new FinService(aDialog, sAcctBankCode, sAcctNo, sAcctCurrency);
-            }
-            else
-            {
-                aService = new FinService(aContact, sAcctBankCode, sAcctNo, sAcctCurrency);
-            }
-
-#if FINQA
-            aService.ProductName = "Notarnet";
-#endif
+            FinService aService = aDialog != null ?
+                new FinService(aDialog, sAcctBankCode, sAcctNo, sAcctCurrency) :
+                new FinService(aContact, sAcctBankCode, sAcctNo, sAcctCurrency);
 
             return aService;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sAction"></param>
-        /// <returns></returns>
-
-        static IFinCmd _GetCmd(string sAction)
-        {
-            IFinCmd aCmd = null;
-
-            switch (sAction)
-            {
-            case "balance":
-                aCmd = new FinCmdBalance();
-                break;
-            case "statement":
-                aCmd = new FinCmdStatement();
-                break;
-            case "remitt":
-                aCmd = new FinCmdRemittDebit();
-                break;
-            case "xml":
-                aCmd = new FinCmdXml();
-                break;
-            case "sepa":
-                aCmd = new FinCmdSepa();
-                break;
-            case "sync":
-                aCmd = new FinCmdSync();
-                break;
-#if FINQA
-            case "testcase":
-                aCmd = new FinCmdTestcase();
-                break;
-#endif
-            }
-
-            return aCmd;
-        }
-
-
     }
 }

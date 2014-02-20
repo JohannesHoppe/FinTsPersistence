@@ -5,7 +5,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace FinTsPersistence.Cmd
+namespace FinTsPersistence.Bootstrap
 {
     public static class CommandLineHelper
     {

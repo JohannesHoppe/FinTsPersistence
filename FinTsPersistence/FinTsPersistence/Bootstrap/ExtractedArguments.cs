@@ -1,6 +1,6 @@
 ﻿using System.Collections.Specialized;
 
-namespace FinTsPersistence.Cmd
+namespace FinTsPersistence.Bootstrap
 {
     /// <summary>
     /// Holds one argument and an various number of args/argvalue pairs

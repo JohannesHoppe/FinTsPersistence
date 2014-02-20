@@ -43,7 +43,7 @@ namespace FintTsPersistenceIntegrationTests
             cmdArguments = IntegrationTestData.GetCmdArguments();
         };
 
-        Because of = () => exitCode = FinTsPersistence.FinTsPersistence.Main(new[]
+        Because of = () => exitCode = FinTsPersistence.Start.Main(new[]
             {
                 "balance", 
                 "-contactfile", contactfileLocation,
