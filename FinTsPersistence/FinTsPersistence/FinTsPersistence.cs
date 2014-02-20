@@ -13,6 +13,8 @@ namespace FinTsPersistence
     /// </summary>
     public class FinTsPersistence
     {
+        private static IContainer Container { get; set; }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>   

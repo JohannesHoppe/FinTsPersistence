@@ -1,6 +1,7 @@
 ﻿using FintTsPersistenceIntegrationTests.Helper;
 using Machine.Specifications;
 
+#pragma warning disable 169
 namespace FintTsPersistenceIntegrationTests
 {
     [Subject("FinTsPersistence")]
@@ -9,6 +10,7 @@ namespace FintTsPersistenceIntegrationTests
         static string contactfileLocation;
         static string cmdArgumentsLocation;
         private static CmdArguments cmdArguments;
+
 
         Because of = () =>
         {
@@ -52,6 +54,5 @@ namespace FintTsPersistenceIntegrationTests
 
         It the_exit_code_should_equal_20 = () => exitCode.ShouldEqual(20);
     }
-
-
 }
+#pragma warning restore 169
