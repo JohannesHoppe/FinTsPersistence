@@ -110,10 +110,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bootstrap\ActionFactory.cs" />
+    <Compile Include="Factories\ActionFactory.cs" />
     <Compile Include="Bootstrap\CommandLineHelper.cs" />
     <Compile Include="Bootstrap\ExtractedArguments.cs" />
     <Compile Include="Bootstrap\ContainerConfig.cs" />
+    <Compile Include="Factories\TanSourceFactory.cs" />
+    <Compile Include="FinContactCreator.cs" />
+    <Compile Include="FinServiceCreator.cs" />
+    <Compile Include="Interfaces\ITanSourceFactory.cs" />
     <Compile Include="Interfaces\IActionFactory.cs" />
     <Compile Include="Interfaces\IFinTsPersistence.cs" />
     <Compile Include="Start.cs" />
@@ -140,16 +144,16 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Actions\ActionSync.cs" />
-    <Compile Include="Tan\FinCmdTan.cs" />
-    <Compile Include="Tan\FinCmdTanList.cs" />
-    <Compile Include="Tan\FinCmdTanPrompt.cs" />
+    <Compile Include="TanSources\TanByArgument.cs" />
+    <Compile Include="TanSources\TanByList.cs" />
+    <Compile Include="TanSources\TanByPrompt.cs" />
     <Compile Include="Actions\ActionXml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Interfaces\IAction.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Interfaces\IFinCmdTanSource.cs" />
+    <Compile Include="Interfaces\ITanSource.cs" />
     <Content Include="Database.ico" />
     <EmbeddedResource Include="FinTsPersistenceUsage.txt" />
     <EmbeddedResource Include="syntax.xml" />

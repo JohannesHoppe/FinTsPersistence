@@ -5,9 +5,12 @@ using System.Linq;
 using FinTsPersistence.Interfaces;
 using Subsembly.FinTS;
 
-namespace FinTsPersistence.Tan
+namespace FinTsPersistence.TanSources
 {
-    public class FinCmdTanList : IFinCmdTanSource
+    /// <summary>
+    /// Uses a tan list file to get the right TAN
+    /// </summary>
+    public class TanByList : ITanSource
     {
         readonly ArrayList m_vList = new ArrayList();
 
@@ -40,11 +43,6 @@ namespace FinTsPersistence.Tan
                 TAN = sTAN;
             }
         };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sFileName"></param>
 
         public int LoadTanList(string sFileName)
         {
@@ -106,8 +104,6 @@ namespace FinTsPersistence.Tan
                 return aTan.TAN;
             }
 
-            //
-
             string sChallenge = aChallengeInfo.Challenge;
             int nIndex = GetIndexFromChallenge(sChallenge);
             if (nIndex >= 0)
@@ -122,12 +118,6 @@ namespace FinTsPersistence.Tan
             Console.WriteLine("Keine TAN für " + sChallenge + "in TAN-Datei gefunden!");
             return null;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sChallenge"></param>
-        /// <returns></returns>
 
         internal static int GetIndexFromChallenge(string sChallenge)
         {

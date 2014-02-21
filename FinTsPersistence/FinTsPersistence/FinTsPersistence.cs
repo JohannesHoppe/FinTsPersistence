@@ -1,10 +1,7 @@
-using System;
+ï»¿using System;
 using System.Collections.Specialized;
-using System.Diagnostics;
 using System.IO;
-using FinTsPersistence.Bootstrap;
 using FinTsPersistence.Interfaces;
-using FinTsPersistence.Tan;
 using Subsembly.FinTS;
 
 namespace FinTsPersistence
@@ -16,144 +13,91 @@ namespace FinTsPersistence
     public class FinTsPersistence : IFinTsPersistence
     {
         private readonly IActionFactory actionFactory;
+        private readonly ITanSourceFactory tanSourceFactory;
 
-        public FinTsPersistence(IActionFactory actionFactory)
+        public FinTsPersistence(IActionFactory actionFactory, ITanSourceFactory tanSourceFactory)
         {
             this.actionFactory = actionFactory;
+            this.tanSourceFactory = tanSourceFactory;
         }
 
-        public int DoAction(string sAction, StringDictionary vsArgsDict)
+        public int DoAction(string action, StringDictionary arguments)
         {
-            // In jedem Fall wird die PIN oder der Dialogkontext zur Fortführung benötigt.
-            string sPIN = vsArgsDict["-pin"];
-            string sResume = vsArgsDict["-resume"];
+            // In jedem Fall wird die PIN oder der Dialogkontext zur FortfÃ¼hrung benÃ¶tigt.
+            string pin = arguments["-pin"];
+            string resume = arguments["-resume"];
 
-            if ((sPIN == null) && (sResume == null))
-            {
-                Console.Error.WriteLine("PIN fehlt!");
-                return -1;
-            }
+            // Optional kann eine TAN oder eine TAN-Liste mitgegeben werden.
+            // Wird beides nicht mitgegeben, so wird die TAN auf der Kommandozeile abgefragt.
+            ITanSource tanSource = tanSourceFactory.GetTanSource(arguments);
 
-            // Optional kann eine TAN oder eine TAN-Liste mitgegeben werden. Wird beides nicht
-            // mitgegeben, so wird die TAN auf der Kommandozeile abgefragt.
-
-            IFinCmdTanSource aTanSource = null;
-
-            string sTAN = vsArgsDict["-tan"];
-            if (sTAN != null)
-            {
-                aTanSource = new FinCmdTan(sTAN);
-            }
-
-            string sTanList = vsArgsDict["-tanlist"];
-            if (sTanList != null)
-            {
-                if (aTanSource != null)
-                {
-                    Console.Error.WriteLine("TAN und TANLIST dürfen nicht gleichzeitig angegeben werden!");
-                    return -1;
-                }
-
-                FinCmdTanList aTanList = new FinCmdTanList();
-                aTanList.LoadTanList(sTanList);
-                aTanSource = aTanList;
-            }
-
-            if (aTanSource == null)
-            {
-                aTanSource = new FinCmdTanPrompt();
-            }
-
-            // Optional kann eine Datei für den HBCI-Trace angegeben werden.
-
-            string sTraceFile = vsArgsDict["-trace"];
+            // Optional kann eine Datei fÃ¼r den HBCI-Trace angegeben werden.
+            string traceFile = arguments["-trace"];
 
             // Wird der Schalter -suspend angegeben, so wird nach der Aktion keine
-            // Dialogbeendigung durchgeführt, sondern einfach der Zustand in die angegebene
-            // Datei gespeichert.
+            // Dialogbeendigung durchgefÃ¼hrt, sondern einfach der Zustand in die angegebene Datei gespeichert.
+            string suspend = arguments["-suspend"];
 
-            string sSuspend = vsArgsDict["-suspend"];
-
-            // Die IAction Implementierung für die gewünschte Aktion erstellen.
-
-            IAction aCmd = actionFactory.GetAction(sAction);
-            if (aCmd == null)
+            // Die IAction Implementierung fÃ¼r die gewÃ¼nschte Aktion erstellen.
+            IAction cmd = actionFactory.GetAction(action);
+            if (!cmd.Parse(action, arguments))
             {
-                CommandLineHelper.ShowUsage();
-                Console.Error.WriteLine("Aktion {0} nicht bekannt!", sAction);
-                return -1;
+                throw new ArgumentException("Wrong arguments for the given action!");
             }
 
-            if (!aCmd.Parse(sAction, vsArgsDict))
+            FinContact contact;
+            FinDialog dialog = null;
+
+            if (resume != null)
             {
-                return -1;
-            }
-
-            // Zuerst ermitteln wir den Bankkontakt aus den übergebenen Parametern. Danach
-            // erstellen wir damit einen FinService.
-
-            FinContact aContact;
-            FinDialog aDialog = null;
-
-            if (sResume != null)
-            {
-                aDialog = new FinDialog();
-                aDialog.Load(sResume);
-                aContact = aDialog.Contact;
+                dialog = new FinDialog();
+                dialog.Load(resume);
+                contact = dialog.Contact;
             }
             else
             {
-                aContact = _GetContact(vsArgsDict);
-                if (aContact == null)
-                {
-                    return -1;
-                }
+                contact = FinContactCreator.GetFinContact(arguments);
             }
 
-            FinService aService = _GetService(aContact, aDialog, vsArgsDict);
-            if (aService == null)
-            {
-                return -1;
-            }
+            FinService service = FinServiceCreator.GetFinService(contact, dialog, arguments);
 
             int nResult = -2;
 
             try
             {
-                aService.ClearDocket();
+                service.ClearDocket();
 
-                if (sAction == "sync")
+                if (action == "sync")
                 {
-                    if (!aService.Synchronize(sPIN))
+                    if (!service.Synchronize(pin))
                     {
                         nResult = -3;
-                        //goto _done;
+                        goto _done;
                     }
                 }
                 else
                 {
-                    // Mit dem FinService und dem IAction die gewünschte Aktion durchführen.
-
-                    if (!aService.Online)
+                    // Mit dem FinService und dem IAction die gewÃ¼nschte Aktion durchfÃ¼hren.
+                    if (!service.Online)
                     {
-                        if (!aService.LogOn(sPIN))
+                        if (!service.LogOn(pin))
                         {
                             nResult = -3;
                             goto _done;
                         }
-                    }
+                    } 
 
-                    if (aService.Online)
-                    {
-                        nResult = aCmd.Execute(aService, aTanSource);
+                    if (service.Online) {
 
-                        if (sSuspend != null)
+                        nResult = cmd.Execute(service, tanSource);
+
+                        if (suspend != null)
                         {
-                            aService.Dialog.SaveAs(sSuspend);
+                            service.Dialog.SaveAs(suspend);
                         }
                         else
                         {
-                            aService.LogOff();
+                            service.LogOff();
                         }
                     }
                 }
@@ -161,35 +105,32 @@ namespace FinTsPersistence
             _done:
 
                 // Falls der Bankkontakt aus einer Datei geladen wurde, so muss diese nun noch
-                // gespeichert werden, damit auch alle am Bankkontakt erfolgten Änderungen
+                // gespeichert werden, damit auch alle am Bankkontakt erfolgten Ã„nderungen
                 // erhalten bleiben.
-
-                string sContactFile = vsArgsDict["-contactfile"];
+                string sContactFile = arguments["-contactfile"];
                 if (sContactFile != null)
                 {
-                    aContact.SaveAs(sContactFile);
+                    contact.SaveAs(sContactFile);
                 }
 
                 // Wurde eine Tracedatei angegeben, so wird der komplette HBCI Trace in diese
                 // Datei geschrieben.
-
-                if (sTraceFile != null)
+                if (traceFile != null)
                 {
-                    StreamWriter sw = File.CreateText(sTraceFile);
-                    sw.Write(aService.Trace);
+                    StreamWriter sw = File.CreateText(traceFile);
+                    sw.Write(service.Trace);
                     sw.Close();
                 }
 
-                // Auftrag ausgeführt. Zuerst geben wir den gesammelten Laufzettel aus,
+                // Auftrag ausgefÃ¼hrt. Zuerst geben wir den gesammelten Laufzettel aus,
                 // danach die Antwortdaten, sofern welche vorhanden sind. Der Laufzettel wird
                 // auf den Error-Kanal ausgegeben, damit er von der Antwortdaten leichter
                 // getrennt werden kann.
-
-                Console.Error.WriteLine(aService.Docket);
+                Console.Error.WriteLine(service.Docket);
 
                 if (nResult != -3)
                 {
-                    string sResponseData = aCmd.GetResponseData(aService);
+                    string sResponseData = cmd.GetResponseData(service);
                     if (sResponseData != null)
                     {
                         Console.WriteLine(sResponseData);
@@ -198,133 +139,15 @@ namespace FinTsPersistence
             }
             catch (Exception x)
             {
-                Console.Error.WriteLine(aService.Trace);
+                Console.Error.WriteLine(service.Trace);
                 Console.Error.WriteLine(x.ToString());
             }
             finally
             {
-                aService.Dispose();
+                service.Dispose();
             }
 
             return nResult;
-        }
-
-        static FinContact _GetContact(StringDictionary vsArgsDict)
-        {
-            FinContact aContact;
-
-            string sContactFile = vsArgsDict["-contactfile"];
-            string sContactName = vsArgsDict["-contactname"];
-
-            if (sContactFile != null)
-            {
-                if (!File.Exists(sContactFile))
-                {
-                    Console.Error.WriteLine("Datei {0} nicht gefunden!", sContactFile);
-                    return null;
-                }
-                aContact = new FinContact();
-                aContact.Load(sContactFile);
-            }
-            else if (sContactName != null)
-            {
-                aContact = FinContactFolder.Default.FindContact(sContactName);
-                if (aContact == null)
-                {
-                    Console.Error.WriteLine("Bankkontakt {0} nicht gefunden!", sContactName);
-                    return null;
-                }
-            }
-            else
-            {
-                string sCommAddress = vsArgsDict["-commaddress"];
-                string sFinTSVersion = vsArgsDict["-fintsversion"];
-                string sTanProcedure = vsArgsDict["-tanprocedure"];
-                string sTanMediaName = vsArgsDict["-tanmedianame"];
-                string sBankCode = vsArgsDict["-bankcode"];
-                string sUserID = vsArgsDict["-userid"];
-                string sCustID = vsArgsDict["-custid"];
-
-                if ((sCommAddress == null) || (sBankCode == null) || (sUserID == null))
-                {
-                    Console.Error.WriteLine("Bankkontakt nicht vollständig spezifiziert!");
-                    return null;
-                }
-
-                int nFinTSVersion = (sFinTSVersion != null) ? Int32.Parse(sFinTSVersion) : 300;
-
-                aContact = new FinContact(sCommAddress, nFinTSVersion, sTanProcedure,
-                    sBankCode, sUserID);
-
-                if (sTanMediaName != null)
-                {
-                    aContact.TanMediaName = sTanMediaName;
-                }
-                if (sCustID != null)
-                {
-                    aContact.DefaultCustID = sCustID;
-                }
-            }
-
-            return aContact;
-        }
-
-        static FinService _GetService(
-            FinContact aContact,
-            FinDialog aDialog,
-            StringDictionary vsArgsDict)
-        {
-            Debug.Assert(aContact != null);
-
-            // Als nächstes ermitteln wir das Konto für die gewünschte Bankverbindung.
-
-            string sAcctBankCode = vsArgsDict["-acctbankcode"];
-            string sAcctNo = vsArgsDict["-acctno"];
-            string sAcctCurrency = vsArgsDict["-acctcurrency"];
-
-            if (sAcctBankCode == null)
-            {
-                sAcctBankCode = aContact.BankCode;
-            }
-            if (sAcctBankCode == null)
-            {
-                Console.Error.WriteLine("Bankleitzahl zu Konto fehlt!");
-                return null;
-            }
-            if ((sAcctBankCode.Length != 8) || !FinUtil.IsDigits(sAcctBankCode))
-            {
-                Console.Error.WriteLine("Bankleitzahl zu Konto ist ungültig!");
-                return null;
-            }
-
-            if (sAcctNo == null)
-            {
-                Console.Error.WriteLine("Kontonummer fehlt!");
-                return null;
-            }
-            if ((sAcctNo == "") || (sAcctNo.Length > 30))
-            {
-                Console.Error.WriteLine("Kontonummer ist ungültig!");
-                return null;
-            }
-
-            if (sAcctCurrency == null)
-            {
-                sAcctCurrency = "EUR";
-            }
-            else if ((sAcctCurrency.Length != 3) || !FinUtil.IsUpperAscii(sAcctCurrency))
-            {
-                Console.Error.WriteLine("Kontowährung ist ungültig!");
-                return null;
-            }
-
-            // Die Bankverbindung ist jetzt vollständig spezifiziert und wir können ein
-            // FinService Objekt dafür anlegen.
-            FinService aService = aDialog != null ?
-                new FinService(aDialog, sAcctBankCode, sAcctNo, sAcctCurrency) :
-                new FinService(aContact, sAcctBankCode, sAcctNo, sAcctCurrency);
-
-            return aService;
-        }
+        }  
     }
 }

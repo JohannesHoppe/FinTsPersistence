@@ -1,6 +1,8 @@
 ﻿using Autofac;
 using FinTsPersistence.Actions;
+using FinTsPersistence.Factories;
 using FinTsPersistence.Interfaces;
+using FinTsPersistence.TanSources;
 
 namespace FinTsPersistence.Bootstrap
 {
@@ -41,6 +43,9 @@ namespace FinTsPersistence.Bootstrap
 
             builder.RegisterType<ActionFactory>()
                     .As<IActionFactory>();
+
+            builder.RegisterType<TanSourceFactory>()
+                    .As<ITanSourceFactory>();
 
             builder.RegisterType<FinTsPersistence>()
                    .As<IFinTsPersistence>();

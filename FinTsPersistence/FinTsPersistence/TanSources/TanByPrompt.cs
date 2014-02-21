@@ -2,9 +2,12 @@
 using FinTsPersistence.Interfaces;
 using Subsembly.FinTS;
 
-namespace FinTsPersistence.Tan
+namespace FinTsPersistence.TanSources
 {
-    public class FinCmdTanPrompt : IFinCmdTanSource
+    /// <summary>
+    /// Prompts for tan on command line
+    /// </summary>
+    public class TanByPrompt : ITanSource
     {
         public string GetTan(FinService aService)
         {

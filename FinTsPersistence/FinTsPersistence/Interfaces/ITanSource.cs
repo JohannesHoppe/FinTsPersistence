@@ -2,7 +2,7 @@
 
 namespace FinTsPersistence.Interfaces
 {
-    public interface IFinCmdTanSource
+    public interface ITanSource
     {
         string GetTan(FinService aService);
     }

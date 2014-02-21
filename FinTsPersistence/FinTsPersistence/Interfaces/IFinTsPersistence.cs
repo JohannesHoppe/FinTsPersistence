@@ -4,6 +4,6 @@ namespace FinTsPersistence.Interfaces
 {
     public interface IFinTsPersistence
     {
-        int DoAction(string sAction, StringDictionary vsArgsDict);
+        int DoAction(string action, StringDictionary arguments);
     }
 }

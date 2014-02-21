@@ -14,7 +14,7 @@ namespace FinTsPersistence.Actions
             return OnParse(sAction, vsArgsDict);
         }
 
-        public virtual int Execute(FinService aService, IFinCmdTanSource aTanSource)
+        public virtual int Execute(FinService aService, ITanSource aTanSource)
         {
             m_aOrder = OnCreateOrder(aService);
             if (m_aOrder == null)

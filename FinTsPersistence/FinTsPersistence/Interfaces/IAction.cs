@@ -7,7 +7,7 @@ namespace FinTsPersistence.Interfaces
     {
         bool Parse(string sAction, StringDictionary vsArgsDict);
 
-        int Execute(FinService aService, IFinCmdTanSource aTanSource);
+        int Execute(FinService aService, ITanSource aTanSource);
 
         string GetResponseData(FinService aService);
     }
