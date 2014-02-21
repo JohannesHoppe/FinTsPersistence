@@ -10,7 +10,7 @@ namespace FinTsPersistence.Actions
     {
         public const string ActionName = "balance";
 
-        protected override bool OnParse(string sAction, StringDictionary vsArgsDict)
+        protected override bool OnParse(string action, StringDictionary arguments)
         {
             return true;
         }
@@ -20,11 +20,11 @@ namespace FinTsPersistence.Actions
             return aService.CreateBalance(false);
         }
 
-        protected override string OnGetResponseData(FinService aService, FinOrder aOrder)
+        protected override string OnGetResponseData(FinService service, FinOrder order)
         {
-            FinAcctBal aAcctBal = aOrder as FinAcctBal;
+            FinAcctBal acctBal = order as FinAcctBal;
 
-            if ((aAcctBal == null) || (aAcctBal.AcctBals == null))
+            if ((acctBal == null) || (acctBal.AcctBals == null))
             {
                 return null;
             }
@@ -34,7 +34,7 @@ namespace FinTsPersistence.Actions
             sb.Append("BalanceType;BankCode;AcctNo;Date;Currency;Value");
             sb.Append(Environment.NewLine);
 
-            foreach (FinAcctBalResp aBal in aAcctBal.AcctBals)
+            foreach (FinAcctBalResp aBal in acctBal.AcctBals)
             {
                 _AppendBalance(aBal, sb);
             }

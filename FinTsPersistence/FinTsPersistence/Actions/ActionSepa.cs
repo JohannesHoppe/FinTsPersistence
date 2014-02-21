@@ -12,9 +12,9 @@ namespace FinTsPersistence.Actions
 
         SepaDocument m_aSepaDoc;
 
-        protected override bool OnParse(string sAction, StringDictionary vsArgsDict)
+        protected override bool OnParse(string action, StringDictionary arguments)
         {
-            string sFileName = vsArgsDict["-xmlfile"];
+            string sFileName = arguments["-xmlfile"];
             if (sFileName == null)
             {
                 Console.Error.WriteLine("Argument -xmlfile muss angegeben werden!");

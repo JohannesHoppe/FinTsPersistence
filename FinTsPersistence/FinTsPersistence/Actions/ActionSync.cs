@@ -10,7 +10,7 @@ namespace FinTsPersistence.Actions
     {
         public const string ActionName = "sync";
 
-        protected override bool OnParse(string sAction, StringDictionary vsArgsDict)
+        protected override bool OnParse(string action, StringDictionary arguments)
         {
             return true;
         }

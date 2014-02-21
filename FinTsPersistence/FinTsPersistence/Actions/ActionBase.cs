@@ -9,38 +9,36 @@ namespace FinTsPersistence.Actions
     {
         FinOrder order;
 
-        public bool Parse(string sAction, StringDictionary vsArgsDict)
+        public bool Parse(string action, StringDictionary arguments)
         {
-            return OnParse(sAction, vsArgsDict);
+            return OnParse(action, arguments);
         }
 
-        public virtual int Execute(FinService aService, ITanSource aTanSource)
+        public virtual int Execute(FinService service, ITanSource tanSource)
         {
-            order = OnCreateOrder(aService);
+            order = OnCreateOrder(service);
             if (order == null)
             {
                 return -1;
             }
 
-            //
+            FinServiceResult result = service.SendOrder(order);
 
-            FinServiceResult nRes = aService.SendOrder(order);
-
-            if (nRes == FinServiceResult.NeedTan)
+            if (result == FinServiceResult.NeedTan)
             {
-                string sTAN = aTanSource.GetTan(aService);
-                if (sTAN == null)
+                string tan = tanSource.GetTan(service);
+                if (tan == null)
                 {
                     return -1;
                 }
 
-                nRes = aService.SendTan(sTAN);
+                result = service.SendTan(tan);
             }
 
-            if (nRes == FinServiceResult.NeedTanMediaName)
+            if (result == FinServiceResult.NeedTanMediaName)
             {
                 Console.WriteLine("Bezeichnung des TAN-Mediums erforderlich!");
-                FinTanMedia[] vTanMedias = aService.TanMedias;
+                FinTanMedia[] vTanMedias = service.TanMedias;
                 if (vTanMedias != null)
                 {
                     Console.WriteLine("Bitte geben Sie einen der folgenden Parameter an:");
@@ -53,15 +51,13 @@ namespace FinTsPersistence.Actions
                 return -1;
             }
 
-            if (nRes == FinServiceResult.Fatal)
+            if (result == FinServiceResult.Fatal)
             {
                 return -1;
             }
 
-
             // Als Rückgabewert wird der höchste Rückmeldecode aus dem HIRMS genommen.
             // Wurde kein HIRMS übermittelt wird als Rückgabewert 0 eingesetzt.
-
             int nResult = 0;
             if (order.StatusSegment != null)
             {
@@ -77,11 +73,11 @@ namespace FinTsPersistence.Actions
             return OnGetResponseData(aService, order);
         }
 
-        protected abstract bool OnParse(string sAction, StringDictionary vsArgsDict);
+        protected abstract bool OnParse(string action, StringDictionary arguments);
 
         protected abstract FinOrder OnCreateOrder(FinService aService);
 
-        protected virtual string OnGetResponseData(FinService aService, FinOrder aOrder)
+        protected virtual string OnGetResponseData(FinService service, FinOrder order)
         {
             return null;
         }

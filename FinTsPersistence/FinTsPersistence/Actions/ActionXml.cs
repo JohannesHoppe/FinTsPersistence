@@ -15,9 +15,9 @@ namespace FinTsPersistence.Actions
         XmlDocument                        m_aXmlDocument;
         FinTransmogrifierRepository        m_aSyntax;
 
-        protected override bool OnParse(string sAction, StringDictionary vsArgsDict)
+        protected override bool OnParse(string action, StringDictionary arguments)
         {
-            string sFileName = vsArgsDict["-xmlfile"];
+            string sFileName = arguments["-xmlfile"];
             if (sFileName == null)
             {
                 Console.Error.WriteLine("Argument -xmlfile muss angegeben werden!");
@@ -86,9 +86,9 @@ namespace FinTsPersistence.Actions
         /// </summary>
         /// <returns></returns>
 
-        protected override string OnGetResponseData(FinService aService, FinOrder aOrder)
+        protected override string OnGetResponseData(FinService service, FinOrder order)
         {
-            FinXmlOrder aXmlOrder = aOrder as FinXmlOrder;
+            FinXmlOrder aXmlOrder = order as FinXmlOrder;
 
             if (aXmlOrder == null)
             {

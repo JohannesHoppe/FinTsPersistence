@@ -11,23 +11,23 @@ namespace FinTsPersistence.Actions
 
         FinRemitt m_aRemitt;
 
-        protected override bool OnParse(string sAction, StringDictionary vsArgsDict)
+        protected override bool OnParse(string action, StringDictionary arguments)
         {
-            string sPayeeName = vsArgsDict["-payeename"];
+            string sPayeeName = arguments["-payeename"];
             if (string.IsNullOrEmpty(sPayeeName))
             {
                 Console.Error.WriteLine("Parameter -payeename fehlt!");
                 return false;
             }
 
-            string sPayeeAcctNo = vsArgsDict["-payeeacctno"];
+            string sPayeeAcctNo = arguments["-payeeacctno"];
             if (string.IsNullOrEmpty(sPayeeAcctNo))
             {
                 Console.Error.WriteLine("Parameter -payeeacctno fehlt!");
                 return false;
             }
 
-            string sPayeeBankCode = vsArgsDict["-payeebankcode"];
+            string sPayeeBankCode = arguments["-payeebankcode"];
             if (string.IsNullOrEmpty(sPayeeBankCode))
             {
                 Console.Error.WriteLine("Parameter -payeebankcode fehlt!");
@@ -37,7 +37,7 @@ namespace FinTsPersistence.Actions
             decimal dAmount = 0M;
             try
             {
-                dAmount = SwiftAmt.Parse(vsArgsDict["-amount"]);
+                dAmount = SwiftAmt.Parse(arguments["-amount"]);
             }
             catch { /* IGNORE */ }
             if (dAmount == 0M)
@@ -46,9 +46,9 @@ namespace FinTsPersistence.Actions
                 return false;
             }
 
-            string sTextKey = vsArgsDict["-textkey"];
-            string sTextKeyExt = vsArgsDict["-textkeyext"];
-            string[] vsPurpose = vsArgsDict["-purpose"].Split('|');
+            string sTextKey = arguments["-textkey"];
+            string sTextKeyExt = arguments["-textkeyext"];
+            string[] vsPurpose = arguments["-purpose"].Split('|');
 
             if (sTextKey == null)
             {

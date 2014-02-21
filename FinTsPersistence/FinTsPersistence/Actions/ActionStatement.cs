@@ -22,15 +22,15 @@ namespace FinTsPersistence.Actions
         SwiftDate        m_tFromDate = SwiftDate.NullDate;
         OutputFormat    m_nFormat = OutputFormat.CSV;
 
-        protected override bool OnParse(string sAction, StringDictionary vsArgsDict)
+        protected override bool OnParse(string action, StringDictionary arguments)
         {
-            string sFromDate = vsArgsDict["-fromdate"];
+            string sFromDate = arguments["-fromdate"];
             if (sFromDate != null)
             {
                 m_tFromDate = SwiftDate.Parse(sFromDate, SwiftDateFormat.StandardDate);
             }
 
-            string sFormat = vsArgsDict["-format"];
+            string sFormat = arguments["-format"];
             switch (sFormat)
             {
             case "csv":
@@ -59,9 +59,9 @@ namespace FinTsPersistence.Actions
             return aService.CreateDownloadStatement(m_tFromDate);
         }
 
-        protected override string OnGetResponseData(FinService aService, FinOrder aOrder)
+        protected override string OnGetResponseData(FinService service, FinOrder order)
         {
-            FinAcctMvmtsSpecifiedPeriod aAcctMvmts = aOrder as FinAcctMvmtsSpecifiedPeriod;
+            FinAcctMvmtsSpecifiedPeriod aAcctMvmts = order as FinAcctMvmtsSpecifiedPeriod;
 
             if (aAcctMvmts == null)
             {
