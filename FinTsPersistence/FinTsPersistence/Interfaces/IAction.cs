@@ -10,5 +10,9 @@ namespace FinTsPersistence.Interfaces
         int Execute(FinService aService, ITanSource aTanSource);
 
         string GetResponseData(FinService aService);
+
+        bool GoOnline { get; }
+
+        bool DoSync { get; }
     }
 }

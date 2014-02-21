@@ -7,7 +7,7 @@ namespace FinTsPersistence.Actions
 {
     public abstract class ActionBase : IAction
     {
-        FinOrder m_aOrder;
+        FinOrder order;
 
         public bool Parse(string sAction, StringDictionary vsArgsDict)
         {
@@ -16,15 +16,15 @@ namespace FinTsPersistence.Actions
 
         public virtual int Execute(FinService aService, ITanSource aTanSource)
         {
-            m_aOrder = OnCreateOrder(aService);
-            if (m_aOrder == null)
+            order = OnCreateOrder(aService);
+            if (order == null)
             {
                 return -1;
             }
 
             //
 
-            FinServiceResult nRes = aService.SendOrder(m_aOrder);
+            FinServiceResult nRes = aService.SendOrder(order);
 
             if (nRes == FinServiceResult.NeedTan)
             {
@@ -63,10 +63,10 @@ namespace FinTsPersistence.Actions
             // Wurde kein HIRMS übermittelt wird als Rückgabewert 0 eingesetzt.
 
             int nResult = 0;
-            if (m_aOrder.StatusSegment != null)
+            if (order.StatusSegment != null)
             {
-                int nIndex = m_aOrder.StatusSegment.FindMax();
-                nResult = m_aOrder.StatusSegment.GetStatusCode(nIndex);
+                int nIndex = order.StatusSegment.FindMax();
+                nResult = order.StatusSegment.GetStatusCode(nIndex);
             }
 
             return nResult;
@@ -74,7 +74,7 @@ namespace FinTsPersistence.Actions
 
         public virtual string GetResponseData(FinService aService)
         {
-            return OnGetResponseData(aService, m_aOrder);
+            return OnGetResponseData(aService, order);
         }
 
         protected abstract bool OnParse(string sAction, StringDictionary vsArgsDict);
@@ -84,6 +84,16 @@ namespace FinTsPersistence.Actions
         protected virtual string OnGetResponseData(FinService aService, FinOrder aOrder)
         {
             return null;
+        }
+
+        public virtual bool GoOnline
+        {
+            get { return true; }
+        }
+
+        public virtual bool DoSync
+        {
+            get { return false; }
         }
     }
 }

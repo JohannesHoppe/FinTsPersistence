@@ -67,7 +67,7 @@ namespace FinTsPersistence
             {
                 service.ClearDocket();
 
-                if (action == "sync")
+                if (cmd.DoSync)
                 {
                     if (!service.Synchronize(pin))
                     {
@@ -75,9 +75,9 @@ namespace FinTsPersistence
                         goto _done;
                     }
                 }
-                else
+                
+                if (cmd.GoOnline)
                 {
-                    // Mit dem FinService und dem IAction die gewünschte Aktion durchführen.
                     if (!service.Online)
                     {
                         if (!service.LogOn(pin))
@@ -102,7 +102,7 @@ namespace FinTsPersistence
                     }
                 }
 
-            _done:
+                _done:
 
                 // Falls der Bankkontakt aus einer Datei geladen wurde, so muss diese nun noch
                 // gespeichert werden, damit auch alle am Bankkontakt erfolgten Änderungen

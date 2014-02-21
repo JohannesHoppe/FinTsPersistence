@@ -19,5 +19,15 @@ namespace FinTsPersistence.Actions
         {
             return null;
         }
+
+        public new bool GoOnline
+        {
+            get { return false; }
+        }
+
+        public new bool DoSync
+        {
+            get { return true; }
+        }
     }
 }
