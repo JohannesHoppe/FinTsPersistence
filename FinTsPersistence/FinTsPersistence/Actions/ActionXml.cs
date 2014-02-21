@@ -75,16 +75,9 @@ namespace FinTsPersistence.Actions
             xml.InnerText = aAcct.BankCode;
             xmlBankID.AppendChild(xml);
 
-            //
-
             FinXmlOrderBuilder aXmlOrderBuilder = new FinXmlOrderBuilder(aService.Contact, m_aSyntax);
             return aXmlOrderBuilder.Build(m_aXmlDocument.DocumentElement);
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
 
         protected override string OnGetResponseData(FinService service, FinOrder order)
         {
@@ -127,6 +120,16 @@ namespace FinTsPersistence.Actions
             }
 
             return aSyntax;
+        }
+
+        public override bool GoOnline
+        {
+            get { return true; }
+        }
+
+        public override bool DoSync
+        {
+            get { return false; }
         }
     }
 }

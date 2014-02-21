@@ -20,12 +20,12 @@ namespace FinTsPersistence.Actions
             return null;
         }
 
-        public new bool GoOnline
+        public override bool GoOnline
         {
             get { return false; }
         }
 
-        public new bool DoSync
+        public override bool DoSync
         {
             get { return true; }
         }

@@ -82,14 +82,8 @@ namespace FinTsPersistence.Actions
             return null;
         }
 
-        public virtual bool GoOnline
-        {
-            get { return true; }
-        }
+        public abstract bool GoOnline { get; }
 
-        public virtual bool DoSync
-        {
-            get { return false; }
-        }
+        public abstract bool DoSync { get; }
     }
 }

@@ -54,5 +54,33 @@ namespace FintTsPersistenceIntegrationTests
 
         It the_exit_code_should_equal_20 = () => exitCode.ShouldEqual(20);
     }
+
+    /// <summary>
+    /// Just syncing
+    /// </summary>
+    [Subject("FinTsPersistence")]
+    public class when_syncing
+    {
+        static string contactfileLocation;
+        static CmdArguments cmdArguments;
+        static int exitCode;
+
+        Establish context = () =>
+        {
+            contactfileLocation = IntegrationTestData.GetContacfileLocation();
+            cmdArguments = IntegrationTestData.GetCmdArguments();
+        };
+
+        Because of = () => exitCode = FinTsPersistence.Start.Main(new[]
+            {
+                "sync", 
+                "-contactfile", contactfileLocation,
+                "-pin", cmdArguments.Pin,
+                "-acctno", cmdArguments.Acctno,
+                "-acctbankcode", cmdArguments.Acctbankcode
+            });
+
+        It the_exit_code_should_equal_minus2 = () => exitCode.ShouldEqual(-2);
+    }
 }
 #pragma warning restore 169

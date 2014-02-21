@@ -95,9 +95,17 @@ namespace FinTsPersistence.Actions
                 return null;
             }
 
-            //
-
             return aSepaOrderBuilder.Build(aAcct, m_aSepaDoc);
+        }
+
+        public override bool GoOnline
+        {
+            get { return true; }
+        }
+
+        public override bool DoSync
+        {
+            get { return false; }
         }
     }
 }
