@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Xml;
+using FinTsPersistence.Actions.Result;
 using Subsembly.FinTS;
 
 namespace FinTsPersistence.Actions
@@ -79,7 +80,7 @@ namespace FinTsPersistence.Actions
             return aXmlOrderBuilder.Build(m_aXmlDocument.DocumentElement);
         }
 
-        protected override string OnGetResponseData(FinService service, FinOrder order)
+        protected override ResponseData OnGetResponseData(FinService service, FinOrder order)
         {
             FinXmlOrder aXmlOrder = order as FinXmlOrder;
 
@@ -103,7 +104,7 @@ namespace FinTsPersistence.Actions
                 aResponseXml.WriteContentTo(aXmlWriter);
                 aXmlWriter.Flush();
                 aStringWriter.Flush();
-                return aStringWriter.ToString();
+                return new ResponseData { Formatted = aStringWriter.ToString() };
             }
         }
 

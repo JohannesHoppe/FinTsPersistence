@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Specialized;
 using System.Text;
+using FinTsPersistence.Actions.Result;
 using Subsembly.FinTS;
 using Subsembly.Swift;
 
@@ -20,7 +21,7 @@ namespace FinTsPersistence.Actions
             return aService.CreateBalance(false);
         }
 
-        protected override string OnGetResponseData(FinService service, FinOrder order)
+        protected override ResponseData OnGetResponseData(FinService service, FinOrder order)
         {
             FinAcctBal acctBal = order as FinAcctBal;
 
@@ -39,7 +40,7 @@ namespace FinTsPersistence.Actions
                 _AppendBalance(aBal, sb);
             }
 
-            return sb.ToString();
+            return new ResponseData {Formatted = sb.ToString() };
         }
 
         private void _AppendBalance(FinAcctBalResp aBal, StringBuilder sb)

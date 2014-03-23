@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Specialized;
 using System.Text;
+using FinTsPersistence.Actions.Result;
 using FinTsPersistence.Csv;
 using Subsembly.FinTS;
 using Subsembly.Swift;
@@ -59,7 +60,7 @@ namespace FinTsPersistence.Actions
             return aService.CreateDownloadStatement(m_tFromDate);
         }
 
-        protected override string OnGetResponseData(FinService service, FinOrder order)
+        protected override ResponseData OnGetResponseData(FinService service, FinOrder order)
         {
             FinAcctMvmtsSpecifiedPeriod aAcctMvmts = order as FinAcctMvmtsSpecifiedPeriod;
 
@@ -70,16 +71,16 @@ namespace FinTsPersistence.Actions
 
             switch (m_nFormat)
             {
-            case OutputFormat.CSV:
-                return _GetCsvResponseData(aAcctMvmts);
-            case OutputFormat.MT940:
-                return _GetMT940ResponseData(aAcctMvmts);
-            case OutputFormat.MT942:
-                return _GetMT942ResponseData(aAcctMvmts);
-            case OutputFormat.CSV942:
-                return _GetCsv942ResponseData(aAcctMvmts);
-            default:
-                return null;
+                case OutputFormat.CSV:
+                    return new ResponseData { Formatted = _GetCsvResponseData(aAcctMvmts) };
+                case OutputFormat.MT940:
+                    return new ResponseData { Formatted = _GetMT940ResponseData(aAcctMvmts) };
+                case OutputFormat.MT942:
+                    return new ResponseData { Formatted = _GetMT942ResponseData(aAcctMvmts) };
+                case OutputFormat.CSV942:
+                    return new ResponseData { Formatted = _GetCsv942ResponseData(aAcctMvmts) };
+                default:
+                    return null;
             }
         }
 

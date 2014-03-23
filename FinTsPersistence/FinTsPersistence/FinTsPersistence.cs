@@ -2,6 +2,7 @@
 using System.Collections.Specialized;
 using System.IO;
 using FinTsPersistence.Actions;
+using FinTsPersistence.Actions.Result;
 using FinTsPersistence.Interfaces;
 using Subsembly.FinTS;
 
@@ -119,10 +120,10 @@ namespace FinTsPersistence
 
                 if (result.Status != Status.CouldNotLogOn)
                 {
-                    string sResponseData = cmd.GetResponseData(service);
-                    if (sResponseData != null)
+                    ResponseData responseData = cmd.GetResponseData(service);
+                    if (responseData != null)
                     {
-                        Console.WriteLine(sResponseData);
+                        Console.WriteLine(responseData.Formatted);
                     }
                 }
             }

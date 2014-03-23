@@ -1,5 +1,6 @@
 using System.Collections.Specialized;
 using FinTsPersistence.Actions;
+using FinTsPersistence.Actions.Result;
 
 namespace FinTsPersistence.Interfaces
 {

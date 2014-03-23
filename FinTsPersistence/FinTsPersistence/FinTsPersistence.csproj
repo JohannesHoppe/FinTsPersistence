@@ -110,8 +110,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actions\ActionResult.cs" />
-    <Compile Include="Actions\Status.cs" />
+    <Compile Include="Actions\Result\ActionResult.cs" />
+    <Compile Include="Actions\ActionPersist.cs" />
+    <Compile Include="Actions\Result\ResponseData.cs" />
+    <Compile Include="Actions\Result\Status.cs" />
+    <Compile Include="Actions\Result\Transaction.cs" />
     <Compile Include="Factories\ActionFactory.cs" />
     <Compile Include="Bootstrap\CommandLineHelper.cs" />
     <Compile Include="Bootstrap\ExtractedArguments.cs" />

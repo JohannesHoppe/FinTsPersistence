@@ -1,7 +1,7 @@
-﻿using FinTsPersistence.Actions;
+﻿using FinTsPersistence.Actions.Result;
 using FintTsPersistenceIntegrationTests.Helper;
 using Machine.Specifications;
-using Status = FinTsPersistence.Actions.Status;
+using Status = FinTsPersistence.Actions.Result.Status;
 
 #pragma warning disable 169
 namespace FintTsPersistenceIntegrationTests

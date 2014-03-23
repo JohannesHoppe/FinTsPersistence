@@ -1,5 +1,6 @@
 using System;
 using FinTsPersistence.Actions;
+using FinTsPersistence.Actions.Result;
 using FinTsPersistence.Bootstrap;
 using FinTsPersistence.Interfaces;
 

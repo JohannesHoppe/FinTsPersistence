@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Specialized;
+using FinTsPersistence.Actions.Result;
 using FinTsPersistence.Interfaces;
 using Subsembly.FinTS;
 
@@ -80,7 +81,7 @@ namespace FinTsPersistence.Actions
                                 "New: " + result);
         }
 
-        public virtual string GetResponseData(FinService aService)
+        public virtual ResponseData GetResponseData(FinService aService)
         {
             return OnGetResponseData(aService, order);
         }
@@ -89,7 +90,7 @@ namespace FinTsPersistence.Actions
 
         protected abstract FinOrder OnCreateOrder(FinService aService);
 
-        protected virtual string OnGetResponseData(FinService service, FinOrder order)
+        protected virtual ResponseData OnGetResponseData(FinService service, FinOrder order)
         {
             return null;
         }

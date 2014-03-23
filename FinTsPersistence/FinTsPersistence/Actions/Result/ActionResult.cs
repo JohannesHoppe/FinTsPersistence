@@ -1,4 +1,4 @@
-﻿namespace FinTsPersistence.Actions
+﻿namespace FinTsPersistence.Actions.Result
 {
     /// <summary>
     /// All recevied information regarding one action

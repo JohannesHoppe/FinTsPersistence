@@ -1,5 +1,5 @@
 using System.Collections.Specialized;
-using FinTsPersistence.Actions;
+using FinTsPersistence.Actions.Result;
 using Subsembly.FinTS;
 
 namespace FinTsPersistence.Interfaces
@@ -10,6 +10,6 @@ namespace FinTsPersistence.Interfaces
 
         ActionResult Execute(FinService service, ITanSource tanSource);
 
-        string GetResponseData(FinService aService);
+        ResponseData GetResponseData(FinService aService);
     }
 }

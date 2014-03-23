@@ -1,4 +1,4 @@
-﻿namespace FinTsPersistence.Actions
+﻿namespace FinTsPersistence.Actions.Result
 {
     /// <summary>
     /// Indicates a problem that happened even if all input data was set up correctly 
