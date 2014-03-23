@@ -72,15 +72,5 @@ namespace FinTsPersistence.Actions
         {
             return aService.CreateRemitt(m_aRemitt);
         }
-
-        public override bool GoOnline
-        {
-            get { return true; }
-        }
-
-        public override bool DoSync
-        {
-            get { return false; }
-        }
     }
 }

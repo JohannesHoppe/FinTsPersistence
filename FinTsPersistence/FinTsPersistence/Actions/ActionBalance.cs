@@ -70,15 +70,5 @@ namespace FinTsPersistence.Actions
                 sb.Append(Environment.NewLine);
             }
         }
-
-        public override bool GoOnline
-        {
-            get { return true; }
-        }
-
-        public override bool DoSync
-        {
-            get { return false; }
-        }
     }
 }

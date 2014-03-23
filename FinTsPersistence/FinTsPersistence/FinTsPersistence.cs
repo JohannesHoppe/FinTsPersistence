@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Specialized;
 using System.IO;
+using FinTsPersistence.Actions;
 using FinTsPersistence.Interfaces;
 using Subsembly.FinTS;
 
@@ -21,7 +22,7 @@ namespace FinTsPersistence
             this.tanSourceFactory = tanSourceFactory;
         }
 
-        public int DoAction(string action, StringDictionary arguments)
+        public ActionResult DoAction(string action, StringDictionary arguments)
         {
             // In jedem Fall wird die PIN oder der Dialogkontext zur Fortführung benötigt.
             string pin = arguments["-pin"];
@@ -60,45 +61,33 @@ namespace FinTsPersistence
             }
 
             FinService service = FinServiceCreator.GetFinService(contact, dialog, arguments);
-
-            int nResult = -2;
+            ActionResult result = new ActionResult(Status.Unknown);
 
             try
             {
                 service.ClearDocket();
 
-                if (cmd.DoSync)
+                if (!service.Online)
                 {
-                    if (!service.Synchronize(pin))
+                    // Hinweis: eine erforderliche Synchronisierung wird von LogOn immer automatisch durchführt.
+                    if (!service.LogOn(pin))
                     {
-                        nResult = -3;
+                        result = new ActionResult(Status.CouldNotLogOn);
                         goto _done;
                     }
-                }
-                
-                if (cmd.GoOnline)
-                {
-                    if (!service.Online)
+                } 
+
+                if (service.Online) {
+
+                    result = cmd.Execute(service, tanSource);
+
+                    if (suspend != null)
                     {
-                        if (!service.LogOn(pin))
-                        {
-                            nResult = -3;
-                            goto _done;
-                        }
-                    } 
-
-                    if (service.Online) {
-
-                        nResult = cmd.Execute(service, tanSource);
-
-                        if (suspend != null)
-                        {
-                            service.Dialog.SaveAs(suspend);
-                        }
-                        else
-                        {
-                            service.LogOff();
-                        }
+                        service.Dialog.SaveAs(suspend);
+                    }
+                    else
+                    {
+                        service.LogOff();
                     }
                 }
 
@@ -128,7 +117,7 @@ namespace FinTsPersistence
                 // getrennt werden kann.
                 Console.Error.WriteLine(service.Docket);
 
-                if (nResult != -3)
+                if (result.Status != Status.CouldNotLogOn)
                 {
                     string sResponseData = cmd.GetResponseData(service);
                     if (sResponseData != null)
@@ -147,7 +136,7 @@ namespace FinTsPersistence
                 service.Dispose();
             }
 
-            return nResult;
+            return result;
         }  
     }
 }

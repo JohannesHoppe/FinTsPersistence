@@ -1,4 +1,5 @@
 using System.Collections.Specialized;
+using FinTsPersistence.Actions;
 using Subsembly.FinTS;
 
 namespace FinTsPersistence.Interfaces
@@ -7,12 +8,8 @@ namespace FinTsPersistence.Interfaces
     {
         bool Parse(string action, StringDictionary arguments);
 
-        int Execute(FinService service, ITanSource tanSource);
+        ActionResult Execute(FinService service, ITanSource tanSource);
 
         string GetResponseData(FinService aService);
-
-        bool GoOnline { get; }
-
-        bool DoSync { get; }
     }
 }

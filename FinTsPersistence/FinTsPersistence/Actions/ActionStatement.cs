@@ -188,15 +188,5 @@ namespace FinTsPersistence.Actions
             return Encoding.GetEncoding(1252).GetString(
                 aBufMT942.Bytes, aBufMT942.Offset, aBufMT942.Length);
         }
-
-        public override bool GoOnline
-        {
-            get { return true; }
-        }
-
-        public override bool DoSync
-        {
-            get { return false; }
-        }
     }
 }

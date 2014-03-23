@@ -1,5 +1,7 @@
-﻿using FintTsPersistenceIntegrationTests.Helper;
+﻿using FinTsPersistence.Actions;
+using FintTsPersistenceIntegrationTests.Helper;
 using Machine.Specifications;
+using Status = FinTsPersistence.Actions.Status;
 
 #pragma warning disable 169
 namespace FintTsPersistenceIntegrationTests
@@ -10,7 +12,6 @@ namespace FintTsPersistenceIntegrationTests
         static string contactfileLocation;
         static string cmdArgumentsLocation;
         private static CmdArguments cmdArguments;
-
 
         Because of = () =>
         {
@@ -35,7 +36,7 @@ namespace FintTsPersistenceIntegrationTests
     {
         static string contactfileLocation;
         static CmdArguments cmdArguments;
-        static int exitCode;
+        static ActionResult result;
 
         Establish context = () =>
         {
@@ -43,7 +44,7 @@ namespace FintTsPersistenceIntegrationTests
             cmdArguments = IntegrationTestData.GetCmdArguments();
         };
 
-        Because of = () => exitCode = FinTsPersistence.Start.Main(new[]
+        Because of = () => result = FinTsPersistence.Start.DoAction(new[]
             {
                 "balance", 
                 "-contactfile", contactfileLocation,
@@ -52,18 +53,19 @@ namespace FintTsPersistenceIntegrationTests
                 "-acctbankcode", cmdArguments.Acctbankcode
             });
 
-        It the_exit_code_should_equal_20 = () => exitCode.ShouldEqual(20);
+        It should_execute_succesfully = () => result.Success.ShouldBeTrue();
+        It should_have_status_ok = () => result.Status.ShouldEqual(Status.Success);
     }
 
     /// <summary>
-    /// Just syncing
+    /// Getting a CSV statement
     /// </summary>
     [Subject("FinTsPersistence")]
-    public class when_syncing
+    public class when_receiving_a_csv_statement
     {
         static string contactfileLocation;
         static CmdArguments cmdArguments;
-        static int exitCode;
+        static ActionResult result;
 
         Establish context = () =>
         {
@@ -71,16 +73,19 @@ namespace FintTsPersistenceIntegrationTests
             cmdArguments = IntegrationTestData.GetCmdArguments();
         };
 
-        Because of = () => exitCode = FinTsPersistence.Start.Main(new[]
+        Because of = () => result = FinTsPersistence.Start.DoAction(new[]
             {
-                "sync", 
+                "statement", 
                 "-contactfile", contactfileLocation,
                 "-pin", cmdArguments.Pin,
                 "-acctno", cmdArguments.Acctno,
-                "-acctbankcode", cmdArguments.Acctbankcode
+                "-acctbankcode", cmdArguments.Acctbankcode,
+                "-format", "csv",
+                "-fromdate", "2014-03-10"
             });
 
-        It the_exit_code_should_equal_minus2 = () => exitCode.ShouldEqual(-2);
+        It should_execute_succesfully = () => result.Success.ShouldBeTrue();
+        It should_have_status_ok = () => result.Status.ShouldEqual(Status.Success);
     }
 }
 #pragma warning restore 169

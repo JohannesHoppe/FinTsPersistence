@@ -121,15 +121,5 @@ namespace FinTsPersistence.Actions
 
             return aSyntax;
         }
-
-        public override bool GoOnline
-        {
-            get { return true; }
-        }
-
-        public override bool DoSync
-        {
-            get { return false; }
-        }
     }
 }

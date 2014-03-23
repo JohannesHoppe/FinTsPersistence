@@ -14,12 +14,12 @@ namespace FinTsPersistence.Actions
             return OnParse(action, arguments);
         }
 
-        public virtual int Execute(FinService service, ITanSource tanSource)
+        public virtual ActionResult Execute(FinService service, ITanSource tanSource)
         {
             order = OnCreateOrder(service);
             if (order == null)
             {
-                return -1;
+                return new ActionResult(Status.CouldNotCreateOrder);
             }
 
             FinServiceResult result = service.SendOrder(order);
@@ -29,7 +29,7 @@ namespace FinTsPersistence.Actions
                 string tan = tanSource.GetTan(service);
                 if (tan == null)
                 {
-                    return -1;
+                    return new ActionResult(Status.CouldNotCreateOrder);
                 }
 
                 result = service.SendTan(tan);
@@ -48,24 +48,36 @@ namespace FinTsPersistence.Actions
                     }
                 }
 
-                return -1;
+                return new ActionResult(Status.NeedTanMediaName);
             }
 
             if (result == FinServiceResult.Fatal)
             {
-                return -1;
+                return new ActionResult(Status.FatalResult);
             }
 
             // Als Rückgabewert wird der höchste Rückmeldecode aus dem HIRMS genommen.
             // Wurde kein HIRMS übermittelt wird als Rückgabewert 0 eingesetzt.
-            int nResult = 0;
+            int orderStatusCode = 0;
             if (order.StatusSegment != null)
             {
                 int nIndex = order.StatusSegment.FindMax();
-                nResult = order.StatusSegment.GetStatusCode(nIndex);
+                orderStatusCode = order.StatusSegment.GetStatusCode(nIndex);
             }
 
-            return nResult;
+            if (result == FinServiceResult.Error)
+            {
+                return new ActionResult(Status.ErrorResult, false, orderStatusCode);
+            }
+
+            if (result == FinServiceResult.Success)
+            {
+                return new ActionResult(Status.Success, true, orderStatusCode);
+            }
+
+            throw new Exception("The enum FinServiceResult has been changed! " +
+                                "Known states: NeedTan, NeedTanMediaName, Fatal, Error, Success " +
+                                "New: " + result);
         }
 
         public virtual string GetResponseData(FinService aService)
@@ -81,9 +93,5 @@ namespace FinTsPersistence.Actions
         {
             return null;
         }
-
-        public abstract bool GoOnline { get; }
-
-        public abstract bool DoSync { get; }
     }
 }

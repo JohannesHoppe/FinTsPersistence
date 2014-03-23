@@ -37,10 +37,6 @@ namespace FinTsPersistence.Bootstrap
                    .As<IAction>()
                    .WithMetadata(ActionFactory.ActionName, ActionSepa.ActionName);
 
-            builder.RegisterType<ActionSync>()
-                   .As<IAction>()
-                   .WithMetadata(ActionFactory.ActionName, ActionSync.ActionName);
-
             builder.RegisterType<ActionFactory>()
                     .As<IActionFactory>();
 
