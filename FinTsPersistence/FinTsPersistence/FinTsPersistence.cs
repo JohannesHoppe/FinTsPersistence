@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Specialized;
 using System.IO;
-using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
 using FinTsPersistence.Interfaces;
 using Subsembly.FinTS;
@@ -121,16 +120,16 @@ namespace FinTsPersistence
                 if (result.Status != Status.CouldNotLogOn)
                 {
                     ResponseData responseData = cmd.GetResponseData(service);
-                    if (responseData != null)
+                    if (responseData.Formatted != null)
                     {
                         Console.WriteLine(responseData.Formatted);
                     }
+                    result.Response = responseData;
                 }
             }
             catch (Exception x)
             {
-                Console.Error.WriteLine(service.Trace);
-                Console.Error.WriteLine(x.ToString());
+                throw new ActionException(x, service.Trace);
             }
             finally
             {

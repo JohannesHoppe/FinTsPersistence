@@ -28,5 +28,10 @@
         /// Wurde kein HIRMS übermittelt wird als Rückgabewert 0 eingesetzt.
         /// </summary>
         public int OrderStatusCode { private set; get; }
+
+        /// <summary>
+        /// Data from the actions
+        /// </summary>
+        public ResponseData Response { set; get; }
     }
 }
