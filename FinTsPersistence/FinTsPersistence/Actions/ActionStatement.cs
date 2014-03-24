@@ -2,7 +2,7 @@ using System;
 using System.Collections.Specialized;
 using System.Text;
 using FinTsPersistence.Actions.Result;
-using FinTsPersistence.Csv;
+using FinTsPersistence.Actions.Result.Csv;
 using Subsembly.FinTS;
 using Subsembly.Swift;
 

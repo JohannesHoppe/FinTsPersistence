@@ -105,11 +105,14 @@
       <Name>System</Name>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\Result\ActionException.cs" />
     <Compile Include="Actions\Result\ActionResult.cs" />
     <Compile Include="Actions\ActionPersist.cs" />
     <Compile Include="Actions\Result\ResponseData.cs" />
@@ -129,9 +132,9 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Csv\CsvFile.cs" />
-    <Compile Include="Csv\CsvParser.cs" />
-    <Compile Include="Csv\CsvValues.cs" />
+    <Compile Include="Actions\Result\Csv\CsvFile.cs" />
+    <Compile Include="Actions\Result\Csv\CsvParser.cs" />
+    <Compile Include="Actions\Result\Csv\CsvValues.cs" />
     <Compile Include="Actions\ActionBalance.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -165,6 +168,12 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Text;
 using System.IO;
 
-namespace FinTsPersistence.Csv
+namespace FinTsPersistence.Actions.Result.Csv
 {
     public class CsvFile : IDisposable
     {

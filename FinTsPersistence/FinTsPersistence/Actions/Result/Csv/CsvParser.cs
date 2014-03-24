@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 
-namespace FinTsPersistence.Csv
+namespace FinTsPersistence.Actions.Result.Csv
 {
     public class CsvParser
     {

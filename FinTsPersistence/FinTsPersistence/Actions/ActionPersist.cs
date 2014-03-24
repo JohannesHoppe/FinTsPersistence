@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Text;
 using FinTsPersistence.Actions.Result;
-using FinTsPersistence.Csv;
 using Subsembly.FinTS;
 using Subsembly.Swift;
 

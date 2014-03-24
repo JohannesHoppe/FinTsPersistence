@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
-namespace FinTsPersistence.Csv
+namespace FinTsPersistence.Actions.Result.Csv
 {
     /// <summary>
     /// Contains the CSV values of a single CSV line.

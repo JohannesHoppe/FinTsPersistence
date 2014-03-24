@@ -86,6 +86,7 @@ namespace FintTsPersistenceIntegrationTests
 
         It should_execute_succesfully = () => result.Success.ShouldBeTrue();
         It should_have_status_ok = () => result.Status.ShouldEqual(Status.Success);
+        It should_return_a_list_of_transactions = () => result.Response.Transactions.ShouldNotBeEmpty();
     }
 }
 #pragma warning restore 169
