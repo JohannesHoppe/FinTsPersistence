@@ -2,7 +2,6 @@
 using System.Collections;
 using System.IO;
 using System.Linq;
-using FinTsPersistence.Interfaces;
 using Subsembly.FinTS;
 
 namespace FinTsPersistence.TanSources

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Specialized;
 using FinTsPersistence.Actions.Result;
-using FinTsPersistence.Interfaces;
+using FinTsPersistence.TanSources;
 using Subsembly.FinTS;
 
 namespace FinTsPersistence.Actions

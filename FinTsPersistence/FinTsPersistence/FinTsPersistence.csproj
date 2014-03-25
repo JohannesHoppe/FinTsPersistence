@@ -117,17 +117,26 @@
     <Compile Include="Actions\ActionPersist.cs" />
     <Compile Include="Actions\Result\ResponseData.cs" />
     <Compile Include="Actions\Result\Status.cs" />
-    <Compile Include="Actions\Result\Transaction.cs" />
-    <Compile Include="Factories\ActionFactory.cs" />
-    <Compile Include="Bootstrap\CommandLineHelper.cs" />
-    <Compile Include="Bootstrap\ExtractedArguments.cs" />
-    <Compile Include="Bootstrap\ContainerConfig.cs" />
-    <Compile Include="Factories\TanSourceFactory.cs" />
+    <Compile Include="Actions\Result\FintTsTransaction.cs" />
+    <Compile Include="Actions\ActionFactory.cs" />
+    <Compile Include="App_Start\CommandLineHelper.cs" />
+    <Compile Include="App_Start\ExtractedArguments.cs" />
+    <Compile Include="App_Start\ContainerConfig.cs" />
+    <Compile Include="Model\SpecialCase.cs" />
+    <Compile Include="Model\Transaction.cs" />
+    <Compile Include="Model\TransactionContext.cs" />
+    <Compile Include="TanSources\TanSourceFactory.cs" />
     <Compile Include="FinContactCreator.cs" />
     <Compile Include="FinServiceCreator.cs" />
-    <Compile Include="Interfaces\ITanSourceFactory.cs" />
-    <Compile Include="Interfaces\IActionFactory.cs" />
-    <Compile Include="Interfaces\IFinTsPersistence.cs" />
+    <Compile Include="TanSources\ITanSourceFactory.cs">
+      <DependentUpon>TanSourceFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Actions\IActionFactory.cs">
+      <DependentUpon>ActionFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IFinTsPersistence.cs">
+      <DependentUpon>FinTsPersistence.cs</DependentUpon>
+    </Compile>
     <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -157,10 +166,10 @@
     <Compile Include="Actions\ActionXml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Interfaces\IAction.cs">
+    <Compile Include="Actions\IAction.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Interfaces\ITanSource.cs" />
+    <Compile Include="TanSources\ITanSource.cs" />
     <Content Include="Database.ico" />
     <EmbeddedResource Include="FinTsPersistenceUsage.txt" />
     <EmbeddedResource Include="syntax.xml" />
@@ -172,9 +181,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

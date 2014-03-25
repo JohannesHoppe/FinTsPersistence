@@ -1,6 +1,6 @@
 ﻿using Subsembly.FinTS;
 
-namespace FinTsPersistence.Interfaces
+namespace FinTsPersistence.TanSources
 {
     public interface ITanSource
     {

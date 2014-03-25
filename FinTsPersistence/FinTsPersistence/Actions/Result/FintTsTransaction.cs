@@ -2,9 +2,16 @@
 
 namespace FinTsPersistence.Actions.Result
 {
-    public class Transaction
+    /// <summary>
+    /// Holds all relevant information about one transaction which was revieved via FinTS/HBCI
+    /// </summary>
+    public class FintTsTransaction
     {
-        public Transaction(
+        public FintTsTransaction()
+        {
+        }
+
+        public FintTsTransaction(
             DateTime entryDate,
             DateTime valueDate,
             decimal value,
@@ -45,7 +52,7 @@ namespace FinTsPersistence.Actions.Result
         public DateTime EntryDate
         {
             get;
-            private set;
+            set;
         }
 
         /// <summary>
@@ -55,7 +62,7 @@ namespace FinTsPersistence.Actions.Result
         public DateTime ValueDate
         {
             get;
-            private set;
+            set;
         }
 
         /// <summary>
@@ -64,7 +71,7 @@ namespace FinTsPersistence.Actions.Result
         public decimal Value
         {
             get;
-            private set;
+            set;
         }
 
         /// <summary>
@@ -73,7 +80,7 @@ namespace FinTsPersistence.Actions.Result
         public string AccountNumber
         {
             get;
-            private set;
+            set;
         }
 
         /// <summary>
@@ -82,7 +89,7 @@ namespace FinTsPersistence.Actions.Result
         public string BankCode
         {
             get;
-            private set;
+            set;
         }
 
         /// <summary>
@@ -91,7 +98,7 @@ namespace FinTsPersistence.Actions.Result
         public string Name
         {
             get;
-            private set;
+            set;
         }
 
         /// <summary>
@@ -109,7 +116,7 @@ namespace FinTsPersistence.Actions.Result
         public string EntryText
         {
             get;
-            private set;
+            set;
         }
 
         /// <summary>
@@ -118,16 +125,16 @@ namespace FinTsPersistence.Actions.Result
         public string PrimaNotaNumber
         {
             get;
-            private set;
+            set;
         }
 
         /// <summary>
-        /// The Transaction Type Identification Code (Buchungsschlüssel) of this transaction.
+        /// The FintTsTransaction Type Identification Code (Buchungsschlüssel) of this transaction.
         /// </summary>
         public string TransactionTypeIdentificationCode
         {
             get;
-            private set;
+            set;
         }
 
         /// <summary>
@@ -136,7 +143,7 @@ namespace FinTsPersistence.Actions.Result
         public string TransactionZkaCode
         {
             get;
-            private set;
+            set;
         }
 
         /// <summary>
@@ -145,7 +152,7 @@ namespace FinTsPersistence.Actions.Result
         public string TextKeyExtension
         {
             get;
-            private set;
+            set;
         }
 
         /// <summary>
@@ -154,7 +161,7 @@ namespace FinTsPersistence.Actions.Result
         public string BankReference
         {
             get;
-            private set;
+            set;
         }
 
         /// <summary>
@@ -163,7 +170,7 @@ namespace FinTsPersistence.Actions.Result
         public string OwnerReference
         {
             get;
-            private set;
+            set;
         }
 
         /// <summary>
@@ -172,7 +179,7 @@ namespace FinTsPersistence.Actions.Result
         public string SupplementaryDetails
         {
             get;
-            private set;
+            set;
         }
     }
 }

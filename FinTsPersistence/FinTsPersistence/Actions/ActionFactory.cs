@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Autofac.Features.Metadata;
-using FinTsPersistence.Interfaces;
 
-namespace FinTsPersistence.Factories
+namespace FinTsPersistence.Actions
 {
     /// <summary>
     /// Resolves the right action (actuall FinTS/HBCI job to do) via the given name

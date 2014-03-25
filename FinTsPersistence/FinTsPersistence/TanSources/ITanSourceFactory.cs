@@ -1,6 +1,6 @@
 ﻿using System.Collections.Specialized;
 
-namespace FinTsPersistence.Interfaces
+namespace FinTsPersistence.TanSources
 {
     public interface ITanSourceFactory
     {

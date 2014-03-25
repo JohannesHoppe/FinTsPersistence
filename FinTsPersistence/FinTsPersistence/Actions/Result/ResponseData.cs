@@ -6,7 +6,7 @@ namespace FinTsPersistence.Actions.Result
     {
         public ResponseData()
         {
-            Transactions = new List<Transaction>();  
+            Transactions = new List<FintTsTransaction>();  
         }
 
         /// <summary>
@@ -17,6 +17,6 @@ namespace FinTsPersistence.Actions.Result
         /// <summary>
         /// Data from action 'ActionPersist'
         /// </summary>
-        public List<Transaction> Transactions { get; set; }           
+        public List<FintTsTransaction> Transactions { get; set; }           
     }
 }

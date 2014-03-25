@@ -1,8 +1,6 @@
 using System;
-using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
-using FinTsPersistence.Bootstrap;
-using FinTsPersistence.Interfaces;
+using FinTsPersistence.App_Start;
 
 namespace FinTsPersistence
 {   
@@ -32,9 +30,13 @@ namespace FinTsPersistence
             }
             catch (ArgumentException ex)
             {
-                Console.Error.WriteLine(ex.Message);
+                CommandLineHelper.DisplayShortException(ex);
                 CommandLineHelper.ShowUsage();
-            }     
+            }
+            catch (ActionException ex)
+            {
+                CommandLineHelper.DisplayActionException(ex);
+            }  
             catch (Exception ex)
             {
                 CommandLineHelper.DisplayException(ex);

@@ -1,5 +1,4 @@
-﻿using FinTsPersistence.Interfaces;
-using Subsembly.FinTS;
+﻿using Subsembly.FinTS;
 
 namespace FinTsPersistence.TanSources
 {

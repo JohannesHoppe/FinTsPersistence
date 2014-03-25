@@ -1,4 +1,4 @@
-﻿namespace FinTsPersistence.Interfaces
+﻿namespace FinTsPersistence.Actions
 {
     public interface IActionFactory
     {

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Specialized;
 using System.IO;
+using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
-using FinTsPersistence.Interfaces;
+using FinTsPersistence.TanSources;
 using Subsembly.FinTS;
 
 namespace FinTsPersistence
@@ -32,7 +33,7 @@ namespace FinTsPersistence
             // Wird beides nicht mitgegeben, so wird die TAN auf der Kommandozeile abgefragt.
             ITanSource tanSource = tanSourceFactory.GetTanSource(arguments);
 
-            // Optional kann eine Datei für den HBCI-Trace angegeben werden.
+            // Optional kann eine Datei für den HBCI-FinTsTrace angegeben werden.
             string traceFile = arguments["-trace"];
 
             // Wird der Schalter -suspend angegeben, so wird nach der Aktion keine
@@ -102,7 +103,7 @@ namespace FinTsPersistence
                     contact.SaveAs(sContactFile);
                 }
 
-                // Wurde eine Tracedatei angegeben, so wird der komplette HBCI Trace in diese
+                // Wurde eine Tracedatei angegeben, so wird der komplette HBCI FinTsTrace in diese
                 // Datei geschrieben.
                 if (traceFile != null)
                 {

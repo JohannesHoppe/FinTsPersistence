@@ -1,10 +1,8 @@
 ﻿using Autofac;
 using FinTsPersistence.Actions;
-using FinTsPersistence.Factories;
-using FinTsPersistence.Interfaces;
 using FinTsPersistence.TanSources;
 
-namespace FinTsPersistence.Bootstrap
+namespace FinTsPersistence.App_Start
 {
     /// <summary>
     /// Wires up Autofac

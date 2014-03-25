@@ -7,9 +7,9 @@ namespace FinTsPersistence.Actions.Result
         public ActionException(Exception innerException, string trace)
             : base("An unexpected exceptio orrured while executing the action.", innerException)
         {
-            Trace = trace;
+            FinTsTrace = trace;
         }
 
-        public string Trace { get; private set; }
+        public string FinTsTrace { get; private set; }
     }
 }

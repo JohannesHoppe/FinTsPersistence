@@ -1,8 +1,6 @@
 ﻿using System.Collections.Specialized;
-using FinTsPersistence.Interfaces;
-using FinTsPersistence.TanSources;
 
-namespace FinTsPersistence.Factories
+namespace FinTsPersistence.TanSources
 {
     /// <summary>
     /// Resolves the best source the receive the required TAN, fallback is a prompt on command line!

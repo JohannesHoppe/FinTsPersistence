@@ -4,8 +4,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using FinTsPersistence.Actions.Result;
 
-namespace FinTsPersistence.Bootstrap
+namespace FinTsPersistence.App_Start
 {
     public static class CommandLineHelper
     {
@@ -78,11 +79,37 @@ namespace FinTsPersistence.Bootstrap
             Console.Error.WriteLine(sUsage);
         }
 
-        public static void DisplayException(Exception x)
+        public static void DisplayShortException(Exception ex)
         {
-            Console.Error.WriteLine("Exception " + x.Message + "!");
-            Console.Error.WriteLine(x.ToString());
-            Debug.Fail(x.Message);
+            Console.Error.WriteLine("Exception: {0}", ex.GetType());
+            Console.Error.WriteLine("Message: {0}", ex.Message);
+            Console.Error.WriteLine("-----------------------------");
+        }
+
+        public static void DisplayActionException(ActionException ex)
+        {
+            Console.Error.WriteLine("Exception: {0}", ex.GetType());
+            Console.Error.WriteLine("Message: {0}", ex.Message);
+            Console.Error.WriteLine("-----------------------------");
+            Console.Error.WriteLine(ex.ToString());
+            Console.Error.WriteLine("-----------------------------");
+
+            if (ex.InnerException != null)
+            {
+                Console.Error.WriteLine("Inner Exception: {0}", ex.InnerException.GetType());
+                Console.Error.WriteLine("Inner Message: {0}", ex.InnerException.Message);
+            }
+            Console.Error.WriteLine("-----------------------------");
+            Console.Error.WriteLine("FinTS Trace:");
+        }
+
+        public static void DisplayException(Exception ex)
+        {
+            Console.Error.WriteLine("Exception: {0}", ex.GetType());
+            Console.Error.WriteLine("Message: {0}", ex.Message);
+            Console.Error.WriteLine("-----------------------------");
+            Console.Error.WriteLine(ex.ToString());
+            Console.Error.WriteLine("-----------------------------");
         }
 
         public static void WaitForEnterOnDebug()
