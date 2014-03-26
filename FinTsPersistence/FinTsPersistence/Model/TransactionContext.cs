@@ -3,15 +3,17 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace FinTsPersistence.Model
 {
-    public class TransactionContext : DbContext
+    /// <summary>
+    /// A mockable data context (EF Code First)
+    /// </summary>
+    public class TransactionContext : DbContext, ITransactionContext
     {
-
-        public TransactionContext()
+        public TransactionContext() 
             : base("TransactionContext")
         {
         }
 
-        public DbSet<Transaction> Transactions { get; set; }
+        public IDbSet<Transaction> Transactions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
