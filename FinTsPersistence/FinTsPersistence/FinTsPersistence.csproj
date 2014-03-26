@@ -86,12 +86,6 @@
     <Reference Include="Autofac">
       <HintPath>..\packages\Autofac.3.3.0\lib\net40\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Subsembly.FinTS">
       <HintPath>..\Assemblies\Subsembly.FinTS.dll</HintPath>
     </Reference>
@@ -122,6 +116,7 @@
     <Compile Include="App_Start\CommandLineHelper.cs" />
     <Compile Include="App_Start\ExtractedArguments.cs" />
     <Compile Include="App_Start\ContainerConfig.cs" />
+    <Compile Include="Model\ITransactionContext.cs" />
     <Compile Include="Model\SpecialCase.cs" />
     <Compile Include="Model\Transaction.cs" />
     <Compile Include="Model\TransactionContext.cs" />
