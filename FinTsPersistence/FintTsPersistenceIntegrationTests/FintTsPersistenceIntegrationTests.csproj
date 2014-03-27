@@ -56,10 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FinTsPersistence.when_receiving_data_to_persist.cs" />
     <Compile Include="Helper\IntegrationTestData.cs" />
     <Compile Include="Helper\CmdArguments.cs" />
     <Compile Include="Helper\XmlParser.cs" />
-    <Compile Include="StatementTests.cs" />
+    <Compile Include="FinTsPersistence.when_receiving_a_csv_statement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FinTsPersistence.when_setting_up_integration_test.cs" />
     <Compile Include="FinTsPersistence.when_receiving_a_balance.cs" />
