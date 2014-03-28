@@ -25,6 +25,13 @@ namespace FinTsPersistence.Model
             context.SaveChanges();
         }
 
+        public Transaction GetLastTransaction()
+        {
+            return (from t in context.Transactions
+                    orderby t.TransactionId
+                    select t).FirstOrDefault();
+        }
+
         public IEnumerable<Transaction> GetLastTransactions(int amountOfDays)
         {
             return new List<Transaction>();
