@@ -35,6 +35,10 @@ namespace FinTsPersistence.App_Start
                    .As<IAction>()
                    .WithMetadata(ActionFactory.ActionName, ActionSepa.ActionName);
 
+            builder.RegisterType<ActionPersist>()
+                   .As<IAction>()
+                   .WithMetadata(ActionFactory.ActionName, ActionPersist.ActionName);
+
             builder.RegisterType<ActionFactory>()
                     .As<IActionFactory>();
 
