@@ -87,11 +87,9 @@
       <HintPath>..\packages\Autofac.3.3.0\lib\net40\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Subsembly.FinTS">
@@ -124,9 +122,13 @@
     <Compile Include="App_Start\ExtractedArguments.cs" />
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="Model\ITransactionContext.cs" />
+    <Compile Include="Model\ITransactionRepository.cs">
+      <DependentUpon>TransactionRepository.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\SpecialCase.cs" />
     <Compile Include="Model\Transaction.cs" />
     <Compile Include="Model\TransactionContext.cs" />
+    <Compile Include="Model\TransactionRepository.cs" />
     <Compile Include="TanSources\TanSourceFactory.cs" />
     <Compile Include="FinContactCreator.cs" />
     <Compile Include="FinServiceCreator.cs" />

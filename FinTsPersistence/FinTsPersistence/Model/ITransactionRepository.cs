@@ -5,6 +5,6 @@ namespace FinTsPersistence.Model
     public interface ITransactionRepository
     {
         void SaveTransactions(IEnumerable<Transaction> transactions);
-        void GetLastTransactions(int amountOfDays);
+        IEnumerable<Transaction> GetLastTransactions(int amountOfDays);
     }
 }

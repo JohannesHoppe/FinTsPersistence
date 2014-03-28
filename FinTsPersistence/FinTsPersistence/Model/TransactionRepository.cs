@@ -25,9 +25,9 @@ namespace FinTsPersistence.Model
             context.SaveChanges();
         }
 
-        public void GetLastTransactions(int amountOfDays)
+        public IEnumerable<Transaction> GetLastTransactions(int amountOfDays)
         {
-            
+            return new List<Transaction>();
         }
     }
 }
