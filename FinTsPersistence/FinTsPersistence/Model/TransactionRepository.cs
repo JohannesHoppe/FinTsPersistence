@@ -27,8 +27,13 @@ namespace FinTsPersistence.Model
 
         public Transaction GetLastTransaction()
         {
+            if (!context.Transactions.Any())
+            {
+                return new NoTransaction();
+            }
+
             return (from t in context.Transactions
-                    orderby t.TransactionId
+                    orderby t.TransactionId descending
                     select t).FirstOrDefault();
         }
 

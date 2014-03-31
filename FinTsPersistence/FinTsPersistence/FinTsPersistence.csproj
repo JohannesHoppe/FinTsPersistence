@@ -125,6 +125,8 @@
     <Compile Include="Model\ITransactionRepository.cs">
       <DependentUpon>TransactionRepository.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\NoTransaction.cs" />
+    <Compile Include="Model\NoTransactionExtension.cs" />
     <Compile Include="Model\SpecialCase.cs" />
     <Compile Include="Model\Transaction.cs" />
     <Compile Include="Model\TransactionContext.cs" />

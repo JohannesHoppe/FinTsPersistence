@@ -66,12 +66,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TransactionRepository.when_trying_to_get_last_transaction.cs" />
+    <Compile Include="from_TransactionRepository_with_no_transactions.cs" />
+    <Compile Include="from_TransactionRepository_with_six_transactions.cs" />
+    <Compile Include="TransactionRepository.when_getting_last_transaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <Compile Include="TransactionRepository.when_retuning_last_transactions.cs" />
+    <Compile Include="TransactionRepository.when_getting_last_transactions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FinTsPersistence\FinTsPersistence.csproj">

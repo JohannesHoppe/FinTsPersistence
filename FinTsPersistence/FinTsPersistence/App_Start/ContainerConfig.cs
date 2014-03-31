@@ -48,10 +48,6 @@ namespace FinTsPersistence.App_Start
             builder.RegisterType<FinTsPersistence>()
                    .As<IFinTsPersistence>();
 
-            //perform auto-wiring
-            ////builder.RegisterAssemblyTypes(programAssembly).AsImplementedInterfaces();
-
-
             return builder.Build();
         }
 
