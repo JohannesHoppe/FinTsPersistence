@@ -39,7 +39,18 @@ namespace FinTsPersistence.Model
 
         public IEnumerable<Transaction> GetLastTransactions(int amountOfDays)
         {
-            return new List<Transaction>();
+            var lastTransaction = GetLastTransaction();
+            if (lastTransaction.IsNoTransaction())
+            {
+                return new List<Transaction>();
+            }
+
+            DateTime daysBefore = lastTransaction.EntryDate.Date.AddDays(-amountOfDays);
+
+            return (from t in context.Transactions
+                    orderby t.TransactionId ascending
+                    where t.EntryDate >= daysBefore
+                    select t).ToList();
         }
     }
 }

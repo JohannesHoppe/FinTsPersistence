@@ -13,6 +13,6 @@ namespace FintTsPersistenceTests
         static List<Transaction> result;
         Because of = () => result = repository.GetLastTransactions(2).ToList();
 
-        It should_only_return_the_requested_last_days = () => result.Should().OnlyContain(t => new[] {4, 5, 6}.Contains(t.TransactionId));
+        It should_only_return_the_requested_last_days = () => result.Should().OnlyContain(t => new[] {2, 3, 4, 5, 6}.Contains(t.TransactionId));
     }
 }

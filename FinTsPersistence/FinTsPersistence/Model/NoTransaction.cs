@@ -4,7 +4,7 @@ namespace FinTsPersistence.Model
 {
     /// <summary>
     /// NULL-Object for Transaction
-    /// Checks against properties fo that object must always result to false!
+    /// Checks against properties for that object must should result to false!
     /// </summary>
     public class NoTransaction : Transaction
     {
@@ -13,8 +13,8 @@ namespace FinTsPersistence.Model
         public NoTransaction()
         {
             TransactionId = NoTransactionId;
-            EntryDate = DateTime.MinValue;
-            ValueDate = DateTime.MinValue;
+            EntryDate = DateTime.MaxValue;
+            ValueDate = DateTime.MaxValue;
         }
     }
 }
