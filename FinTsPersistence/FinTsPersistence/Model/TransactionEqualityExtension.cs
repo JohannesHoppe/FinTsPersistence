@@ -24,6 +24,18 @@ namespace FinTsPersistence.Model
                 return false;
             }
 
+            if (trans1.EntryDate !=
+                trans2.EntryDate)
+            {
+                return false;
+            }
+
+            if (trans1.ValueDate !=
+                trans2.ValueDate)
+            {
+                return false;
+            }
+
             if (trans1.Name.Simplyfy() !=
                 trans2.Name.Simplyfy())
             {
@@ -50,11 +62,15 @@ namespace FinTsPersistence.Model
                 .Trim()
                 .Replace("\n", "")
                 .Replace("\r", "")
-                .Replace("ß", "")
+                .Replace("ß", "S")
                 .ToUpper(CultureInfo.InvariantCulture)
-                .Replace("Ü", "")
-                .Replace("Ä", "")
-                .Replace("Ö", "");
+                .Replace("Ü", "U")
+                .Replace("Ä", "A")
+                .Replace("Ö", "O")
+                .Replace("SS", "S")
+                .Replace("UE", "U")
+                .Replace("AE", "A")
+                .Replace("OE", "O");
 
         }
     }

@@ -66,12 +66,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TransactionEqualityExtension.comparisons.cs" />
+    <Compile Include="TransactionRepository.when_comparing_very_similar_transactions_with_different_valuedate.cs" />
+    <Compile Include="TransactionRepository.when_comparing_very_similar_transactions_with_different_entrydate.cs" />
+    <Compile Include="TransactionRepository.when_comparing_totally_equal_transactions.cs" />
     <Compile Include="TransactionRepository.when_trying_to_get_last_transaction.cs" />
     <Compile Include="from_TransactionRepository_with_no_transactions.cs" />
     <Compile Include="from_TransactionRepository_with_six_transactions.cs" />
     <Compile Include="TransactionRepository.when_getting_last_transaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionRepository.when_comparing_very_similar_transactions.cs" />
+    <Compile Include="TransactionRepository.when_comparing_very_similar_transactions_with_different_value.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
