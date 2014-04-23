@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TransactionEqualityExtension.comparisons.cs" />
     <Compile Include="TransactionRepository.when_trying_to_get_last_transaction.cs" />
     <Compile Include="from_TransactionRepository_with_no_transactions.cs" />
     <Compile Include="from_TransactionRepository_with_six_transactions.cs" />

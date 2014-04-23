@@ -15,6 +15,9 @@ namespace FinTsPersistence.Model
             this.context = context;
         }
 
+        /// <summary>
+        /// Saves all given transactions
+        /// </summary>
         public void SaveTransactions(IEnumerable<Transaction> transactions)
         {
             foreach (var t in transactions)
@@ -25,6 +28,9 @@ namespace FinTsPersistence.Model
             context.SaveChanges();
         }
 
+        /// <summary>
+        /// Returns transactions with the highest TransactionId
+        /// </summary>
         public Transaction GetLastTransaction()
         {
             if (!context.Transactions.Any())
@@ -37,6 +43,9 @@ namespace FinTsPersistence.Model
                     select t).FirstOrDefault();
         }
 
+        /// <summary>
+        /// Gets last transactions by entrydate
+        /// </summary>
         public IEnumerable<Transaction> GetLastTransactions(int amountOfDays)
         {
             var lastTransaction = GetLastTransaction();

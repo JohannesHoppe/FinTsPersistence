@@ -121,7 +121,9 @@
     <Compile Include="App_Start\CommandLineHelper.cs" />
     <Compile Include="App_Start\ExtractedArguments.cs" />
     <Compile Include="App_Start\ContainerConfig.cs" />
-    <Compile Include="Model\ITransactionContext.cs" />
+    <Compile Include="Model\ITransactionContext.cs">
+      <DependentUpon>TransactionContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\ITransactionRepository.cs">
       <DependentUpon>TransactionRepository.cs</DependentUpon>
     </Compile>
@@ -130,6 +132,7 @@
     <Compile Include="Model\SpecialCase.cs" />
     <Compile Include="Model\Transaction.cs" />
     <Compile Include="Model\TransactionContext.cs" />
+    <Compile Include="Model\TransactionEqualityExtension.cs" />
     <Compile Include="Model\TransactionRepository.cs" />
     <Compile Include="TanSources\TanSourceFactory.cs" />
     <Compile Include="FinContactCreator.cs" />
