@@ -22,7 +22,7 @@ namespace FintTsPersistenceIntegrationTests
         {
             contactfileLocation = IntegrationTestData.GetContacfileLocation();
             cmdArguments = IntegrationTestData.GetCmdArguments();
-            fromDate = DateTime.Now.AddDays(-4);
+            fromDate = DateTime.Now.AddDays(-4).Date;
         };
 
         Because of = () => result = FinTsPersistence.Start.DoAction(new[]
