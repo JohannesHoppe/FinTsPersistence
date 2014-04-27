@@ -5,13 +5,13 @@ namespace FinTsPersistence.Actions.Result
     /// <summary>
     /// Holds all relevant information about one transaction which was revieved via FinTS/HBCI
     /// </summary>
-    public class FintTsTransaction
+    public class FinTsTransaction
     {
-        public FintTsTransaction()
+        public FinTsTransaction()
         {
         }
 
-        public FintTsTransaction(
+        public FinTsTransaction(
             DateTime entryDate,
             DateTime valueDate,
             decimal value,
@@ -129,7 +129,7 @@ namespace FinTsPersistence.Actions.Result
         }
 
         /// <summary>
-        /// The FintTsTransaction Type Identification Code (Buchungsschlüssel) of this transaction.
+        /// The FinTsTransaction Type Identification Code (Buchungsschlüssel) of this transaction.
         /// </summary>
         public string TransactionTypeIdentificationCode
         {

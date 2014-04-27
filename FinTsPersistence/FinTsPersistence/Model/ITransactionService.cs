@@ -5,6 +5,6 @@ namespace FinTsPersistence.Model
 {
     public interface ITransactionService
     {
-        ActionResult DoPersistence(StringDictionary argument);
+        ActionResult DoPersistence(StringDictionary arguments);
     }
 }

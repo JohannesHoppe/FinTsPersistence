@@ -1,7 +1,7 @@
 ﻿namespace FinTsPersistence.Actions.Result
 {
     /// <summary>
-    /// All recevied information regarding one action
+    /// All received information regarding one action
     /// </summary>
     public class ActionResult
     {

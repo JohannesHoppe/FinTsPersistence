@@ -117,7 +117,7 @@
     <Compile Include="Actions\ActionPersist.cs" />
     <Compile Include="Actions\Result\ResponseData.cs" />
     <Compile Include="Actions\Result\Status.cs" />
-    <Compile Include="Actions\Result\FintTsTransaction.cs" />
+    <Compile Include="Actions\Result\FinTsTransaction.cs" />
     <Compile Include="Actions\ActionFactory.cs" />
     <Compile Include="App_Start\CommandLineHelper.cs" />
     <Compile Include="App_Start\ExtractedArguments.cs" />
@@ -140,6 +140,7 @@
     <Compile Include="Model\Transaction.cs" />
     <Compile Include="Model\TransactionContext.cs" />
     <Compile Include="Model\TransactionEqualityExtension.cs" />
+    <Compile Include="Model\TransactionExtension.cs" />
     <Compile Include="Model\TransactionRepository.cs" />
     <Compile Include="Model\LazyTransactionService.cs" />
     <Compile Include="TanSources\TanSourceFactory.cs" />

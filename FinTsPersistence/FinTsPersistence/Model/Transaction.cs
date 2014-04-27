@@ -5,7 +5,7 @@ namespace FinTsPersistence.Model
     /// <summary>
     /// Holds all relevant information about one transaction as well as properties to store it in a database
     /// </summary>
-    public class Transaction : FintTsTransaction
+    public class Transaction : FinTsTransaction
     {
         /// <summary>
         /// Primary key

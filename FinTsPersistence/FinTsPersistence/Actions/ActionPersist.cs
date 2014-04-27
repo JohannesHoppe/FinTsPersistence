@@ -63,9 +63,9 @@ namespace FinTsPersistence.Actions
                        };
         }
    
-        private List<FintTsTransaction> GetTransactions(Swift9xxBase aStmt)
+        private List<FinTsTransaction> GetTransactions(Swift9xxBase aStmt)
         {
-            List<FintTsTransaction> result = new List<FintTsTransaction>();
+            List<FinTsTransaction> result = new List<FinTsTransaction>();
 
             foreach (SwiftStatementLine aStmtLine in aStmt.StatementLines)
             {
@@ -75,7 +75,7 @@ namespace FinTsPersistence.Actions
                     paymentPurpose = String.Join(Environment.NewLine, aStmtLine.PaymtPurpose);
                 }
 
-                result.Add(new FintTsTransaction(
+                result.Add(new FinTsTransaction(
                     aStmtLine.EntryDate.ToDateTime(),
                     aStmtLine.ValueDate.ToDateTime(),
                     aStmtLine.DecValue,

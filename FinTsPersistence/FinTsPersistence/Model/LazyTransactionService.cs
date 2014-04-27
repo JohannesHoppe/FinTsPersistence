@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Linq;
 using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
 using FinTsPersistence.Helper;
+using System.Linq;
 
 namespace FinTsPersistence.Model
 {
@@ -26,7 +25,7 @@ namespace FinTsPersistence.Model
     /// 
     /// Requirements & Assumption:
     /// This strategy assumes that the historic data send by the bank never changes again!
-    /// This strategy heavily relies on the EntryDate and it is 
+    /// This strategy heavily relies on the EntryDate. 
     /// </summary>
     //TODO: verification: order of transactions (by EntryDate)
     public class LazyTransactionService : ITransactionService
@@ -42,20 +41,32 @@ namespace FinTsPersistence.Model
             this.date = date;
         }
 
-        public ActionResult DoPersistence(StringDictionary argument)
+        public ActionResult DoPersistence(StringDictionary arguments)
         {
             var lastStoredTransaction = transactionRepository.GetLastTransaction();
-            var nextDayToPersist = lastStoredTransaction.EntryDate.AddDays(1);
-
-            var argumentClone = argument.NewCopy();
-            argument.Add(Arguments.FromDate, nextDayToPersist.ToIsoDate());
-
-            //argument.Add(-fromdate", fromDate.ToIsoDate());
-
+            
+            var nextDayToPersist = lastStoredTransaction.IsNoTransaction() ?
+                new DateTime(date.Now.Year, 1, 1) : 
+                lastStoredTransaction.EntryDate.AddDays(1);
 
             DateTime yesterday = date.Now.AddDays(-1);
 
-            throw new NotImplementedException();
+            arguments = arguments.NewCopy();
+            arguments.Add(Arguments.FromDate, nextDayToPersist.ToIsoDate());
+
+            ActionResult result = finTsService.DoAction(ActionPersist.ActionName, arguments);
+
+            var transactionsFilteredAndTransformed = result.Response.Transactions
+                .Where(t => t.EntryDate <= yesterday)
+                .Select(x => x.ToTransaction())
+                .ToList();
+
+            if (transactionsFilteredAndTransformed.Any())
+            {
+                transactionRepository.SaveTransactions(transactionsFilteredAndTransformed);
+            }
+
+            return result;
         }
     }
 }
