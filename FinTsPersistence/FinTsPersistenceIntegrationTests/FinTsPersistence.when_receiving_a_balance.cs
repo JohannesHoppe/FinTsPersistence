@@ -1,10 +1,10 @@
 ﻿using FinTsPersistence.Actions.Result;
-using FintTsPersistenceIntegrationTests.Helper;
+using FinTsPersistenceIntegrationTests.Helper;
 using FluentAssertions;
 using Machine.Specifications;
 using Status = FinTsPersistence.Actions.Result.Status;
 
-namespace FintTsPersistenceIntegrationTests
+namespace FinTsPersistenceIntegrationTests
 {
     /// <summary>
     /// Just receiving a balance (not required for persistence) 

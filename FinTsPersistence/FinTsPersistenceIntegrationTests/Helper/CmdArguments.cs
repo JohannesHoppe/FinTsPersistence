@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace FintTsPersistenceIntegrationTests.Helper
+namespace FinTsPersistenceIntegrationTests.Helper
 {
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRoot(Namespace = "", IsNullable = false)]

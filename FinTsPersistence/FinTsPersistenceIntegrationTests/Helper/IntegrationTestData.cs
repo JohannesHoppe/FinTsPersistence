@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace FintTsPersistenceIntegrationTests.Helper
+namespace FinTsPersistenceIntegrationTests.Helper
 {
     public static class IntegrationTestData
     {

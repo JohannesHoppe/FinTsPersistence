@@ -33,7 +33,7 @@ namespace FintTsPersistenceIntegrationTests
                 "-acctno", cmdArguments.Acctno,
                 "-acctbankcode", cmdArguments.Acctbankcode,
                 "-format", "csv",
-                "-fromdate", fromDate.ToString("yyyy-MM-dd")
+                Arguments.FromDate, fromDate.ToString("yyyy-MM-dd")
             });
 
         It should_execute_successfully = () => result.Success.Should().BeTrue();

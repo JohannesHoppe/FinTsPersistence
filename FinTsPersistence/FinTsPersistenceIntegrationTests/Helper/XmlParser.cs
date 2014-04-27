@@ -2,7 +2,7 @@
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace FintTsPersistenceIntegrationTests.Helper
+namespace FinTsPersistenceIntegrationTests.Helper
 {
     /// <summary>
     /// Parses some XML content to the given type T

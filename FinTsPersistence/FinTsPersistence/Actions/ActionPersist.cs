@@ -18,7 +18,7 @@ namespace FinTsPersistence.Actions
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {
-            string sFromDate = arguments["-fromdate"];
+            string sFromDate = arguments[Arguments.FromDate];
             if (sFromDate != null)
             {
                 fromDate = SwiftDate.Parse(sFromDate, SwiftDateFormat.StandardDate);

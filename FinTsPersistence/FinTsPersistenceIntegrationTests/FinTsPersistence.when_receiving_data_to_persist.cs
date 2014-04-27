@@ -1,14 +1,15 @@
 ﻿using System;
+using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
-using FintTsPersistenceIntegrationTests.Helper;
+using FinTsPersistenceIntegrationTests.Helper;
 using FluentAssertions;
 using Machine.Specifications;
 using Status = FinTsPersistence.Actions.Result.Status;
 
-namespace FintTsPersistenceIntegrationTests
+namespace FinTsPersistenceIntegrationTests
 {
     /// <summary>
-    /// Receving data to persist from FinTS/HBCI
+    /// Receiving data to persist from FinTS/HBCI
     /// </summary>
     [Subject("FinTsPersistence")]
     public class when_receiving_when_receiving_data_to_persist
@@ -27,13 +28,13 @@ namespace FintTsPersistenceIntegrationTests
 
         Because of = () => result = FinTsPersistence.Start.DoAction(new[]
             {
-                "persist", 
+                ActionPersist.ActionName, 
                 "-contactfile", contactfileLocation,
                 "-pin", cmdArguments.Pin,
                 "-acctno", cmdArguments.Acctno,
                 "-acctbankcode", cmdArguments.Acctbankcode,
                 "-format", "csv",
-                "-fromdate", fromDate.ToString("yyyy-MM-dd")
+                Arguments.FromDate, fromDate.ToIsoDate()
             });
 
         It should_execute_successfully = () => result.Success.Should().BeTrue();

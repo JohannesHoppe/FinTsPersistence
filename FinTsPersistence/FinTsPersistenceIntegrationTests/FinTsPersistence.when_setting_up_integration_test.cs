@@ -1,8 +1,8 @@
-﻿using FintTsPersistenceIntegrationTests.Helper;
+﻿using FinTsPersistenceIntegrationTests.Helper;
 using FluentAssertions;
 using Machine.Specifications;
 
-namespace FintTsPersistenceIntegrationTests
+namespace FinTsPersistenceIntegrationTests
 {
     /// <summary>
     /// Makes sure that all other integration tests are executable

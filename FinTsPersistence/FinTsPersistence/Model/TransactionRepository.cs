@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FinTsPersistence.Model
 {
+    /// <summary>
+    /// Stores and retrieves data from DB
+    /// 
+    /// Requirements:
+    /// The transactions to save MUST be ordered by EntryDate!! No checks are done.
+    /// </summary>
     public class TransactionRepository : ITransactionRepository
     {
         private readonly ITransactionContext context;
