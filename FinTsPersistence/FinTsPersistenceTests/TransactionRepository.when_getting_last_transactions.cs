@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using It = Machine.Specifications.It;
 
-namespace FintTsPersistenceTests
+namespace FinTsPersistenceTests
 {
     [Subject("TransactionRepository")]
     class when_getting_last_transactions : from_TransactionRepository_with_six_transactions

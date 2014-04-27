@@ -3,7 +3,7 @@ using FinTsPersistence.Model;
 using FluentAssertions;
 using Machine.Specifications;
 
-namespace FintTsPersistenceTests
+namespace FinTsPersistenceTests
 {
     [Subject("TransactionRepository")]
     class when_comparing_very_similar_transactions_with_different_valuedate

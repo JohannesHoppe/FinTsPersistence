@@ -25,19 +25,19 @@ namespace FinTsPersistence
         public ActionResult DoAction(string action, StringDictionary arguments)
         {
             // In jedem Fall wird die PIN oder der Dialogkontext zur Fortführung benötigt.
-            string pin = arguments["-pin"];
-            string resume = arguments["-resume"];
+            string pin = arguments[Arguments.Pin];
+            string resume = arguments[Arguments.Resume];
 
             // Optional kann eine TAN oder eine TAN-Liste mitgegeben werden.
             // Wird beides nicht mitgegeben, so wird die TAN auf der Kommandozeile abgefragt.
             ITanSource tanSource = tanSourceFactory.GetTanSource(arguments);
 
             // Optional kann eine Datei für den HBCI-FinTsTrace angegeben werden.
-            string traceFile = arguments["-trace"];
+            string traceFile = arguments[Arguments.Trace];
 
             // Wird der Schalter -suspend angegeben, so wird nach der Aktion keine
             // Dialogbeendigung durchgeführt, sondern einfach der Zustand in die angegebene Datei gespeichert.
-            string suspend = arguments["-suspend"];
+            string suspend = arguments[Arguments.Suspend];
 
             // Die IAction Implementierung für die gewünschte Aktion erstellen.
             IAction cmd = actionFactory.GetAction(action);
@@ -96,7 +96,7 @@ namespace FinTsPersistence
                 // Falls der Bankkontakt aus einer Datei geladen wurde, so muss diese nun noch
                 // gespeichert werden, damit auch alle am Bankkontakt erfolgten Änderungen
                 // erhalten bleiben.
-                string sContactFile = arguments["-contactfile"];
+                string sContactFile = arguments[Arguments.ContactFile];
                 if (sContactFile != null)
                 {
                     contact.SaveAs(sContactFile);

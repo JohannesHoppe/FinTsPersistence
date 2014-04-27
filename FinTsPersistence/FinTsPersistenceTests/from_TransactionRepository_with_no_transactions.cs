@@ -3,7 +3,7 @@ using FinTsPersistence.Model;
 using Machine.Specifications;
 using Moq;
 
-namespace FintTsPersistenceTests
+namespace FinTsPersistenceTests
 {
     class from_TransactionRepository_with_no_transactions
     {
@@ -12,7 +12,6 @@ namespace FintTsPersistenceTests
         internal Establish context = () =>
         {
             InMemoryDbSet<Transaction> inMemoryDbSet = new InMemoryDbSet<Transaction>(true);
-
 
             var mockedContext = new Mock<ITransactionContext>();
             mockedContext.Setup(m => m.Transactions).Returns(inMemoryDbSet);

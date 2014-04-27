@@ -4,7 +4,7 @@ using FinTsPersistence.Model;
 using Machine.Specifications;
 using Moq;
 
-namespace FintTsPersistenceTests
+namespace FinTsPersistenceTests
 {
     class from_TransactionRepository_with_six_transactions
     {

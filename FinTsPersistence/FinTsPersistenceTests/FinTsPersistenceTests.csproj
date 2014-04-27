@@ -7,8 +7,8 @@
     <ProjectGuid>{36755424-A6F6-409E-AFC5-9DD9C74A7A8F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FintTsPersistenceTests</RootNamespace>
-    <AssemblyName>FintTsPersistenceTests</AssemblyName>
+    <RootNamespace>FinTsPersistenceTests</RootNamespace>
+    <AssemblyName>FinTsPersistenceTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>

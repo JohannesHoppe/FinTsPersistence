@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Specialized;
 using System.IO;
+using FinTsPersistence.Actions;
 using Subsembly.FinTS;
 
 namespace FinTsPersistence
@@ -9,7 +10,7 @@ namespace FinTsPersistence
     {
         public static FinContact GetFinContact(StringDictionary arguments)
         {
-            string contactFile = arguments["-contactfile"];
+            string contactFile = arguments[Arguments.ContactFile];
             if (contactFile != null)
             {
                 return GetContactByFile(contactFile);

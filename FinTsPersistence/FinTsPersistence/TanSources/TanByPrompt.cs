@@ -10,12 +10,12 @@ namespace FinTsPersistence.TanSources
     {
         public string GetTan(FinService aService)
         {
-            FinTanProcessParameters aTanProc = aService.TanProcess;
+            FinTanProcessParameters tanProcess = aService.TanProcess;
             FinChallengeInfo aChallengeInfo = aService.ChallengeInfo;
 
-            if ((aTanProc != null) && (aChallengeInfo != null))
+            if ((tanProcess != null) && (aChallengeInfo != null))
             {
-                Console.Write(aTanProc.ChallengeLabel + ": ");
+                Console.Write(tanProcess.ChallengeLabel + ": ");
                 Console.WriteLine(aChallengeInfo.Challenge);
             }
 

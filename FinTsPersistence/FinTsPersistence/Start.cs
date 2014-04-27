@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Specialized;
 using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
-using FinTsPersistence.App_Start;
 using FinTsPersistence.Model;
 
 namespace FinTsPersistence
@@ -60,7 +58,7 @@ namespace FinTsPersistence
             var extractedArguments = CommandLineHelper.ExtractArguments(args);
             CommandLineHelper.CheckForPinOrResume(extractedArguments.Arguments);
 
-            if (extractedArguments.Action == ActionBalance.ActionName)
+            if (extractedArguments.Action == ActionPersist.ActionName)
             {
                 var transactionService = ContainerConfig.Resolve<ITransactionService>();
                 return transactionService.DoPersistence(extractedArguments.Arguments);

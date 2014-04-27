@@ -1,4 +1,5 @@
-﻿using FinTsPersistence.Actions.Result;
+﻿using FinTsPersistence.Actions;
+using FinTsPersistence.Actions.Result;
 using FinTsPersistenceIntegrationTests.Helper;
 using FluentAssertions;
 using Machine.Specifications;
@@ -24,11 +25,11 @@ namespace FinTsPersistenceIntegrationTests
 
         Because of = () => result = FinTsPersistence.Start.DoAction(new[]
             {
-                "balance", 
-                "-contactfile", contactfileLocation,
-                "-pin", cmdArguments.Pin,
-                "-acctno", cmdArguments.Acctno,
-                "-acctbankcode", cmdArguments.Acctbankcode
+                ActionBalance.ActionName, 
+                Arguments.ContactFile, contactfileLocation,
+                Arguments.Pin, cmdArguments.Pin,
+                Arguments.AcctNo, cmdArguments.Acctno,
+                Arguments.AcctBankCode, cmdArguments.Acctbankcode
             });
 
         It should_execute_successfully = () => result.Success.Should().BeTrue();

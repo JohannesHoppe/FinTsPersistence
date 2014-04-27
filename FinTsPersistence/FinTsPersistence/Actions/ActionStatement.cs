@@ -20,8 +20,8 @@ namespace FinTsPersistence.Actions
             CSV942,
         };
 
-        SwiftDate        m_tFromDate = SwiftDate.NullDate;
-        OutputFormat    m_nFormat = OutputFormat.CSV;
+        SwiftDate    m_tFromDate = SwiftDate.NullDate;
+        OutputFormat m_nFormat = OutputFormat.CSV;
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {
@@ -31,7 +31,7 @@ namespace FinTsPersistence.Actions
                 m_tFromDate = SwiftDate.Parse(sFromDate, SwiftDateFormat.StandardDate);
             }
 
-            string sFormat = arguments["-format"];
+            string sFormat = arguments[Arguments.Format];
             switch (sFormat)
             {
             case "csv":

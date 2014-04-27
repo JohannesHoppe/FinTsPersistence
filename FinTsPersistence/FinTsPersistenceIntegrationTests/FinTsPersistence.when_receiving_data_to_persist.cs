@@ -1,4 +1,5 @@
 ﻿using System;
+using FinTsPersistence;
 using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
 using FinTsPersistenceIntegrationTests.Helper;
@@ -26,16 +27,18 @@ namespace FinTsPersistenceIntegrationTests
             fromDate = DateTime.Now.AddDays(-4).Date;
         };
 
-        Because of = () => result = FinTsPersistence.Start.DoAction(new[]
+        Because of = () => result = ContainerConfig.Resolve<IFinTsService>().DoAction(
+            ActionPersist.ActionName,
+            CommandLineHelper.ExtractArguments(new[]
             {
-                ActionPersist.ActionName, 
-                "-contactfile", contactfileLocation,
-                "-pin", cmdArguments.Pin,
-                "-acctno", cmdArguments.Acctno,
-                "-acctbankcode", cmdArguments.Acctbankcode,
-                "-format", "csv",
+                "XXX",
+                Arguments.ContactFile, contactfileLocation,
+                Arguments.Pin, cmdArguments.Pin,
+                Arguments.AcctNo, cmdArguments.Acctno,
+                Arguments.AcctBankCode, cmdArguments.Acctbankcode,
+                Arguments.Format, "csv",
                 Arguments.FromDate, fromDate.ToIsoDate()
-            });
+            }).Arguments);
 
         It should_execute_successfully = () => result.Success.Should().BeTrue();
         It should_have_status_ok = () => result.Status.Should().Be(Status.Success);

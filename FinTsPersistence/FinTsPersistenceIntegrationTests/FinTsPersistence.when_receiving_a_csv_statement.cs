@@ -1,14 +1,15 @@
 ﻿using System;
+using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
-using FintTsPersistenceIntegrationTests.Helper;
+using FinTsPersistenceIntegrationTests.Helper;
 using FluentAssertions;
 using Machine.Specifications;
 using Status = FinTsPersistence.Actions.Result.Status;
 
-namespace FintTsPersistenceIntegrationTests
+namespace FinTsPersistenceIntegrationTests
 {
     /// <summary>
-    /// Just getting a CSV statement (not required for persistance)
+    /// Just getting a CSV statement (not required for persistence)
     /// </summary>
     [Subject("FinTsPersistence")]
     public class when_receiving_a_csv_statement
@@ -27,13 +28,13 @@ namespace FintTsPersistenceIntegrationTests
 
         Because of = () => result = FinTsPersistence.Start.DoAction(new[]
             {
-                "statement", 
-                "-contactfile", contactfileLocation,
-                "-pin", cmdArguments.Pin,
-                "-acctno", cmdArguments.Acctno,
-                "-acctbankcode", cmdArguments.Acctbankcode,
-                "-format", "csv",
-                Arguments.FromDate, fromDate.ToString("yyyy-MM-dd")
+                ActionStatement.ActionName, 
+                Arguments.ContactFile, contactfileLocation,
+                Arguments.Pin, cmdArguments.Pin,
+                Arguments.AcctNo, cmdArguments.Acctno,
+                Arguments.AcctBankCode, cmdArguments.Acctbankcode,
+                Arguments.Format, "csv",
+                Arguments.FromDate, fromDate.ToIsoDate()
             });
 
         It should_execute_successfully = () => result.Success.Should().BeTrue();

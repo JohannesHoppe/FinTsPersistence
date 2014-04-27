@@ -3,7 +3,7 @@ using FluentAssertions;
 using Machine.Specifications;
 using It = Machine.Specifications.It;
 
-namespace FintTsPersistenceTests
+namespace FinTsPersistenceTests
 {
     [Subject("TransactionRepository")]
     internal class when_comparing_totally_equal_transactions

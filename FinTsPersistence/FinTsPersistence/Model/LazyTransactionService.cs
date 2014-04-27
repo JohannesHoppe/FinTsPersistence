@@ -52,11 +52,10 @@ namespace FinTsPersistence.Model
 
             //argument.Add(-fromdate", fromDate.ToIsoDate());
 
-            finTsService.DoAction(ActionBalance.ActionName, )
 
             DateTime yesterday = date.Now.AddDays(-1);
 
-
+            throw new NotImplementedException();
         }
     }
 }

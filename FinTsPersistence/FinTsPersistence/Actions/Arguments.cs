@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FinTsPersistence.Actions
 {
@@ -10,6 +6,13 @@ namespace FinTsPersistence.Actions
     {
         public const string FromDate = "-fromdate";
         public const string ContactFile = "-contactfile";
+        public const string Pin = "-pin";
+        public const string Resume = "-resume";
+        public const string AcctNo = "-acctno";
+        public const string AcctBankCode = "-acctbankcode";
+        public const string Format = "-format";
+        public const string Trace = "-trace";
+        public const string Suspend = "-suspend";
 
         /// <summary>
         /// ISO standard date format which is yyyy-MM-dd
@@ -18,7 +21,5 @@ namespace FinTsPersistence.Actions
         {
             return date.ToString("yyyy-MM-dd");
         }
-
-
     }
 }

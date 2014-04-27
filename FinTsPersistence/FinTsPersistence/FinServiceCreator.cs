@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Specialized;
+using FinTsPersistence.Actions;
 using Subsembly.FinTS;
 
 namespace FinTsPersistence
@@ -16,7 +17,7 @@ namespace FinTsPersistence
                 throw new ArgumentNullException("contact");
             } 
 
-            string acctBankCode = arguments["-acctbankcode"] ?? contact.BankCode;
+            string acctBankCode = arguments[Arguments.AcctBankCode] ?? contact.BankCode;
             if (acctBankCode == null)
             {
                 throw new ArgumentException("Bankleitzahl zu Konto fehlt!");
@@ -27,7 +28,7 @@ namespace FinTsPersistence
                 throw new ArgumentException("Bankleitzahl zu Konto ist ungültig!");
             }
 
-            string acctNo = arguments["-acctno"];
+            string acctNo = arguments[Arguments.AcctNo];
             if (acctNo == null)
             {
                 throw new ArgumentException("Kontonummer fehlt!");

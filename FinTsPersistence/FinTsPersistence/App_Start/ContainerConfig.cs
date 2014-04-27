@@ -3,7 +3,7 @@ using FinTsPersistence.Actions;
 using FinTsPersistence.Model;
 using FinTsPersistence.TanSources;
 
-namespace FinTsPersistence.App_Start
+namespace FinTsPersistence
 {
     /// <summary>
     /// Wires up Autofac

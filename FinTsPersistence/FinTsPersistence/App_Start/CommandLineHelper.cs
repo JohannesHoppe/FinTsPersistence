@@ -4,9 +4,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
 
-namespace FinTsPersistence.App_Start
+namespace FinTsPersistence
 {
     public static class CommandLineHelper
     {
@@ -30,8 +31,8 @@ namespace FinTsPersistence.App_Start
         /// <exception cref="ArgumentException">ArgumentException</exception>
         public static void CheckForPinOrResume(StringDictionary arguments)
         {
-            string pin = arguments["-pin"];
-            string resume = arguments["-resume"];
+            string pin = arguments[Arguments.Pin];
+            string resume = arguments[Arguments.Resume];
 
             if ((pin == null) && (resume == null))
             {

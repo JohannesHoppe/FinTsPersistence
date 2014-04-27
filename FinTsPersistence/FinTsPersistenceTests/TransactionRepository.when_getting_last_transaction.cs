@@ -3,7 +3,7 @@ using FluentAssertions;
 using Machine.Specifications;
 using It = Machine.Specifications.It;
 
-namespace FintTsPersistenceTests
+namespace FinTsPersistenceTests
 {
     [Subject("TransactionRepository")]
     class when_getting_last_transaction : from_TransactionRepository_with_six_transactions
