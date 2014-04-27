@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using FinTsPersistence.Actions;
+using FinTsPersistence.Model;
 using FinTsPersistence.TanSources;
 
 namespace FinTsPersistence.App_Start
@@ -45,8 +46,11 @@ namespace FinTsPersistence.App_Start
             builder.RegisterType<TanSourceFactory>()
                     .As<ITanSourceFactory>();
 
-            builder.RegisterType<FinTsPersistence>()
-                   .As<IFinTsPersistence>();
+            builder.RegisterType<FinTsService>()
+                   .As<IFinTsService>();
+
+            builder.RegisterType<LazyTransactionService>()
+                    .As<ITransactionService>();
 
             return builder.Build();
         }

@@ -9,15 +9,14 @@ using Subsembly.FinTS;
 namespace FinTsPersistence
 {
     /// <summary>
-    /// Modified version of Subsembly FinCmd - with currently only one action: persist
-    /// FinTsPersistence {action} -{argname1} {argvalue1} ...
+    /// Uses Subsembly.FinTS to receive online-banking data
     /// </summary>
-    public class FinTsPersistence : IFinTsPersistence
+    public class FinTsService : IFinTsService
     {
         private readonly IActionFactory actionFactory;
         private readonly ITanSourceFactory tanSourceFactory;
 
-        public FinTsPersistence(IActionFactory actionFactory, ITanSourceFactory tanSourceFactory)
+        public FinTsService(IActionFactory actionFactory, ITanSourceFactory tanSourceFactory)
         {
             this.actionFactory = actionFactory;
             this.tanSourceFactory = tanSourceFactory;

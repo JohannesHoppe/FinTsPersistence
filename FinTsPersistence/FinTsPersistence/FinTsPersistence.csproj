@@ -127,6 +127,7 @@
     <Compile Include="Model\ITransactionRepository.cs">
       <DependentUpon>TransactionRepository.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ITransactionService.cs" />
     <Compile Include="Model\NoTransaction.cs" />
     <Compile Include="Model\NoTransactionExtension.cs" />
     <Compile Include="Model\SpecialCase.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="Model\TransactionContext.cs" />
     <Compile Include="Model\TransactionEqualityExtension.cs" />
     <Compile Include="Model\TransactionRepository.cs" />
+    <Compile Include="Model\LazyTransactionService.cs" />
     <Compile Include="TanSources\TanSourceFactory.cs" />
     <Compile Include="FinContactCreator.cs" />
     <Compile Include="FinServiceCreator.cs" />
@@ -143,8 +145,8 @@
     <Compile Include="Actions\IActionFactory.cs">
       <DependentUpon>ActionFactory.cs</DependentUpon>
     </Compile>
-    <Compile Include="IFinTsPersistence.cs">
-      <DependentUpon>FinTsPersistence.cs</DependentUpon>
+    <Compile Include="IFinTsService.cs">
+      <DependentUpon>FinTsService.cs</DependentUpon>
     </Compile>
     <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -159,7 +161,7 @@
     <Compile Include="Actions\ActionBase.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FinTsPersistence.cs">
+    <Compile Include="FinTsService.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Actions\ActionRemittDebit.cs">

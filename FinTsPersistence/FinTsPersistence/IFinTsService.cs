@@ -3,7 +3,7 @@ using FinTsPersistence.Actions.Result;
 
 namespace FinTsPersistence
 {
-    public interface IFinTsPersistence
+    public interface IFinTsService
     {
         ActionResult DoAction(string action, StringDictionary arguments);
     }

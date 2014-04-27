@@ -7,7 +7,7 @@ using Status = FinTsPersistence.Actions.Result.Status;
 namespace FintTsPersistenceIntegrationTests
 {
     /// <summary>
-    /// Just receving a balance (not required for persistance) 
+    /// Just receiving a balance (not required for persistence) 
     /// </summary>
     [Subject("FinTsPersistence")]
     public class when_receiving_a_balance
@@ -31,7 +31,7 @@ namespace FintTsPersistenceIntegrationTests
                 "-acctbankcode", cmdArguments.Acctbankcode
             });
 
-        It should_execute_succesfully = () => result.Success.Should().BeTrue();
+        It should_execute_successfully = () => result.Success.Should().BeTrue();
         It should_have_status_ok = () => result.Status.Should().Be(Status.Success);
     }
 }

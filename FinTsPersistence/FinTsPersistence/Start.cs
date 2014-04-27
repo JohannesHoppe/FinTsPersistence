@@ -1,11 +1,14 @@
 using System;
+using System.Collections.Specialized;
+using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
 using FinTsPersistence.App_Start;
+using FinTsPersistence.Model;
 
 namespace FinTsPersistence
 {   
     /// <summary>
-    /// Modified version of Subsembly FinCmd - with currently only one action: persist
+    /// Modified version of Subsembly FinCmd - with one extr action: persist
     /// FinTsPersistence {action} -{argname1} {argvalue1} ...
     /// </summary>
     /// <remarks>
@@ -48,6 +51,7 @@ namespace FinTsPersistence
 
         /// <summary>
         /// Entry point for embedding the library
+        /// Does some in-before checks against the given data
         /// </summary>
         public static ActionResult DoAction(string[] args)
         {
@@ -56,9 +60,15 @@ namespace FinTsPersistence
             var extractedArguments = CommandLineHelper.ExtractArguments(args);
             CommandLineHelper.CheckForPinOrResume(extractedArguments.Arguments);
 
-            var finTsPersistence = ContainerConfig.Resolve<IFinTsPersistence>();
-
-            return finTsPersistence.DoAction(extractedArguments.Action, extractedArguments.Arguments);
+            if (extractedArguments.Action == ActionBalance.ActionName)
+            {
+                var transactionService = ContainerConfig.Resolve<ITransactionService>();
+                return transactionService.DoPersistence(extractedArguments.Arguments);
+            }
+            
+            // 'old' FinCMD code without any special workflow
+            var finTsService = ContainerConfig.Resolve<IFinTsService>();
+            return finTsService.DoAction(extractedArguments.Action, extractedArguments.Arguments);
         }
     }
 }
