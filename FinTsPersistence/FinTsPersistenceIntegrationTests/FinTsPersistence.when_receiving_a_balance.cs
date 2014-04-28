@@ -32,7 +32,6 @@ namespace FinTsPersistenceIntegrationTests
                 Arguments.AcctBankCode, cmdArguments.Acctbankcode
             });
 
-        It should_execute_successfully = () => result.Success.Should().BeTrue();
-        It should_have_status_ok = () => result.Status.Should().Be(Status.Success);
+        It should_execute_successfully = () => result.Status.Should().Be(Status.Success);
     }
 }

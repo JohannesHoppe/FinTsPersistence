@@ -56,14 +56,19 @@ namespace FinTsPersistence.Model
 
             ActionResult result = finTsService.DoAction(ActionPersist.ActionName, arguments);
 
-            var transactionsFilteredAndTransformed = result.Response.Transactions
+            if (result.Status != Status.Success)
+            {
+                return result;
+            }
+
+            var filteredTransactions = result.Response.Transactions
                 .Where(t => t.EntryDate <= yesterday)
                 .Select(x => x.ToTransaction())
                 .ToList();
 
-            if (transactionsFilteredAndTransformed.Any())
+            if (filteredTransactions.Any())
             {
-                transactionRepository.SaveTransactions(transactionsFilteredAndTransformed);
+                transactionRepository.SaveTransactions(filteredTransactions);
             }
 
             return result;

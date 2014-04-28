@@ -5,10 +5,9 @@
     /// </summary>
     public class ActionResult
     {
-        public ActionResult(Status status, bool success = false, int orderStatusCode = 0)
+        public ActionResult(Status status, int orderStatusCode = 0)
         {
             Status = status;
-            Success = success;
             OrderStatusCode = orderStatusCode;
         }
 
@@ -17,11 +16,6 @@
         /// (otherwise an ArgumentException would have been happening before) 
         /// </summary>
         public Status Status { private set; get; }
-
-        /// <summary>
-        /// Indicates of the action was executed successfull
-        /// </summary>
-        public bool Success { private set; get; }
 
         /// <summary>
         /// Als Rückgabewert wird der höchste Rückmeldecode aus dem HIRMS genommen.

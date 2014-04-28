@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LazyTransactionService.when_getting_new_transactions.cs" />
     <Compile Include="TransactionRepository.when_comparing_very_similar_transactions_with_different_valuedate.cs" />
     <Compile Include="TransactionRepository.when_comparing_very_similar_transactions_with_different_entrydate.cs" />
     <Compile Include="TransactionRepository.when_comparing_totally_equal_transactions.cs" />

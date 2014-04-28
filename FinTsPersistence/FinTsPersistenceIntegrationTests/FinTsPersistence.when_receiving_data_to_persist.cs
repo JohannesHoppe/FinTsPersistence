@@ -40,8 +40,7 @@ namespace FinTsPersistenceIntegrationTests
                 Arguments.FromDate, fromDate.ToIsoDate()
             }).Arguments);
 
-        It should_execute_successfully = () => result.Success.Should().BeTrue();
-        It should_have_status_ok = () => result.Status.Should().Be(Status.Success);
+        It should_execute_successfully = () => result.Status.Should().Be(Status.Success);
         It should_return_a_list_of_transactions = () => result.Response.Transactions.Should().NotBeEmpty();
         It should_not_return_formatted_output = () => result.Response.Formatted.Should().BeNull();
 

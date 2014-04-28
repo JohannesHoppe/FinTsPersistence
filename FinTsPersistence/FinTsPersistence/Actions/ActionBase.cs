@@ -68,12 +68,12 @@ namespace FinTsPersistence.Actions
 
             if (result == FinServiceResult.Error)
             {
-                return new ActionResult(Status.ErrorResult, false, orderStatusCode);
+                return new ActionResult(Status.ErrorResult, orderStatusCode);
             }
 
             if (result == FinServiceResult.Success)
             {
-                return new ActionResult(Status.Success, true, orderStatusCode);
+                return new ActionResult(Status.Success, orderStatusCode);
             }
 
             throw new Exception("The enum FinServiceResult has been changed! " +
