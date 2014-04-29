@@ -9,11 +9,11 @@ namespace FinTsPersistence.TanSources
     /// </summary>
     public class TanByPrompt : ITanSource
     {
-        private readonly IConsole consoleX;
+        private readonly IConsoleX consoleXX;
 
-        public TanByPrompt(IConsole consoleX)
+        public TanByPrompt(IConsoleX consoleXX)
         {
-            this.consoleX = consoleX;
+            this.consoleXX = consoleXX;
         }
 
         public string GetTan(FinService aService)
@@ -23,14 +23,14 @@ namespace FinTsPersistence.TanSources
 
             if ((tanProcess != null) && (aChallengeInfo != null))
             {
-                consoleX.Write(tanProcess.ChallengeLabel + ": ");
-                consoleX.WriteLine(aChallengeInfo.Challenge);
+                consoleXX.Write(tanProcess.ChallengeLabel + ": ");
+                consoleXX.WriteLine(aChallengeInfo.Challenge);
             }
 
-            consoleX.Write("TAN: ");
-            consoleX.Out.Flush();
+            consoleXX.Write("TAN: ");
+            consoleXX.Out.Flush();
 
-            string sTAN = consoleX.ReadLine();
+            string sTAN = consoleXX.ReadLine();
             return !string.IsNullOrEmpty(sTAN) ? sTAN : null;
         }
     }

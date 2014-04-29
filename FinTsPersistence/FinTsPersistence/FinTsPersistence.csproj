@@ -125,17 +125,17 @@
     <Compile Include="App_Start\ICommandLineHelper.cs">
       <DependentUpon>CommandLineHelper.cs</DependentUpon>
     </Compile>
-    <Compile Include="Code\ConsoleError.cs" />
-    <Compile Include="Code\ConsoleOut.cs" />
-    <Compile Include="Code\ConsoleWrapper.cs" />
+    <Compile Include="Code\ConsoleXError.cs" />
+    <Compile Include="Code\ConsoleXOut.cs" />
+    <Compile Include="Code\ConsoleX.cs" />
     <Compile Include="Code\IConsoleError.cs">
-      <DependentUpon>ConsoleError.cs</DependentUpon>
+      <DependentUpon>ConsoleXError.cs</DependentUpon>
     </Compile>
     <Compile Include="Code\IConsoleOut.cs">
-      <DependentUpon>ConsoleOut.cs</DependentUpon>
+      <DependentUpon>ConsoleXOut.cs</DependentUpon>
     </Compile>
-    <Compile Include="Code\IConsole.cs">
-      <DependentUpon>ConsoleWrapper.cs</DependentUpon>
+    <Compile Include="Code\IConsoleX.cs">
+      <DependentUpon>ConsoleX.cs</DependentUpon>
     </Compile>
     <Compile Include="Code\StringDictionaryExtension.cs" />
     <Compile Include="Model\Date.cs" />

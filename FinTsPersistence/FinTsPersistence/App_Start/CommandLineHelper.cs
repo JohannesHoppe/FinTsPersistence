@@ -12,11 +12,11 @@ namespace FinTsPersistence
 {
     public class CommandLineHelper : ICommandLineHelper
     {
-        private readonly IConsole consoleX;
+        private readonly IConsoleX consoleXX;
 
-        public CommandLineHelper(IConsole consoleX)
+        public CommandLineHelper(IConsoleX consoleXX)
         {
-            this.consoleX = consoleX;
+            this.consoleXX = consoleXX;
         }
 
         /// <summary>
@@ -85,47 +85,47 @@ namespace FinTsPersistence
             aReader.Close();
             aStream.Close();
 
-            consoleX.Error.WriteLine(sUsage);
+            consoleXX.Error.WriteLine(sUsage);
         }
 
         public void DisplayShortException(Exception ex)
         {
-            consoleX.Error.WriteLine("Exception: {0}", ex.GetType());
-            consoleX.Error.WriteLine("Message: {0}", ex.Message);
-            consoleX.Error.WriteLine("-----------------------------");
+            consoleXX.Error.WriteLine("Exception: {0}", ex.GetType());
+            consoleXX.Error.WriteLine("Message: {0}", ex.Message);
+            consoleXX.Error.WriteLine("-----------------------------");
         }
 
         public void DisplayActionException(ActionException ex)
         {
-            consoleX.Error.WriteLine("Exception: {0}", ex.GetType());
-            consoleX.Error.WriteLine("Message: {0}", ex.Message);
-            consoleX.Error.WriteLine("-----------------------------");
-            consoleX.Error.WriteLine(ex.ToString());
-            consoleX.Error.WriteLine("-----------------------------");
+            consoleXX.Error.WriteLine("Exception: {0}", ex.GetType());
+            consoleXX.Error.WriteLine("Message: {0}", ex.Message);
+            consoleXX.Error.WriteLine("-----------------------------");
+            consoleXX.Error.WriteLine(ex.ToString());
+            consoleXX.Error.WriteLine("-----------------------------");
 
             if (ex.InnerException != null)
             {
-                consoleX.Error.WriteLine("Inner Exception: {0}", ex.InnerException.GetType());
-                consoleX.Error.WriteLine("Inner Message: {0}", ex.InnerException.Message);
+                consoleXX.Error.WriteLine("Inner Exception: {0}", ex.InnerException.GetType());
+                consoleXX.Error.WriteLine("Inner Message: {0}", ex.InnerException.Message);
             }
-            consoleX.Error.WriteLine("-----------------------------");
-            consoleX.Error.WriteLine("FinTS Trace:");
+            consoleXX.Error.WriteLine("-----------------------------");
+            consoleXX.Error.WriteLine("FinTS Trace:");
         }
 
         public void DisplayException(Exception ex)
         {
-            consoleX.Error.WriteLine("Exception: {0}", ex.GetType());
-            consoleX.Error.WriteLine("Message: {0}", ex.Message);
-            consoleX.Error.WriteLine("-----------------------------");
-            consoleX.Error.WriteLine(ex.ToString());
-            consoleX.Error.WriteLine("-----------------------------");
+            consoleXX.Error.WriteLine("Exception: {0}", ex.GetType());
+            consoleXX.Error.WriteLine("Message: {0}", ex.Message);
+            consoleXX.Error.WriteLine("-----------------------------");
+            consoleXX.Error.WriteLine(ex.ToString());
+            consoleXX.Error.WriteLine("-----------------------------");
         }
 
         public void WaitForEnterOnDebug()
         {
             #if DEBUG
-            consoleX.WriteLine("Please press enter to exit.");
-            consoleX.ReadLine();
+            consoleXX.WriteLine("Please press enter to exit.");
+            consoleXX.ReadLine();
             #endif
         }
     }

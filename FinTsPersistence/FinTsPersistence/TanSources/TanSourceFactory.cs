@@ -10,11 +10,11 @@ namespace FinTsPersistence.TanSources
     {
         public const string SourceName = "sourceName";
 
-        private readonly IConsole consoleX;
+        private readonly IConsoleX consoleXX;
 
-        public TanSourceFactory(IConsole consoleX)
+        public TanSourceFactory(IConsoleX consoleXX)
         {
-            this.consoleX = consoleX;
+            this.consoleXX = consoleXX;
         }
 
         public ITanSource GetTanSource(StringDictionary arguments)
@@ -30,12 +30,12 @@ namespace FinTsPersistence.TanSources
             string tanlist = arguments["-tanlist"];
             if (tanlist != null)
             {
-                TanByList aTanByList = new TanByList(consoleX);
+                TanByList aTanByList = new TanByList(consoleXX);
                 aTanByList.LoadTanList(tanlist);
                 return aTanByList;
             }
 
-            return new TanByPrompt(consoleX);
+            return new TanByPrompt(consoleXX);
         }
     }
 }

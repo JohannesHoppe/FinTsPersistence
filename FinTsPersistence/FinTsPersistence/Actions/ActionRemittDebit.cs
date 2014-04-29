@@ -12,28 +12,28 @@ namespace FinTsPersistence.Actions
 
         private FinRemitt m_aRemitt;
 
-        public ActionRemittDebit(IConsole consoleX) : base(consoleX) { }
+        public ActionRemittDebit(IConsoleX consoleXX) : base(consoleXX) { }
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {
             string sPayeeName = arguments["-payeename"];
             if (string.IsNullOrEmpty(sPayeeName))
             {
-                ConsoleX.Error.WriteLine("Parameter -payeename fehlt!");
+                ConsoleXX.Error.WriteLine("Parameter -payeename fehlt!");
                 return false;
             }
 
             string sPayeeAcctNo = arguments["-payeeacctno"];
             if (string.IsNullOrEmpty(sPayeeAcctNo))
             {
-                ConsoleX.Error.WriteLine("Parameter -payeeacctno fehlt!");
+                ConsoleXX.Error.WriteLine("Parameter -payeeacctno fehlt!");
                 return false;
             }
 
             string sPayeeBankCode = arguments["-payeebankcode"];
             if (string.IsNullOrEmpty(sPayeeBankCode))
             {
-                ConsoleX.Error.WriteLine("Parameter -payeebankcode fehlt!");
+                ConsoleXX.Error.WriteLine("Parameter -payeebankcode fehlt!");
                 return false;
             }
 
@@ -45,7 +45,7 @@ namespace FinTsPersistence.Actions
             catch { /* IGNORE */ }
             if (dAmount == 0M)
             {
-                ConsoleX.Error.WriteLine("Parameter -amount fehlt oder fehlerhaft!");
+                ConsoleXX.Error.WriteLine("Parameter -amount fehlt oder fehlerhaft!");
                 return false;
             }
 

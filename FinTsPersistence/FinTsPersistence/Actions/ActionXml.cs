@@ -17,19 +17,19 @@ namespace FinTsPersistence.Actions
         private XmlDocument                        m_aXmlDocument;
         private FinTransmogrifierRepository        m_aSyntax;
 
-        public ActionXml(IConsole consoleX) : base(consoleX) { }
+        public ActionXml(IConsoleX consoleXX) : base(consoleXX) { }
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {
             string sFileName = arguments["-xmlfile"];
             if (sFileName == null)
             {
-                ConsoleX.Error.WriteLine("Argument -xmlfile muss angegeben werden!");
+                ConsoleXX.Error.WriteLine("Argument -xmlfile muss angegeben werden!");
                 return false;
             }
             if (!File.Exists(sFileName))
             {
-                ConsoleX.Error.WriteLine("XML Datei {0} nicht gefunden!", sFileName);
+                ConsoleXX.Error.WriteLine("XML Datei {0} nicht gefunden!", sFileName);
                 return false;
             }
 

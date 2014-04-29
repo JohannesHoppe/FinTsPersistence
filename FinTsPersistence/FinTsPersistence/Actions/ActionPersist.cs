@@ -17,7 +17,7 @@ namespace FinTsPersistence.Actions
 
         private SwiftDate fromDate = SwiftDate.NullDate;
 
-        public ActionPersist(IConsole consoleX) : base(consoleX) { }
+        public ActionPersist(IConsoleX consoleXX) : base(consoleXX) { }
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {

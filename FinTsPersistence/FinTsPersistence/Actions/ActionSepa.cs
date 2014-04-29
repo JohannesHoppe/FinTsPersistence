@@ -13,19 +13,19 @@ namespace FinTsPersistence.Actions
 
         private SepaDocument m_aSepaDoc;
 
-        public ActionSepa(IConsole consoleX) : base(consoleX) { }
+        public ActionSepa(IConsoleX consoleXX) : base(consoleXX) { }
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {
             string sFileName = arguments["-xmlfile"];
             if (sFileName == null)
             {
-                ConsoleX.Error.WriteLine("Argument -xmlfile muss angegeben werden!");
+                ConsoleXX.Error.WriteLine("Argument -xmlfile muss angegeben werden!");
                 return false;
             }
             if (!File.Exists(sFileName))
             {
-                ConsoleX.Error.WriteLine("SEPA Datei {0} nicht gefunden!", sFileName);
+                ConsoleXX.Error.WriteLine("SEPA Datei {0} nicht gefunden!", sFileName);
                 return false;
             }
 
@@ -83,18 +83,18 @@ namespace FinTsPersistence.Actions
 
             if (aSepaOrderBuilder == null)
             {
-                ConsoleX.Error.WriteLine("Keine HBCI-Auftragsart für SEPA-Dokument bekannt!");
+                ConsoleXX.Error.WriteLine("Keine HBCI-Auftragsart für SEPA-Dokument bekannt!");
                 return null;
             }
             if (!aSepaOrderBuilder.IsSupported)
             {
-                ConsoleX.Error.WriteLine("HBCI-Auftragsart " + m_aSepaDoc.HbciSegmentType + " von Bank nicht unterstützt!");
+                ConsoleXX.Error.WriteLine("HBCI-Auftragsart " + m_aSepaDoc.HbciSegmentType + " von Bank nicht unterstützt!");
                 return null;
             }
 
             if (aSepaOrderBuilder.FindSepaFormat(m_aSepaDoc.MessageInfo.PainIdentifier) == null)
             {
-                ConsoleX.Error.WriteLine("SEPA-Format " + m_aSepaDoc.MessageInfo.PainIdentifier + " von Bank nicht unterstützt!");
+                ConsoleXX.Error.WriteLine("SEPA-Format " + m_aSepaDoc.MessageInfo.PainIdentifier + " von Bank nicht unterstützt!");
                 return null;
             }
 

@@ -16,13 +16,13 @@ namespace FinTsPersistence
     {
         private readonly IActionFactory actionFactory;
         private readonly ITanSourceFactory tanSourceFactory;
-        private readonly IConsole consoleX;
+        private readonly IConsoleX consoleXX;
 
-        public FinTsService(IActionFactory actionFactory, ITanSourceFactory tanSourceFactory, IConsole consoleX)
+        public FinTsService(IActionFactory actionFactory, ITanSourceFactory tanSourceFactory, IConsoleX consoleXX)
         {
             this.actionFactory = actionFactory;
             this.tanSourceFactory = tanSourceFactory;
-            this.consoleX = consoleX;
+            this.consoleXX = consoleXX;
         }
 
         public ActionResult DoAction(string action, StringDictionary arguments)
@@ -118,14 +118,14 @@ namespace FinTsPersistence
                 // danach die Antwortdaten, sofern welche vorhanden sind. Der Laufzettel wird
                 // auf den Error-Kanal ausgegeben, damit er von der Antwortdaten leichter
                 // getrennt werden kann.
-                consoleX.Error.WriteLine(service.Docket);
+                consoleXX.Error.WriteLine(service.Docket);
 
                 if (result.Status != Status.CouldNotLogOn)
                 {
                     ResponseData responseData = cmd.GetResponseData(service);
                     if (responseData.Formatted != null)
                     {
-                        consoleX.WriteLine(responseData.Formatted);
+                        consoleXX.WriteLine(responseData.Formatted);
                     }
                     result.Response = responseData;
                 }

@@ -5,7 +5,7 @@ namespace FinTsPersistence.Code
     /// <summary>
     /// Wrapper for the standard error output stream.
     /// </summary>
-    public class ConsoleError : IConsoleError
+    public class ConsoleXError : IConsoleError
     {
         /// <summary>
         /// Writes a string followed by a line terminator to the text string or stream.
