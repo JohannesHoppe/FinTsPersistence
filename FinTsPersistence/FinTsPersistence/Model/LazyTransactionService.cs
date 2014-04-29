@@ -34,7 +34,7 @@ namespace FinTsPersistence.Model
         private readonly IDate date;
         private readonly ITransactionRepository transactionRepository;
 
-        public LazyTransactionService(IFinTsService finTsService, ITransactionRepository transactionRepository, IDate date)
+        public LazyTransactionService(ITransactionRepository transactionRepository, IFinTsService finTsService, IDate date)
         {
             this.finTsService = finTsService;
             this.transactionRepository = transactionRepository;

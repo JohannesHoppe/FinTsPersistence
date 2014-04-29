@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Net.Mail;
 using FinTsPersistence;
 using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
@@ -19,38 +20,55 @@ namespace FinTsPersistenceTests
     {
         static LazyTransactionService service;
         static Mock<ITransactionRepository> repository;
+        static Mock<IFinTsService> finTsService;
+        static StringDictionary finTsServiceArguments;
         static ActionResult result;
 
         Establish context = () =>
         {
             var today = new DateTime(2014, 03, 5);
             var yesterday = new DateTime(2014, 03, 4);
-            var lastStoredTransaction = new Transaction { TransactionId = 6, EntryDate = yesterday };
+            var twoDaysBefore = new DateTime(2014, 03, 3);
+            var lastStoredTransaction = new Transaction { TransactionId = 1, EntryDate = twoDaysBefore };
+
+            repository = new Mock<ITransactionRepository>();
+            repository.Setup(m => m.GetLastTransaction()).Returns(lastStoredTransaction);
 
             ActionResult mockedResult = new ActionResult(Status.Success)
                 {
                     Response = new ResponseData
                         {
-                            Transactions = new List<FinTsTransaction>()
+                            Transactions = new List<FinTsTransaction>
+                            {
+                                new Transaction { EntryDate = new DateTime(2014, 03, 4) },
+                                new Transaction { EntryDate = new DateTime(2014, 03, 4) },
+                                new Transaction { EntryDate = new DateTime(2014, 03, 4) },
+                                new Transaction { EntryDate = new DateTime(2014, 03, 5) }
+                            }
                         }
                 };
 
-            var finTsService = new Mock<IFinTsService>();
+            finTsService = new Mock<IFinTsService>();
             finTsService.Setup(m => m.DoAction(ActionPersist.ActionName, Moq.It.IsAny<StringDictionary>()))
-                .Returns(mockedResult);
+                .Returns(mockedResult)
+                .Callback<string, StringDictionary>((action, arguments) => finTsServiceArguments = arguments);
 
-            repository = new Mock<ITransactionRepository>();
-            repository.Setup(m => m.GetLastTransaction()).Returns(lastStoredTransaction);
 
             var date = new Mock<IDate>();
             date.Setup(m => m.Now).Returns(today);
 
-            service = new LazyTransactionService(finTsService.Object, repository.Object, date.Object);
+            service = new LazyTransactionService(repository.Object, finTsService.Object, date.Object);
         };
 
         private Because of = () => result = service.DoPersistence(new StringDictionary()); 
 
-        private It should_call_GetLastTransaction_from_repository = () => repository.Verify(m => m.GetLastTransaction(), Times.Once);
+        private It should_call_GetLastTransaction_from_repository = () => repository.Verify(v => v.GetLastTransaction(), Times.Once);
+
+        private It should_call_FinTsService =
+            () => finTsService.Verify(
+                v => v.DoAction(ActionPersist.ActionName, Moq.It.IsAny<StringDictionary>()));
+
+        private It should_call_FinTsService_with_the_next_day_after_lastStoredTransaction = () => finTsServiceArguments[Arguments.FromDate].Should().Be("2014-03-4");
 
     }
 }
