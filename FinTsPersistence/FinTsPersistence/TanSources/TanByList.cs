@@ -2,6 +2,7 @@
 using System.Collections;
 using System.IO;
 using System.Linq;
+using FinTsPersistence.Code;
 using Subsembly.FinTS;
 
 namespace FinTsPersistence.TanSources
@@ -11,7 +12,13 @@ namespace FinTsPersistence.TanSources
     /// </summary>
     public class TanByList : ITanSource
     {
-        readonly ArrayList m_vList = new ArrayList();
+        private readonly ArrayList m_vList = new ArrayList();
+        private readonly IConsole consoleX;
+
+        public TanByList(IConsole consoleX)
+        {
+            this.consoleX = consoleX;
+        }
 
         class Tan
         {
@@ -114,7 +121,7 @@ namespace FinTsPersistence.TanSources
                 }
             }
 
-            Console.WriteLine("Keine TAN für " + sChallenge + "in TAN-Datei gefunden!");
+            consoleX.WriteLine("Keine TAN für " + sChallenge + "in TAN-Datei gefunden!");
             return null;
         }
 

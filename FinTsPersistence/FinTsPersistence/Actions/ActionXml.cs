@@ -5,6 +5,7 @@ using System.IO;
 using System.Reflection;
 using System.Xml;
 using FinTsPersistence.Actions.Result;
+using FinTsPersistence.Code;
 using Subsembly.FinTS;
 
 namespace FinTsPersistence.Actions
@@ -13,20 +14,22 @@ namespace FinTsPersistence.Actions
     {
         public const string ActionName = "xml";
 
-        XmlDocument                        m_aXmlDocument;
-        FinTransmogrifierRepository        m_aSyntax;
+        private XmlDocument                        m_aXmlDocument;
+        private FinTransmogrifierRepository        m_aSyntax;
+
+        public ActionXml(IConsole consoleX) : base(consoleX) { }
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {
             string sFileName = arguments["-xmlfile"];
             if (sFileName == null)
             {
-                Console.Error.WriteLine("Argument -xmlfile muss angegeben werden!");
+                ConsoleX.Error.WriteLine("Argument -xmlfile muss angegeben werden!");
                 return false;
             }
             if (!File.Exists(sFileName))
             {
-                Console.Error.WriteLine("XML Datei {0} nicht gefunden!", sFileName);
+                ConsoleX.Error.WriteLine("XML Datei {0} nicht gefunden!", sFileName);
                 return false;
             }
 

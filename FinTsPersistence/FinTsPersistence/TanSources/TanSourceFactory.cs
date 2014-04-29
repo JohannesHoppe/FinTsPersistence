@@ -1,4 +1,5 @@
 ﻿using System.Collections.Specialized;
+using FinTsPersistence.Code;
 
 namespace FinTsPersistence.TanSources
 {
@@ -8,6 +9,13 @@ namespace FinTsPersistence.TanSources
     public class TanSourceFactory : ITanSourceFactory
     {
         public const string SourceName = "sourceName";
+
+        private readonly IConsole consoleX;
+
+        public TanSourceFactory(IConsole consoleX)
+        {
+            this.consoleX = consoleX;
+        }
 
         public ITanSource GetTanSource(StringDictionary arguments)
         {
@@ -22,12 +30,12 @@ namespace FinTsPersistence.TanSources
             string tanlist = arguments["-tanlist"];
             if (tanlist != null)
             {
-                TanByList aTanByList = new TanByList();
+                TanByList aTanByList = new TanByList(consoleX);
                 aTanByList.LoadTanList(tanlist);
                 return aTanByList;
             }
 
-            return new TanByPrompt();
+            return new TanByPrompt(consoleX);
         }
     }
 }

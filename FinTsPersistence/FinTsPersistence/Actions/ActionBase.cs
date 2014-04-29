@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Specialized;
 using FinTsPersistence.Actions.Result;
+using FinTsPersistence.Code;
 using FinTsPersistence.TanSources;
 using Subsembly.FinTS;
 
@@ -8,7 +9,13 @@ namespace FinTsPersistence.Actions
 {
     public abstract class ActionBase : IAction
     {
-        FinOrder order;
+        private FinOrder order;
+        protected IConsole ConsoleX;
+
+        protected ActionBase(IConsole consoleX)
+        {
+            this.ConsoleX = consoleX;
+        }
 
         public bool Parse(string action, StringDictionary arguments)
         {
@@ -38,14 +45,14 @@ namespace FinTsPersistence.Actions
 
             if (result == FinServiceResult.NeedTanMediaName)
             {
-                Console.WriteLine("Bezeichnung des TAN-Mediums erforderlich!");
+                ConsoleX.WriteLine("Bezeichnung des TAN-Mediums erforderlich!");
                 FinTanMedia[] vTanMedias = service.TanMedias;
                 if (vTanMedias != null)
                 {
-                    Console.WriteLine("Bitte geben Sie einen der folgenden Parameter an:");
+                    ConsoleX.WriteLine("Bitte geben Sie einen der folgenden Parameter an:");
                     foreach (FinTanMedia t in vTanMedias)
                     {
-                        Console.WriteLine("-tanmedianame \"" + t.TanMediaName + "\"");
+                        ConsoleX.WriteLine("-tanmedianame \"" + t.TanMediaName + "\"");
                     }
                 }
 

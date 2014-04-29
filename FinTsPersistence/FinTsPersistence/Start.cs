@@ -16,6 +16,8 @@ namespace FinTsPersistence
     /// </remarks>
     public class Start
     {
+        private static ICommandLineHelper commandLineHelper;
+
         /// <summary>
         /// The main entry point for the command-line application.
         /// </summary>
@@ -23,6 +25,7 @@ namespace FinTsPersistence
         public static int Main(string[] args)
         {
             int returnCode = -1;
+            commandLineHelper = ContainerConfig.Resolve<ICommandLineHelper>();
 
             try
             {
@@ -31,19 +34,19 @@ namespace FinTsPersistence
             }
             catch (ArgumentException ex)
             {
-                CommandLineHelper.DisplayShortException(ex);
-                CommandLineHelper.ShowUsage();
+                commandLineHelper.DisplayShortException(ex);
+                commandLineHelper.ShowUsage();
             }
             catch (ActionException ex)
             {
-                CommandLineHelper.DisplayActionException(ex);
+                commandLineHelper.DisplayActionException(ex);
             }  
             catch (Exception ex)
             {
-                CommandLineHelper.DisplayException(ex);
+                commandLineHelper.DisplayException(ex);
             }
 
-            CommandLineHelper.WaitForEnterOnDebug();
+            commandLineHelper.WaitForEnterOnDebug();
             return returnCode;
         }
 
@@ -53,10 +56,10 @@ namespace FinTsPersistence
         /// </summary>
         public static ActionResult DoAction(string[] args)
         {
-            CommandLineHelper.CheckAmountOfParameters(args);
+            commandLineHelper.CheckAmountOfParameters(args);
 
-            var extractedArguments = CommandLineHelper.ExtractArguments(args);
-            CommandLineHelper.CheckForPinOrResume(extractedArguments.Arguments);
+            var extractedArguments = commandLineHelper.ExtractArguments(args);
+            commandLineHelper.CheckForPinOrResume(extractedArguments.Arguments);
 
             if (extractedArguments.Action == ActionPersist.ActionName)
             {

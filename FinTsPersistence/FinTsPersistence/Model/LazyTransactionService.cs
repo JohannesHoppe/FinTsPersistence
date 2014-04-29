@@ -2,8 +2,8 @@
 using System.Collections.Specialized;
 using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
-using FinTsPersistence.Helper;
 using System.Linq;
+using FinTsPersistence.Code;
 
 namespace FinTsPersistence.Model
 {

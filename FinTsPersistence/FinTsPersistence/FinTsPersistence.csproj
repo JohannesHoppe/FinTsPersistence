@@ -122,7 +122,22 @@
     <Compile Include="App_Start\CommandLineHelper.cs" />
     <Compile Include="App_Start\ExtractedArguments.cs" />
     <Compile Include="App_Start\ContainerConfig.cs" />
-    <Compile Include="Helper\StringDictionaryExtension.cs" />
+    <Compile Include="App_Start\ICommandLineHelper.cs">
+      <DependentUpon>CommandLineHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\ConsoleError.cs" />
+    <Compile Include="Code\ConsoleOut.cs" />
+    <Compile Include="Code\ConsoleWrapper.cs" />
+    <Compile Include="Code\IConsoleError.cs">
+      <DependentUpon>ConsoleError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\IConsoleOut.cs">
+      <DependentUpon>ConsoleOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\IConsole.cs">
+      <DependentUpon>ConsoleWrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\StringDictionaryExtension.cs" />
     <Compile Include="Model\Date.cs" />
     <Compile Include="Model\IDate.cs">
       <DependentUpon>Date.cs</DependentUpon>

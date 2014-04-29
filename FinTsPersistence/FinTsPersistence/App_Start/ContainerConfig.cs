@@ -16,6 +16,9 @@ namespace FinTsPersistence
         {
             var builder = new ContainerBuilder();
 
+            builder.RegisterType<CommandLineHelper>()
+                    .As<ICommandLineHelper>();
+
             builder.RegisterType<ActionBalance>()
                    .As<IAction>()
                    .WithMetadata(ActionFactory.ActionName, ActionBalance.ActionName);

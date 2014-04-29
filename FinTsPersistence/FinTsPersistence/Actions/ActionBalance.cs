@@ -2,6 +2,7 @@ using System;
 using System.Collections.Specialized;
 using System.Text;
 using FinTsPersistence.Actions.Result;
+using FinTsPersistence.Code;
 using Subsembly.FinTS;
 using Subsembly.Swift;
 
@@ -10,6 +11,8 @@ namespace FinTsPersistence.Actions
     public class ActionBalance : ActionBase
     {
         public const string ActionName = "balance";
+
+        public ActionBalance(IConsole consoleX) : base(consoleX) { }
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {

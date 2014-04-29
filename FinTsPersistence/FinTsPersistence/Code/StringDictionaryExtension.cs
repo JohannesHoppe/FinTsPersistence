@@ -1,6 +1,6 @@
 ﻿using System.Collections.Specialized;
 
-namespace FinTsPersistence.Helper
+namespace FinTsPersistence.Code
 {
     public static class StringDictionaryExtension
     {

@@ -64,11 +64,9 @@ namespace FinTsPersistenceTests
 
         private It should_call_GetLastTransaction_from_repository = () => repository.Verify(v => v.GetLastTransaction(), Times.Once);
 
-        private It should_call_FinTsService =
-            () => finTsService.Verify(
-                v => v.DoAction(ActionPersist.ActionName, Moq.It.IsAny<StringDictionary>()));
+        private It should_call_FinTsService = () => finTsService.Verify(v => v.DoAction(ActionPersist.ActionName, Moq.It.IsAny<StringDictionary>()));
 
-        private It should_call_FinTsService_with_the_next_day_after_lastStoredTransaction = () => finTsServiceArguments[Arguments.FromDate].Should().Be("2014-03-4");
+        private It should_call_FinTsService_with_the_next_day_after_lastStoredTransaction = () => finTsServiceArguments[Arguments.FromDate].Should().Be("2014-03-04");
 
     }
 }

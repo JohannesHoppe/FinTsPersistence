@@ -3,6 +3,7 @@ using System.Collections.Specialized;
 using System.Text;
 using FinTsPersistence.Actions.Result;
 using FinTsPersistence.Actions.Result.Csv;
+using FinTsPersistence.Code;
 using Subsembly.FinTS;
 using Subsembly.Swift;
 
@@ -12,7 +13,7 @@ namespace FinTsPersistence.Actions
     {
         public const string ActionName = "statement";
 
-        enum OutputFormat
+        private enum OutputFormat
         {
             CSV,
             MT940,
@@ -20,8 +21,10 @@ namespace FinTsPersistence.Actions
             CSV942,
         };
 
-        SwiftDate    m_tFromDate = SwiftDate.NullDate;
-        OutputFormat m_nFormat = OutputFormat.CSV;
+        private SwiftDate    m_tFromDate = SwiftDate.NullDate;
+        private OutputFormat m_nFormat = OutputFormat.CSV;
+
+        public ActionStatement(IConsole consoleX) : base(consoleX) { }
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {

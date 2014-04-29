@@ -29,7 +29,7 @@ namespace FinTsPersistenceIntegrationTests
 
         Because of = () => result = ContainerConfig.Resolve<IFinTsService>().DoAction(
             ActionPersist.ActionName,
-            CommandLineHelper.ExtractArguments(new[]
+            (new CommandLineHelper(null)).ExtractArguments(new[]
             {
                 "XXX",
                 Arguments.ContactFile, contactfileLocation,

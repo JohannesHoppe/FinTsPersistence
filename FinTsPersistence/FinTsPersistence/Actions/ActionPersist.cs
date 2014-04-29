@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using FinTsPersistence.Actions.Result;
+using FinTsPersistence.Code;
 using Subsembly.FinTS;
 using Subsembly.Swift;
 
@@ -14,7 +15,9 @@ namespace FinTsPersistence.Actions
     {
         public const string ActionName = "persist";
 
-        SwiftDate fromDate = SwiftDate.NullDate;
+        private SwiftDate fromDate = SwiftDate.NullDate;
+
+        public ActionPersist(IConsole consoleX) : base(consoleX) { }
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {

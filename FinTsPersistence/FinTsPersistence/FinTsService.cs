@@ -3,6 +3,7 @@ using System.Collections.Specialized;
 using System.IO;
 using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
+using FinTsPersistence.Code;
 using FinTsPersistence.TanSources;
 using Subsembly.FinTS;
 
@@ -15,11 +16,13 @@ namespace FinTsPersistence
     {
         private readonly IActionFactory actionFactory;
         private readonly ITanSourceFactory tanSourceFactory;
+        private readonly IConsole consoleX;
 
-        public FinTsService(IActionFactory actionFactory, ITanSourceFactory tanSourceFactory)
+        public FinTsService(IActionFactory actionFactory, ITanSourceFactory tanSourceFactory, IConsole consoleX)
         {
             this.actionFactory = actionFactory;
             this.tanSourceFactory = tanSourceFactory;
+            this.consoleX = consoleX;
         }
 
         public ActionResult DoAction(string action, StringDictionary arguments)
@@ -115,14 +118,14 @@ namespace FinTsPersistence
                 // danach die Antwortdaten, sofern welche vorhanden sind. Der Laufzettel wird
                 // auf den Error-Kanal ausgegeben, damit er von der Antwortdaten leichter
                 // getrennt werden kann.
-                Console.Error.WriteLine(service.Docket);
+                consoleX.Error.WriteLine(service.Docket);
 
                 if (result.Status != Status.CouldNotLogOn)
                 {
                     ResponseData responseData = cmd.GetResponseData(service);
                     if (responseData.Formatted != null)
                     {
-                        Console.WriteLine(responseData.Formatted);
+                        consoleX.WriteLine(responseData.Formatted);
                     }
                     result.Response = responseData;
                 }

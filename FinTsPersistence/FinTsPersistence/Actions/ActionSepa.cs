@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Specialized;
 using System.IO;
+using FinTsPersistence.Code;
 using Subsembly.FinTS;
 using Subsembly.Sepa;
 
@@ -10,19 +11,21 @@ namespace FinTsPersistence.Actions
     {
         public const string ActionName = "sepa";
 
-        SepaDocument m_aSepaDoc;
+        private SepaDocument m_aSepaDoc;
+
+        public ActionSepa(IConsole consoleX) : base(consoleX) { }
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {
             string sFileName = arguments["-xmlfile"];
             if (sFileName == null)
             {
-                Console.Error.WriteLine("Argument -xmlfile muss angegeben werden!");
+                ConsoleX.Error.WriteLine("Argument -xmlfile muss angegeben werden!");
                 return false;
             }
             if (!File.Exists(sFileName))
             {
-                Console.Error.WriteLine("SEPA Datei {0} nicht gefunden!", sFileName);
+                ConsoleX.Error.WriteLine("SEPA Datei {0} nicht gefunden!", sFileName);
                 return false;
             }
 
@@ -80,18 +83,18 @@ namespace FinTsPersistence.Actions
 
             if (aSepaOrderBuilder == null)
             {
-                Console.Error.WriteLine("Keine HBCI-Auftragsart für SEPA-Dokument bekannt!");
+                ConsoleX.Error.WriteLine("Keine HBCI-Auftragsart für SEPA-Dokument bekannt!");
                 return null;
             }
             if (!aSepaOrderBuilder.IsSupported)
             {
-                Console.Error.WriteLine("HBCI-Auftragsart " + m_aSepaDoc.HbciSegmentType + " von Bank nicht unterstützt!");
+                ConsoleX.Error.WriteLine("HBCI-Auftragsart " + m_aSepaDoc.HbciSegmentType + " von Bank nicht unterstützt!");
                 return null;
             }
 
             if (aSepaOrderBuilder.FindSepaFormat(m_aSepaDoc.MessageInfo.PainIdentifier) == null)
             {
-                Console.Error.WriteLine("SEPA-Format " + m_aSepaDoc.MessageInfo.PainIdentifier + " von Bank nicht unterstützt!");
+                ConsoleX.Error.WriteLine("SEPA-Format " + m_aSepaDoc.MessageInfo.PainIdentifier + " von Bank nicht unterstützt!");
                 return null;
             }
 

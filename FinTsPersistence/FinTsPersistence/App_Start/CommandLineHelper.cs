@@ -6,18 +6,26 @@ using System.Reflection;
 using System.Text;
 using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
+using FinTsPersistence.Code;
 
 namespace FinTsPersistence
 {
-    public static class CommandLineHelper
+    public class CommandLineHelper : ICommandLineHelper
     {
+        private readonly IConsole consoleX;
+
+        public CommandLineHelper(IConsole consoleX)
+        {
+            this.consoleX = consoleX;
+        }
+
         /// <summary>
         /// At least one parameters must be given, and the number of parameters must be uneven
         /// (because action has no value)
         /// </summary>
         /// <param name="vsArgs">args from Main</param>
         /// <exception cref="ArgumentException">ArgumentException</exception>
-        public static void CheckAmountOfParameters(string[] vsArgs)
+        public void CheckAmountOfParameters(string[] vsArgs)
         {
             if ((vsArgs.Length == 0) || ((vsArgs.Length & 0x0001) == 0))
             {
@@ -29,7 +37,7 @@ namespace FinTsPersistence
         /// In jedem Fall wird die PIN oder der Dialogkontext zur Fortführung benötigt.
         /// </summary>
         /// <exception cref="ArgumentException">ArgumentException</exception>
-        public static void CheckForPinOrResume(StringDictionary arguments)
+        public void CheckForPinOrResume(StringDictionary arguments)
         {
             string pin = arguments[Arguments.Pin];
             string resume = arguments[Arguments.Resume];
@@ -44,7 +52,7 @@ namespace FinTsPersistence
         /// Get the action and all trailing args/argvalue pairs
         /// </summary>
         /// <param name="vsArgs">args from Main</param>
-        public static ExtractedArguments ExtractArguments(string[] vsArgs)
+        public ExtractedArguments ExtractArguments(string[] vsArgs)
         {
             string sAction = vsArgs[0];
             StringDictionary vsArgsDict = new StringDictionary();
@@ -67,7 +75,7 @@ namespace FinTsPersistence
         /// <summary>
         /// Displays a help text on standard error output stream
         /// </summary>
-        public static void ShowUsage()
+        public void ShowUsage()
         {
             Assembly aThisAssembly = Assembly.GetExecutingAssembly();
             Stream aStream = aThisAssembly.GetManifestResourceStream("FinTsPersistence.FinTsPersistenceUsage.txt");
@@ -77,47 +85,47 @@ namespace FinTsPersistence
             aReader.Close();
             aStream.Close();
 
-            Console.Error.WriteLine(sUsage);
+            consoleX.Error.WriteLine(sUsage);
         }
 
-        public static void DisplayShortException(Exception ex)
+        public void DisplayShortException(Exception ex)
         {
-            Console.Error.WriteLine("Exception: {0}", ex.GetType());
-            Console.Error.WriteLine("Message: {0}", ex.Message);
-            Console.Error.WriteLine("-----------------------------");
+            consoleX.Error.WriteLine("Exception: {0}", ex.GetType());
+            consoleX.Error.WriteLine("Message: {0}", ex.Message);
+            consoleX.Error.WriteLine("-----------------------------");
         }
 
-        public static void DisplayActionException(ActionException ex)
+        public void DisplayActionException(ActionException ex)
         {
-            Console.Error.WriteLine("Exception: {0}", ex.GetType());
-            Console.Error.WriteLine("Message: {0}", ex.Message);
-            Console.Error.WriteLine("-----------------------------");
-            Console.Error.WriteLine(ex.ToString());
-            Console.Error.WriteLine("-----------------------------");
+            consoleX.Error.WriteLine("Exception: {0}", ex.GetType());
+            consoleX.Error.WriteLine("Message: {0}", ex.Message);
+            consoleX.Error.WriteLine("-----------------------------");
+            consoleX.Error.WriteLine(ex.ToString());
+            consoleX.Error.WriteLine("-----------------------------");
 
             if (ex.InnerException != null)
             {
-                Console.Error.WriteLine("Inner Exception: {0}", ex.InnerException.GetType());
-                Console.Error.WriteLine("Inner Message: {0}", ex.InnerException.Message);
+                consoleX.Error.WriteLine("Inner Exception: {0}", ex.InnerException.GetType());
+                consoleX.Error.WriteLine("Inner Message: {0}", ex.InnerException.Message);
             }
-            Console.Error.WriteLine("-----------------------------");
-            Console.Error.WriteLine("FinTS Trace:");
+            consoleX.Error.WriteLine("-----------------------------");
+            consoleX.Error.WriteLine("FinTS Trace:");
         }
 
-        public static void DisplayException(Exception ex)
+        public void DisplayException(Exception ex)
         {
-            Console.Error.WriteLine("Exception: {0}", ex.GetType());
-            Console.Error.WriteLine("Message: {0}", ex.Message);
-            Console.Error.WriteLine("-----------------------------");
-            Console.Error.WriteLine(ex.ToString());
-            Console.Error.WriteLine("-----------------------------");
+            consoleX.Error.WriteLine("Exception: {0}", ex.GetType());
+            consoleX.Error.WriteLine("Message: {0}", ex.Message);
+            consoleX.Error.WriteLine("-----------------------------");
+            consoleX.Error.WriteLine(ex.ToString());
+            consoleX.Error.WriteLine("-----------------------------");
         }
 
-        public static void WaitForEnterOnDebug()
+        public void WaitForEnterOnDebug()
         {
             #if DEBUG
-            Console.Out.WriteLine("Please press enter to exit.");
-            Console.ReadLine();
+            consoleX.WriteLine("Please press enter to exit.");
+            consoleX.ReadLine();
             #endif
         }
     }
