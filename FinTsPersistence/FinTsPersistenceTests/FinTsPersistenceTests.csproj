@@ -66,6 +66,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LazyTransactionService.when_getting_no_stored_transaction.cs" />
+    <Compile Include="LazyTransactionService.when_getting_no_transactions.cs" />
+    <Compile Include="LazyTransactionService.when_getting_no_new_transactions.cs" />
     <Compile Include="LazyTransactionService.when_getting_new_transactions.cs" />
     <Compile Include="TransactionRepository.when_comparing_very_similar_transactions_with_different_valuedate.cs" />
     <Compile Include="TransactionRepository.when_comparing_very_similar_transactions_with_different_entrydate.cs" />

@@ -15,7 +15,7 @@ namespace FinTsPersistenceIntegrationTests
     {
         static string contactfileLocation;
         static CmdArguments cmdArguments;
-        static ActionResult result;
+        static IActionResult result;
 
         Establish context = () =>
             {

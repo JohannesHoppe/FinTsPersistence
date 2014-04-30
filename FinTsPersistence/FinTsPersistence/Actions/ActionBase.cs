@@ -22,7 +22,7 @@ namespace FinTsPersistence.Actions
             return OnParse(action, arguments);
         }
 
-        public virtual ActionResult Execute(FinService service, ITanSource tanSource)
+        public virtual IActionResult Execute(FinService service, ITanSource tanSource)
         {
             order = OnCreateOrder(service);
             if (order == null)

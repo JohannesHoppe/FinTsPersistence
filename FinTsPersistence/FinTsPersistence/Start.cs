@@ -29,7 +29,7 @@ namespace FinTsPersistence
 
             try
             {
-                ActionResult result = DoAction(args);
+                IActionResult result = DoAction(args);
                 returnCode = result.OrderStatusCode;
             }
             catch (ArgumentException ex)
@@ -54,7 +54,7 @@ namespace FinTsPersistence
         /// Entry point for embedding the library
         /// Does some in-before checks against the given data
         /// </summary>
-        public static ActionResult DoAction(string[] args)
+        public static IActionResult DoAction(string[] args)
         {
             commandLineHelper.CheckAmountOfParameters(args);
 

@@ -5,6 +5,6 @@ namespace FinTsPersistence
 {
     public interface IFinTsService
     {
-        ActionResult DoAction(string action, StringDictionary arguments);
+        IActionResult DoAction(string action, StringDictionary arguments);
     }
 }

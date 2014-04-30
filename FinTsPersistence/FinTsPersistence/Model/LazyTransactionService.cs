@@ -41,7 +41,7 @@ namespace FinTsPersistence.Model
             this.date = date;
         }
 
-        public ActionResult DoPersistence(StringDictionary arguments)
+        public IActionResult DoPersistence(StringDictionary arguments)
         {
             var lastStoredTransaction = transactionRepository.GetLastTransaction();
             
@@ -54,7 +54,7 @@ namespace FinTsPersistence.Model
             arguments = arguments.NewCopy();
             arguments.Add(Arguments.FromDate, nextDayToPersist.ToIsoDate());
 
-            ActionResult result = finTsService.DoAction(ActionPersist.ActionName, arguments);
+            IActionResult result = finTsService.DoAction(ActionPersist.ActionName, arguments);
 
             if (result.Status != Status.Success)
             {

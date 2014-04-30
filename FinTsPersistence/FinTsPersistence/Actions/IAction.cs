@@ -9,7 +9,7 @@ namespace FinTsPersistence.Actions
     {
         bool Parse(string action, StringDictionary arguments);
 
-        ActionResult Execute(FinService service, ITanSource tanSource);
+        IActionResult Execute(FinService service, ITanSource tanSource);
 
         ResponseData GetResponseData(FinService aService);
     }

@@ -15,7 +15,7 @@ using Status = FinTsPersistence.Actions.Result.Status;
 namespace FinTsPersistenceTests
 {
     [Subject("LazyTransactionService")]
-    internal class when_getting_new_transactions
+    internal class when_getting_no_stored_transaction
     {
         static LazyTransactionService service;
         static Mock<ITransactionRepository> repository;
@@ -32,7 +32,7 @@ namespace FinTsPersistenceTests
             today               = new DateTime(2014, 03, 5);
             oneDayAfterLastDay  = new DateTime(2014, 03, 4);
             lastStoredDay       = new DateTime(2014, 03, 3);
-            var lastStoredTransaction = new Transaction { TransactionId = 1, EntryDate = lastStoredDay };
+            var lastStoredTransaction = new NoTransaction();
 
             repository = new Mock<ITransactionRepository>();
             repository.Setup(m => m.GetLastTransaction()).Returns(lastStoredTransaction);
@@ -44,15 +44,7 @@ namespace FinTsPersistenceTests
                 {
                     Response = new ResponseData
                         {
-                            Transactions = new List<FinTsTransaction>
-                            {
-                                new Transaction { EntryDate = new DateTime(2014, 03, 4) },
-                                new Transaction { EntryDate = new DateTime(2014, 03, 4) },
-                                new Transaction { EntryDate = new DateTime(2014, 03, 4) },
-                                new Transaction { EntryDate = new DateTime(2014, 03, 5) },
-                                new Transaction { EntryDate = new DateTime(2014, 03, 5) },
-                                new Transaction { EntryDate = new DateTime(2014, 03, 6) },
-                            }
+                            Transactions = new List<FinTsTransaction>()
                         }
                 };
 

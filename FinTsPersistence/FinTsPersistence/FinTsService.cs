@@ -25,7 +25,7 @@ namespace FinTsPersistence
             this.consoleXX = consoleXX;
         }
 
-        public ActionResult DoAction(string action, StringDictionary arguments)
+        public IActionResult DoAction(string action, StringDictionary arguments)
         {
             // In jedem Fall wird die PIN oder der Dialogkontext zur Fortführung benötigt.
             string pin = arguments[Arguments.Pin];
@@ -64,7 +64,7 @@ namespace FinTsPersistence
             }
 
             FinService service = FinServiceCreator.GetFinService(contact, dialog, arguments);
-            ActionResult result = new ActionResult(Status.Unknown);
+            IActionResult result = new ActionResult(Status.Unknown);
 
             try
             {
