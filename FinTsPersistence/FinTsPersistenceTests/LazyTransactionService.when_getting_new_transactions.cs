@@ -20,21 +20,28 @@ namespace FinTsPersistenceTests
     {
         static LazyTransactionService service;
         static Mock<ITransactionRepository> repository;
+        static List<Transaction> repository_SaveTransactions_Argument;
         static Mock<IFinTsService> finTsService;
-        static StringDictionary finTsServiceArguments;
+        static StringDictionary finTsService_doAction_Arguments;
         static ActionResult result;
+        static DateTime today;
+        static DateTime oneDayAfterLastDay;
+        static DateTime lastStoredDay;      
 
         Establish context = () =>
         {
-            var today = new DateTime(2014, 03, 5);
-            var yesterday = new DateTime(2014, 03, 4);
-            var twoDaysBefore = new DateTime(2014, 03, 3);
-            var lastStoredTransaction = new Transaction { TransactionId = 1, EntryDate = twoDaysBefore };
+            today               = new DateTime(2014, 03, 5);
+            oneDayAfterLastDay  = new DateTime(2014, 03, 4);
+            lastStoredDay       = new DateTime(2014, 03, 3);
+            var lastStoredTransaction = new Transaction { TransactionId = 1, EntryDate = lastStoredDay };
 
             repository = new Mock<ITransactionRepository>();
             repository.Setup(m => m.GetLastTransaction()).Returns(lastStoredTransaction);
 
-            ActionResult mockedResult = new ActionResult(Status.Success)
+            repository.Setup(m => m.SaveTransactions(Moq.It.IsAny<IEnumerable<Transaction>>()))
+                .Callback<IEnumerable<Transaction>>(c => repository_SaveTransactions_Argument = c.ToList());
+
+            ActionResult mockedfinTsServiceResult = new ActionResult(Status.Success)
                 {
                     Response = new ResponseData
                         {
@@ -43,15 +50,17 @@ namespace FinTsPersistenceTests
                                 new Transaction { EntryDate = new DateTime(2014, 03, 4) },
                                 new Transaction { EntryDate = new DateTime(2014, 03, 4) },
                                 new Transaction { EntryDate = new DateTime(2014, 03, 4) },
-                                new Transaction { EntryDate = new DateTime(2014, 03, 5) }
+                                new Transaction { EntryDate = new DateTime(2014, 03, 5) },
+                                new Transaction { EntryDate = new DateTime(2014, 03, 5) },
+                                new Transaction { EntryDate = new DateTime(2014, 03, 6) },
                             }
                         }
                 };
 
             finTsService = new Mock<IFinTsService>();
             finTsService.Setup(m => m.DoAction(ActionPersist.ActionName, Moq.It.IsAny<StringDictionary>()))
-                .Returns(mockedResult)
-                .Callback<string, StringDictionary>((action, arguments) => finTsServiceArguments = arguments);
+                .Returns(mockedfinTsServiceResult)
+                .Callback<string, StringDictionary>((action, arguments) => finTsService_doAction_Arguments = arguments);
 
 
             var date = new Mock<IDate>();
@@ -60,13 +69,21 @@ namespace FinTsPersistenceTests
             service = new LazyTransactionService(repository.Object, finTsService.Object, date.Object);
         };
 
-        private Because of = () => result = service.DoPersistence(new StringDictionary()); 
+        Because of = () => result = service.DoPersistence(new StringDictionary()); 
 
-        private It should_call_GetLastTransaction_from_repository = () => repository.Verify(v => v.GetLastTransaction(), Times.Once);
+        It should_call_GetLastTransaction_from_repository = () => repository.Verify(v => v.GetLastTransaction(), Times.Once);
 
-        private It should_call_FinTsService = () => finTsService.Verify(v => v.DoAction(ActionPersist.ActionName, Moq.It.IsAny<StringDictionary>()));
+        It should_call_FinTsService = () => finTsService.Verify(v => v.DoAction(ActionPersist.ActionName, Moq.It.IsAny<StringDictionary>()));
 
-        private It should_call_FinTsService_with_the_next_day_after_lastStoredTransaction = () => finTsServiceArguments[Arguments.FromDate].Should().Be("2014-03-04");
+        It should_call_FinTsService_with_one_day_after_last_day = () => finTsService_doAction_Arguments[Arguments.FromDate].Should().Be(oneDayAfterLastDay.ToIsoDate());
+
+        It should_insert_the_correct_number_of_transactions = () => repository_SaveTransactions_Argument.Should().HaveCount(3);
+
+        It should_only_insert_dates_OnOrBefore_one_day_after_last_day = () => repository_SaveTransactions_Argument.ForEach(x => x.EntryDate.Should().BeOnOrAfter(oneDayAfterLastDay));
+
+        It should_never_insert_dates_of_today = () => repository_SaveTransactions_Argument.ForEach(x => x.EntryDate.Should().NotBe(today));
+
+        It should_never_insert_dates_of_the_future = () => repository_SaveTransactions_Argument.ForEach(x => x.EntryDate.Should().BeBefore(today));
 
     }
 }
