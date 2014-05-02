@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FinTsPersistence.when_receiving_data_to_persist_full_ef_test.cs" />
     <Compile Include="FinTsPersistence.when_receiving_data_to_persist_range_check.cs" />
     <Compile Include="FinTsPersistence.when_receiving_data_to_persist.cs" />
     <Compile Include="Helper\IntegrationTestData.cs" />
@@ -67,6 +68,9 @@
     <Compile Include="FinTsPersistence.when_receiving_a_balance.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

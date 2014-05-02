@@ -23,6 +23,15 @@ namespace FinTsPersistence
             builder.RegisterType<ConsoleX>()
                    .As<IConsoleX>();
 
+            builder.RegisterType<TransactionContext>()
+                   .As<ITransactionContext>();
+
+            builder.RegisterType<TransactionRepository>()
+                   .As<ITransactionRepository>();
+
+            builder.RegisterType<Date>()
+                    .As<IDate>();
+
             builder.RegisterType<ActionBalance>()
                    .As<IAction>()
                    .WithMetadata(ActionFactory.ActionName, ActionBalance.ActionName);

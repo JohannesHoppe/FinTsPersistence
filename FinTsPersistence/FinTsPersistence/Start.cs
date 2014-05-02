@@ -16,8 +16,6 @@ namespace FinTsPersistence
     /// </remarks>
     public class Start
     {
-        private static ICommandLineHelper commandLineHelper;
-
         /// <summary>
         /// The main entry point for the command-line application.
         /// </summary>
@@ -25,7 +23,7 @@ namespace FinTsPersistence
         public static int Main(string[] args)
         {
             int returnCode = -1;
-            commandLineHelper = ContainerConfig.Resolve<ICommandLineHelper>();
+            var commandLineHelper = ContainerConfig.Resolve<ICommandLineHelper>();
 
             try
             {
@@ -56,6 +54,7 @@ namespace FinTsPersistence
         /// </summary>
         public static IActionResult DoAction(string[] args)
         {
+            var commandLineHelper = ContainerConfig.Resolve<ICommandLineHelper>();
             commandLineHelper.CheckAmountOfParameters(args);
 
             var extractedArguments = commandLineHelper.ExtractArguments(args);
