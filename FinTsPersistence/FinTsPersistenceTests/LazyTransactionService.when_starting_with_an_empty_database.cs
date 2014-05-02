@@ -15,7 +15,7 @@ using Status = FinTsPersistence.Actions.Result.Status;
 namespace FinTsPersistenceTests
 {
     [Subject("LazyTransactionService")]
-    internal class when_getting_no_stored_transaction
+    internal class when_starting_with_an_empty_database
     {
         static LazyTransactionService service;
         static Mock<ITransactionRepository> repository;
@@ -24,35 +24,23 @@ namespace FinTsPersistenceTests
         static StringDictionary finTsService_doAction_Arguments;
         static IActionResult result;
         static DateTime today;
-        static DateTime oneDayAfterLastDay;
-        static DateTime lastStoredDay;      
+        static DateTime firstDayOfYear;    
 
         Establish context = () =>
         {
-            today               = new DateTime(2014, 03, 5);
-            oneDayAfterLastDay  = new DateTime(2014, 03, 4);
-            lastStoredDay       = new DateTime(2014, 03, 3);
-            var lastStoredTransaction = new NoTransaction();
+            today          = new DateTime(2014, 03, 5);
+            firstDayOfYear = new DateTime(2014, 01, 1);
 
             repository = new Mock<ITransactionRepository>();
-            repository.Setup(m => m.GetLastTransaction()).Returns(lastStoredTransaction);
+            repository.Setup(m => m.GetLastTransaction()).Returns(new NoTransaction());
 
             repository.Setup(m => m.SaveTransactions(Moq.It.IsAny<IEnumerable<Transaction>>()))
                 .Callback<IEnumerable<Transaction>>(c => repository_SaveTransactions_Argument = c.ToList());
-
-            ActionResult mockedfinTsServiceResult = new ActionResult(Status.Success)
-                {
-                    Response = new ResponseData
-                        {
-                            Transactions = new List<FinTsTransaction>()
-                        }
-                };
-
+                
             finTsService = new Mock<IFinTsService>();
             finTsService.Setup(m => m.DoAction(ActionPersist.ActionName, Moq.It.IsAny<StringDictionary>()))
-                .Returns(mockedfinTsServiceResult)
+                .Returns(new Mock<IActionResult>().Object)
                 .Callback<string, StringDictionary>((action, arguments) => finTsService_doAction_Arguments = arguments);
-
 
             var date = new Mock<IDate>();
             date.Setup(m => m.Now).Returns(today);
@@ -66,16 +54,6 @@ namespace FinTsPersistenceTests
 
         It should_call_FinTsService = () => finTsService.Verify(v => v.DoAction(ActionPersist.ActionName, Moq.It.IsAny<StringDictionary>()));
 
-        It should_call_FinTsService_with_one_day_after_last_day = () => finTsService_doAction_Arguments[Arguments.FromDate].Should().Be(oneDayAfterLastDay.ToIsoDate());
-
-        It should_insert_the_correct_number_of_transactions = () => repository_SaveTransactions_Argument.Should().HaveCount(3);
-
-        It should_only_insert_dates_OnOrBefore_one_day_after_last_day = () => repository_SaveTransactions_Argument.ForEach(x => x.EntryDate.Should().BeOnOrAfter(oneDayAfterLastDay));
-
-        It should_never_insert_dates_of_today = () => repository_SaveTransactions_Argument.ForEach(x => x.EntryDate.Should().NotBe(today));
-
-        It should_never_insert_dates_of_the_future = () => repository_SaveTransactions_Argument.ForEach(x => x.EntryDate.Should().BeBefore(today));
-
-        It should_return_a_successfull_result = () => result.Status.Should().Be(Status.Success);
+        It should_call_FinTsService_with_first_day_of_year = () => finTsService_doAction_Arguments[Arguments.FromDate].Should().Be(firstDayOfYear.ToIsoDate());
     }
 }
