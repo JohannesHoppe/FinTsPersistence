@@ -26,6 +26,6 @@
         /// <summary>
         /// Data from the actions
         /// </summary>
-        public ResponseData Response { set; get; }
+        public IResponseData Response { set; get; }
     }
 }

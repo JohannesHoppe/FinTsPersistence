@@ -40,25 +40,21 @@ namespace FinTsPersistenceTests
             repository.Setup(m => m.SaveTransactions(Moq.It.IsAny<IEnumerable<Transaction>>()))
                 .Callback<IEnumerable<Transaction>>(c => repository_SaveTransactions_Argument = c.ToList());
 
-            ActionResult mockedfinTsServiceResult = new ActionResult(Status.Success)
+            var mockedfinTsServiceResult = new Mock<IActionResult>();
+            mockedfinTsServiceResult.Setup(m => m.Status).Returns(Status.Success);
+            mockedfinTsServiceResult.Setup(m => m.Response.Transactions).Returns(new List<FinTsTransaction>
                 {
-                    Response = new ResponseData
-                        {
-                            Transactions = new List<FinTsTransaction>
-                            {
-                                new Transaction { EntryDate = new DateTime(2014, 03, 4) },
-                                new Transaction { EntryDate = new DateTime(2014, 03, 4) },
-                                new Transaction { EntryDate = new DateTime(2014, 03, 4) },
-                                new Transaction { EntryDate = new DateTime(2014, 03, 5) },
-                                new Transaction { EntryDate = new DateTime(2014, 03, 5) },
-                                new Transaction { EntryDate = new DateTime(2014, 03, 6) },
-                            }
-                        }
-                };
+                    new Transaction { EntryDate = new DateTime(2014, 03, 4) },
+                    new Transaction { EntryDate = new DateTime(2014, 03, 4) },
+                    new Transaction { EntryDate = new DateTime(2014, 03, 4) },
+                    new Transaction { EntryDate = new DateTime(2014, 03, 5) },
+                    new Transaction { EntryDate = new DateTime(2014, 03, 5) },
+                    new Transaction { EntryDate = new DateTime(2014, 03, 6) },
+                });
 
             finTsService = new Mock<IFinTsService>();
             finTsService.Setup(m => m.DoAction(ActionPersist.ActionName, Moq.It.IsAny<StringDictionary>()))
-                .Returns(mockedfinTsServiceResult)
+                .Returns(mockedfinTsServiceResult.Object)
                 .Callback<string, StringDictionary>((action, arguments) => finTsService_doAction_Arguments = arguments);
 
 

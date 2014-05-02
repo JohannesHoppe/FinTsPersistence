@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LazyTransactionService.when_receiving_an_error.cs" />
     <Compile Include="LazyTransactionService.when_starting_with_an_empty_database.cs" />
     <Compile Include="LazyTransactionService.when_getting_no_transactions.cs" />
     <Compile Include="LazyTransactionService.when_getting_no_new_transactions.cs" />

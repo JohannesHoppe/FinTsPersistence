@@ -118,6 +118,9 @@
     <Compile Include="Actions\Result\IActionResult.cs">
       <DependentUpon>ActionResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="Actions\Result\IResponseData.cs">
+      <DependentUpon>ResponseData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Actions\Result\ResponseData.cs" />
     <Compile Include="Actions\Result\Status.cs" />
     <Compile Include="Actions\Result\FinTsTransaction.cs" />

@@ -35,14 +35,13 @@ namespace FinTsPersistenceTests
             repository = new Mock<ITransactionRepository>();
             repository.Setup(m => m.GetLastTransaction()).Returns(lastStoredTransaction);
 
-            ActionResult mockedfinTsServiceResult = new ActionResult(Status.Success)
-                {
-                    Response = new ResponseData { Transactions = new List<FinTsTransaction>() }
-                };
+            var mockedfinTsServiceResult = new Mock<IActionResult>();
+            mockedfinTsServiceResult.Setup(m => m.Status).Returns(Status.Success);
+            mockedfinTsServiceResult.Setup(m => m.Response.Transactions).Returns(new List<FinTsTransaction>());
 
             finTsService = new Mock<IFinTsService>();
             finTsService.Setup(m => m.DoAction(ActionPersist.ActionName, Moq.It.IsAny<StringDictionary>()))
-                .Returns(mockedfinTsServiceResult)
+                .Returns(mockedfinTsServiceResult.Object)
                 .Callback<string, StringDictionary>((action, arguments) => finTsService_doAction_Arguments = arguments);
 
             var date = new Mock<IDate>();

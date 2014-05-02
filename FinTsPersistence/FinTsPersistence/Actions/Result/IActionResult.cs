@@ -20,6 +20,6 @@
         /// <summary>
         /// Data from the actions
         /// </summary>
-        ResponseData Response { set; get; }
+        IResponseData Response { set; get; }
     }
 }
