@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using FinTsPersistence;
 using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
@@ -22,36 +23,51 @@ namespace FinTsPersistenceIntegrationTests
         static CmdArguments cmdArguments;
         static DateTime fromDate;
         static IActionResult result1;
+        static FinTsTransaction exampleTransaction;
         static IActionResult result2;
 
         Establish context = () =>
         {
             contactfileLocation = IntegrationTestData.GetContacfileLocation();
             cmdArguments = IntegrationTestData.GetCmdArguments();
-            fromDate = DateTime.Now.AddDays(-10).Date;
+            fromDate = DateTime.Now.AddDays(-7).Date;
         };
 
         Because of = () => 
         {
+            // first: finding a date with transactions
             result1 = ContainerConfig.Resolve<IFinTsService>().DoAction(
             ActionPersist.ActionName,
             (new CommandLineHelper(null)).ExtractArguments(new[]
-            {
-                "XXX",
-                Arguments.ContactFile, contactfileLocation,
-                Arguments.Pin, cmdArguments.Pin,
-                Arguments.AcctNo, cmdArguments.Acctno,
-                Arguments.AcctBankCode, cmdArguments.Acctbankcode,
-                Arguments.Format, "csv",
-                Arguments.FromDate, fromDate.ToIsoDate()
-            }).Arguments);
+                {
+                    "XXX",
+                    Arguments.ContactFile, contactfileLocation,
+                    Arguments.Pin, cmdArguments.Pin,
+                    Arguments.AcctNo, cmdArguments.Acctno,
+                    Arguments.AcctBankCode, cmdArguments.Acctbankcode,
+                    Arguments.FromDate, fromDate.ToIsoDate()
+                }
+            ).Arguments);
+
+            exampleTransaction = result1.Response.Transactions.First();
+
+            // second: verifying assumption
+            result2 = ContainerConfig.Resolve<IFinTsService>().DoAction(
+            ActionPersist.ActionName,
+            (new CommandLineHelper(null)).ExtractArguments(new[]
+                {
+                    "XXX",
+                    Arguments.ContactFile, contactfileLocation,
+                    Arguments.Pin, cmdArguments.Pin,
+                    Arguments.AcctNo, cmdArguments.Acctno,
+                    Arguments.AcctBankCode, cmdArguments.Acctbankcode,
+                    Arguments.FromDate, exampleTransaction.EntryDate.ToIsoDate()
+                }
+            ).Arguments);
         };
 
-        It should_execute_successfully = () => result.Status.Should().Be(Status.Success);
-        It should_return_a_list_of_transactions = () => result.Response.Transactions.Should().NotBeEmpty();
-        It should_not_return_formatted_output = () => result.Response.Formatted.Should().BeNull();
-
-        It should_return_transactions_with_entrydates_of_the_right_time = () => result.Response.Transactions.ForEach(x => x.EntryDate.Should().BeOnOrAfter(fromDate));
-        It should_return_transactions_valuedates_of_the_right_time = () => result.Response.Transactions.ForEach(x => x.ValueDate.Should().BeOnOrAfter(fromDate));
+        It should_execute_successfully = () => result2.Status.Should().Be(Status.Success);
+        It should_return_a_list_of_transactions = () => result2.Response.Transactions.Should().NotBeEmpty();
+        It should_return_transactions_with_entrydates_of_the_right_time = () => result2.Response.Transactions.First().EntryDate.Should().Be(exampleTransaction.EntryDate);
     }
 }

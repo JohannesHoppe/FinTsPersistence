@@ -24,7 +24,7 @@ namespace FinTsPersistenceIntegrationTests
         {
             contactfileLocation = IntegrationTestData.GetContacfileLocation();
             cmdArguments = IntegrationTestData.GetCmdArguments();
-            fromDate = DateTime.Now.AddDays(-4).Date;
+            fromDate = DateTime.Now.AddDays(-7).Date;
         };
 
         Because of = () => result = ContainerConfig.Resolve<IFinTsService>().DoAction(
@@ -36,7 +36,6 @@ namespace FinTsPersistenceIntegrationTests
                 Arguments.Pin, cmdArguments.Pin,
                 Arguments.AcctNo, cmdArguments.Acctno,
                 Arguments.AcctBankCode, cmdArguments.Acctbankcode,
-                Arguments.Format, "csv",
                 Arguments.FromDate, fromDate.ToIsoDate()
             }).Arguments);
 

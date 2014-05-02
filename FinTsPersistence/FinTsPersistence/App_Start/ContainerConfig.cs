@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using FinTsPersistence.Actions;
+using FinTsPersistence.Code;
 using FinTsPersistence.Model;
 using FinTsPersistence.TanSources;
 
@@ -18,6 +19,9 @@ namespace FinTsPersistence
 
             builder.RegisterType<CommandLineHelper>()
                     .As<ICommandLineHelper>();
+
+            builder.RegisterType<ConsoleX>()
+                   .As<IConsoleX>();
 
             builder.RegisterType<ActionBalance>()
                    .As<IAction>()
