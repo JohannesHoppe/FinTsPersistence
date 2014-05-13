@@ -83,7 +83,6 @@
     <Compile Include="TransactionRepository.when_comparing_very_similar_transactions_with_different_value.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
     <Compile Include="TransactionRepository.when_getting_last_transactions.cs" />
   </ItemGroup>
