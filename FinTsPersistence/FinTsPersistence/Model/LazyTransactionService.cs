@@ -27,14 +27,13 @@ namespace FinTsPersistence.Model
     /// This strategy assumes that the historic data send by the bank never changes again!
     /// This strategy heavily relies on the EntryDate. 
     /// </summary>
-    //TODO: verification: order of transactions (by EntryDate)
     public class LazyTransactionService : ITransactionService
     {
         private readonly IFinTsService finTsService;
         private readonly IDate date;
         private readonly ITransactionRepository transactionRepository;
 
-        public LazyTransactionService(ITransactionRepository transactionRepository, IFinTsService finTsService, IDate date)
+        public LazyTransactionService(ITransactionRepository transactionRepository, IFinTsService finTsService, IDate date, IInputOutput io)
         {
             this.finTsService = finTsService;
             this.transactionRepository = transactionRepository;

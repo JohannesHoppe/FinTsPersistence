@@ -115,10 +115,8 @@ namespace FinTsPersistence
                 }
 
                 // Auftrag ausgeführt. Zuerst geben wir den gesammelten Laufzettel aus,
-                // danach die Antwortdaten, sofern welche vorhanden sind. Der Laufzettel wird
-                // auf den Error-Kanal ausgegeben, damit er von der Antwortdaten leichter
-                // getrennt werden kann.
-                io.Error.WriteLine(service.Docket);
+                // danach die Antwortdaten, sofern welche vorhanden sind.
+                io.WriteLine(service.Docket);
 
                 if (result.Status != Status.CouldNotLogOn)
                 {
