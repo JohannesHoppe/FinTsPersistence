@@ -24,7 +24,7 @@ namespace FinTsPersistence.Actions
         private SwiftDate    m_tFromDate = SwiftDate.NullDate;
         private OutputFormat m_nFormat = OutputFormat.CSV;
 
-        public ActionStatement(IConsoleX consoleXX) : base(consoleXX) { }
+        public ActionStatement(IInputOutput io) : base(io) { }
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {

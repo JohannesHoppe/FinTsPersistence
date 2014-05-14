@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Specialized;
 using FinTsPersistence.Code;
 using Subsembly.FinTS;
@@ -12,28 +11,28 @@ namespace FinTsPersistence.Actions
 
         private FinRemitt m_aRemitt;
 
-        public ActionRemittDebit(IConsoleX consoleXX) : base(consoleXX) { }
+        public ActionRemittDebit(IInputOutput io) : base(io) { }
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {
             string sPayeeName = arguments["-payeename"];
             if (string.IsNullOrEmpty(sPayeeName))
             {
-                ConsoleXX.Error.WriteLine("Parameter -payeename fehlt!");
+                Io.Error.WriteLine("Parameter -payeename fehlt!");
                 return false;
             }
 
             string sPayeeAcctNo = arguments["-payeeacctno"];
             if (string.IsNullOrEmpty(sPayeeAcctNo))
             {
-                ConsoleXX.Error.WriteLine("Parameter -payeeacctno fehlt!");
+                Io.Error.WriteLine("Parameter -payeeacctno fehlt!");
                 return false;
             }
 
             string sPayeeBankCode = arguments["-payeebankcode"];
             if (string.IsNullOrEmpty(sPayeeBankCode))
             {
-                ConsoleXX.Error.WriteLine("Parameter -payeebankcode fehlt!");
+                Io.Error.WriteLine("Parameter -payeebankcode fehlt!");
                 return false;
             }
 
@@ -45,7 +44,7 @@ namespace FinTsPersistence.Actions
             catch { /* IGNORE */ }
             if (dAmount == 0M)
             {
-                ConsoleXX.Error.WriteLine("Parameter -amount fehlt oder fehlerhaft!");
+                Io.Error.WriteLine("Parameter -amount fehlt oder fehlerhaft!");
                 return false;
             }
 

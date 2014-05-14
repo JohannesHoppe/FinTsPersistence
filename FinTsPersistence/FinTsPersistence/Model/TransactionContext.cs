@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using FinTsPersistence.Code;
 
 namespace FinTsPersistence.Model
 {
@@ -14,6 +15,8 @@ namespace FinTsPersistence.Model
         }
 
         public IDbSet<Transaction> Transactions { get; set; }
+
+        public IDbSet<TransactionLog> TransactionLogs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

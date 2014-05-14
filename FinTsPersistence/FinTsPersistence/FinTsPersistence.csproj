@@ -83,9 +83,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.3.3.0\lib\net40\Autofac.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -105,6 +102,7 @@
       <Name>System</Name>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
@@ -131,19 +129,24 @@
     <Compile Include="App_Start\ICommandLineHelper.cs">
       <DependentUpon>CommandLineHelper.cs</DependentUpon>
     </Compile>
-    <Compile Include="Code\ConsoleXError.cs" />
-    <Compile Include="Code\ConsoleXOut.cs" />
-    <Compile Include="Code\ConsoleX.cs" />
-    <Compile Include="Code\IConsoleError.cs">
-      <DependentUpon>ConsoleXError.cs</DependentUpon>
+    <Compile Include="Code\ConsoleOutputError.cs" />
+    <Compile Include="Code\Console.cs" />
+    <Compile Include="Code\ConsoleOutputInfo.cs" />
+    <Compile Include="Code\DbLoggerInfo.cs" />
+    <Compile Include="Code\IOutputInfo.cs">
+      <DependentUpon>ConsoleOutputInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Code\IConsoleOut.cs">
-      <DependentUpon>ConsoleXOut.cs</DependentUpon>
+    <Compile Include="Code\DbLoggerError.cs" />
+    <Compile Include="Code\DbLogger.cs" />
+    <Compile Include="Code\IOutputError.cs">
+      <DependentUpon>ConsoleOutputError.cs</DependentUpon>
     </Compile>
-    <Compile Include="Code\IConsoleX.cs">
-      <DependentUpon>ConsoleX.cs</DependentUpon>
+    <Compile Include="Code\IInputOutput.cs">
+      <DependentUpon>Console.cs</DependentUpon>
     </Compile>
     <Compile Include="Code\StringDictionaryExtension.cs" />
+    <Compile Include="Code\TransactionLog.cs" />
+    <Compile Include="Code\MessageSeverity.cs" />
     <Compile Include="Model\Date.cs" />
     <Compile Include="Model\IDate.cs">
       <DependentUpon>Date.cs</DependentUpon>

@@ -3,23 +3,17 @@
     /// <summary>
     /// Made Unit-Testable
     /// </summary>
-    public interface IConsoleX
+    public interface IInputOutput
     {
         /// <summary>
         /// Gets the standard error output stream.
         /// </summary>
-        IConsoleError Error { get; }
+        IOutputError Error { get; }
 
         /// <summary>
-        /// Gets the standard output stream.
+        /// Gets a special output stream.
         /// </summary>
-        IConsoleOut Out { get; }
-
-        /// <summary>
-        /// Writes the specified string value to the standard output stream.
-        /// </summary>
-        /// <param name="value">The value to write.</param>
-        void Write(string value);
+        IOutputInfo Info { get; }
 
         /// <summary>
         /// Writes the specified string value, followed by the current line terminator, to the standard output stream.

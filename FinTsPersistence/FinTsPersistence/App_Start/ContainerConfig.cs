@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using System.Configuration;
+using Autofac;
 using FinTsPersistence.Actions;
 using FinTsPersistence.Code;
 using FinTsPersistence.Model;
@@ -20,11 +21,18 @@ namespace FinTsPersistence
             builder.RegisterType<CommandLineHelper>()
                     .As<ICommandLineHelper>();
 
-            builder.RegisterType<ConsoleX>()
-                   .As<IConsoleX>();
-
             builder.RegisterType<TransactionContext>()
                    .As<ITransactionContext>();
+
+            if (ConfigurationManager.AppSettings["WriteOutputToDb"].ToUpper() == "TRUE") {
+
+                builder.RegisterType<DbLogger>()
+                        .As<IInputOutput>();
+            }   else {
+
+                builder.RegisterType<Console>()
+                       .As<IInputOutput>();
+            }
 
             builder.RegisterType<TransactionRepository>()
                    .As<ITransactionRepository>();

@@ -1,5 +1,4 @@
-﻿using System;
-using FinTsPersistence.Code;
+﻿using FinTsPersistence.Code;
 using Subsembly.FinTS;
 
 namespace FinTsPersistence.TanSources
@@ -9,11 +8,11 @@ namespace FinTsPersistence.TanSources
     /// </summary>
     public class TanByPrompt : ITanSource
     {
-        private readonly IConsoleX consoleXX;
+        private readonly IInputOutput io;
 
-        public TanByPrompt(IConsoleX consoleXX)
+        public TanByPrompt(IInputOutput io)
         {
-            this.consoleXX = consoleXX;
+            this.io = io;
         }
 
         public string GetTan(FinService aService)
@@ -23,14 +22,13 @@ namespace FinTsPersistence.TanSources
 
             if ((tanProcess != null) && (aChallengeInfo != null))
             {
-                consoleXX.Write(tanProcess.ChallengeLabel + ": ");
-                consoleXX.WriteLine(aChallengeInfo.Challenge);
+                io.WriteLine(tanProcess.ChallengeLabel + ": ");
+                io.WriteLine(aChallengeInfo.Challenge);
             }
 
-            consoleXX.Write("TAN: ");
-            consoleXX.Out.Flush();
+            io.WriteLine("TAN:");
 
-            string sTAN = consoleXX.ReadLine();
+            string sTAN = io.ReadLine();
             return !string.IsNullOrEmpty(sTAN) ? sTAN : null;
         }
     }

@@ -10,11 +10,11 @@ namespace FinTsPersistence.Actions
     public abstract class ActionBase : IAction
     {
         private FinOrder order;
-        protected IConsoleX ConsoleXX;
+        protected IInputOutput Io;
 
-        protected ActionBase(IConsoleX consoleXX)
+        protected ActionBase(IInputOutput io)
         {
-            this.ConsoleXX = consoleXX;
+            Io = io;
         }
 
         public bool Parse(string action, StringDictionary arguments)
@@ -45,14 +45,14 @@ namespace FinTsPersistence.Actions
 
             if (result == FinServiceResult.NeedTanMediaName)
             {
-                ConsoleXX.WriteLine("Bezeichnung des TAN-Mediums erforderlich!");
+                Io.WriteLine("Bezeichnung des TAN-Mediums erforderlich!");
                 FinTanMedia[] vTanMedias = service.TanMedias;
                 if (vTanMedias != null)
                 {
-                    ConsoleXX.WriteLine("Bitte geben Sie einen der folgenden Parameter an:");
+                    Io.WriteLine("Bitte geben Sie einen der folgenden Parameter an:");
                     foreach (FinTanMedia t in vTanMedias)
                     {
-                        ConsoleXX.WriteLine("-tanmedianame \"" + t.TanMediaName + "\"");
+                        Io.WriteLine("-tanmedianame \"" + t.TanMediaName + "\"");
                     }
                 }
 

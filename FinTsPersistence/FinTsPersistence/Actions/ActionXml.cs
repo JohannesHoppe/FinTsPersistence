@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Specialized;
 using System.Diagnostics;
 using System.IO;
@@ -17,19 +16,19 @@ namespace FinTsPersistence.Actions
         private XmlDocument                        m_aXmlDocument;
         private FinTransmogrifierRepository        m_aSyntax;
 
-        public ActionXml(IConsoleX consoleXX) : base(consoleXX) { }
+        public ActionXml(IInputOutput io) : base(io) { }
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {
             string sFileName = arguments["-xmlfile"];
             if (sFileName == null)
             {
-                ConsoleXX.Error.WriteLine("Argument -xmlfile muss angegeben werden!");
+                Io.Error.WriteLine("Argument -xmlfile muss angegeben werden!");
                 return false;
             }
             if (!File.Exists(sFileName))
             {
-                ConsoleXX.Error.WriteLine("XML Datei {0} nicht gefunden!", sFileName);
+                Io.Error.WriteLine("XML Datei {0} nicht gefunden!", sFileName);
                 return false;
             }
 

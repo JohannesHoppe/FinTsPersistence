@@ -12,7 +12,7 @@ namespace FinTsPersistence.Actions
     {
         public const string ActionName = "balance";
 
-        public ActionBalance(IConsoleX consoleXX) : base(consoleXX) { }
+        public ActionBalance(IInputOutput io) : base(io) { }
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {

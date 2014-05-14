@@ -1,36 +1,25 @@
-﻿using System;
-
-namespace FinTsPersistence.Code
+﻿namespace FinTsPersistence.Code
 {
     /// <summary>
     /// Wrapper to make Standard-Console Unit-Testable
     /// </summary>
-    public class ConsoleX : IConsoleX
+    public class Console : IInputOutput
     {
-        public ConsoleX()
+        public Console()
         {
-            Error = new ConsoleXError();
-            Out = new ConsoleXOut();
+            Error = new ConsoleOutputError();
+            Info = new ConsoleOutputInfo();
         }
 
         /// <summary>
         /// Gets the standard error output stream.
         /// </summary>
-        public IConsoleError Error { get; private set; }
+        public IOutputError Error { get; private set; }
 
         /// <summary>
-        /// Gets the standard output stream.
+        /// Gets a special output stream.
         /// </summary>
-        public IConsoleOut Out { get; private set; }
-
-        /// <summary>
-        /// Writes the specified string value to the standard output stream.
-        /// </summary>
-        /// <param name="value">The value to write.</param>
-        public void Write(string value)
-        {
-            Console.Write(value);
-        }
+        public IOutputInfo Info { get; private set; }
 
         /// <summary>
         /// Writes the specified string value, followed by the current line terminator, to the standard output stream.
@@ -38,7 +27,7 @@ namespace FinTsPersistence.Code
         /// <param name="value">The value to write.</param>
         public void WriteLine(string value) 
         {
-            Console.WriteLine(value);
+            System.Console.WriteLine(value);
         }
 
         /// <summary>
@@ -47,7 +36,7 @@ namespace FinTsPersistence.Code
         /// <returns>The next line of characters from the input stream, or null if no more lines are available.</returns>
         public string ReadLine()
         {
-            return Console.ReadLine();
+            return System.Console.ReadLine();
         }
     }
 }

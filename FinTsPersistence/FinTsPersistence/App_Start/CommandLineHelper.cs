@@ -12,11 +12,11 @@ namespace FinTsPersistence
 {
     public class CommandLineHelper : ICommandLineHelper
     {
-        private readonly IConsoleX consoleXX;
+        private readonly IInputOutput io;
 
-        public CommandLineHelper(IConsoleX consoleXX)
+        public CommandLineHelper(IInputOutput io)
         {
-            this.consoleXX = consoleXX;
+            this.io = io;
         }
 
         /// <summary>
@@ -85,47 +85,47 @@ namespace FinTsPersistence
             aReader.Close();
             aStream.Close();
 
-            consoleXX.Error.WriteLine(sUsage);
+            io.Error.WriteLine(sUsage);
         }
 
         public void DisplayShortException(Exception ex)
         {
-            consoleXX.Error.WriteLine("Exception: {0}", ex.GetType());
-            consoleXX.Error.WriteLine("Message: {0}", ex.Message);
-            consoleXX.Error.WriteLine("-----------------------------");
+            io.Error.WriteLine("Exception: {0}", ex.GetType());
+            io.Error.WriteLine("Message: {0}", ex.Message);
+            io.Error.WriteLine("-----------------------------");
         }
 
         public void DisplayActionException(ActionException ex)
         {
-            consoleXX.Error.WriteLine("Exception: {0}", ex.GetType());
-            consoleXX.Error.WriteLine("Message: {0}", ex.Message);
-            consoleXX.Error.WriteLine("-----------------------------");
-            consoleXX.Error.WriteLine(ex.ToString());
-            consoleXX.Error.WriteLine("-----------------------------");
+            io.Error.WriteLine("Exception: {0}", ex.GetType());
+            io.Error.WriteLine("Message: {0}", ex.Message);
+            io.Error.WriteLine("-----------------------------");
+            io.Error.WriteLine(ex.ToString());
+            io.Error.WriteLine("-----------------------------");
 
             if (ex.InnerException != null)
             {
-                consoleXX.Error.WriteLine("Inner Exception: {0}", ex.InnerException.GetType());
-                consoleXX.Error.WriteLine("Inner Message: {0}", ex.InnerException.Message);
+                io.Error.WriteLine("Inner Exception: {0}", ex.InnerException.GetType());
+                io.Error.WriteLine("Inner Message: {0}", ex.InnerException.Message);
             }
-            consoleXX.Error.WriteLine("-----------------------------");
-            consoleXX.Error.WriteLine("FinTS Trace:");
+            io.Error.WriteLine("-----------------------------");
+            io.Error.WriteLine("FinTS Trace:");
         }
 
         public void DisplayException(Exception ex)
         {
-            consoleXX.Error.WriteLine("Exception: {0}", ex.GetType());
-            consoleXX.Error.WriteLine("Message: {0}", ex.Message);
-            consoleXX.Error.WriteLine("-----------------------------");
-            consoleXX.Error.WriteLine(ex.ToString());
-            consoleXX.Error.WriteLine("-----------------------------");
+            io.Error.WriteLine("Exception: {0}", ex.GetType());
+            io.Error.WriteLine("Message: {0}", ex.Message);
+            io.Error.WriteLine("-----------------------------");
+            io.Error.WriteLine(ex.ToString());
+            io.Error.WriteLine("-----------------------------");
         }
 
         public void WaitForEnterOnDebug()
         {
             #if DEBUG
-            consoleXX.WriteLine("Please press enter to exit.");
-            consoleXX.ReadLine();
+            io.WriteLine("Please press enter to exit.");
+            io.ReadLine();
             #endif
         }
     }

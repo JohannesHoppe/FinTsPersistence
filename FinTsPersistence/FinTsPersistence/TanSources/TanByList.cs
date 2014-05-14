@@ -13,11 +13,11 @@ namespace FinTsPersistence.TanSources
     public class TanByList : ITanSource
     {
         private readonly ArrayList m_vList = new ArrayList();
-        private readonly IConsoleX consoleXX;
+        private readonly IInputOutput io;
 
-        public TanByList(IConsoleX consoleXX)
+        public TanByList(IInputOutput io)
         {
-            this.consoleXX = consoleXX;
+            this.io = io;
         }
 
         class Tan
@@ -121,7 +121,7 @@ namespace FinTsPersistence.TanSources
                 }
             }
 
-            consoleXX.WriteLine("Keine TAN für " + sChallenge + "in TAN-Datei gefunden!");
+            io.WriteLine("Keine TAN für " + sChallenge + "in TAN-Datei gefunden!");
             return null;
         }
 

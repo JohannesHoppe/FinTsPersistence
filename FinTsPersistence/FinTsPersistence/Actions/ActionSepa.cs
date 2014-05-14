@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Specialized;
 using System.IO;
 using FinTsPersistence.Code;
@@ -13,19 +12,19 @@ namespace FinTsPersistence.Actions
 
         private SepaDocument m_aSepaDoc;
 
-        public ActionSepa(IConsoleX consoleXX) : base(consoleXX) { }
+        public ActionSepa(IInputOutput io) : base(io) { }
 
         protected override bool OnParse(string action, StringDictionary arguments)
         {
             string sFileName = arguments["-xmlfile"];
             if (sFileName == null)
             {
-                ConsoleXX.Error.WriteLine("Argument -xmlfile muss angegeben werden!");
+                Io.Error.WriteLine("Argument -xmlfile muss angegeben werden!");
                 return false;
             }
             if (!File.Exists(sFileName))
             {
-                ConsoleXX.Error.WriteLine("SEPA Datei {0} nicht gefunden!", sFileName);
+                Io.Error.WriteLine("SEPA Datei {0} nicht gefunden!", sFileName);
                 return false;
             }
 
@@ -83,18 +82,18 @@ namespace FinTsPersistence.Actions
 
             if (aSepaOrderBuilder == null)
             {
-                ConsoleXX.Error.WriteLine("Keine HBCI-Auftragsart für SEPA-Dokument bekannt!");
+                Io.Error.WriteLine("Keine HBCI-Auftragsart für SEPA-Dokument bekannt!");
                 return null;
             }
             if (!aSepaOrderBuilder.IsSupported)
             {
-                ConsoleXX.Error.WriteLine("HBCI-Auftragsart " + m_aSepaDoc.HbciSegmentType + " von Bank nicht unterstützt!");
+                Io.Error.WriteLine("HBCI-Auftragsart " + m_aSepaDoc.HbciSegmentType + " von Bank nicht unterstützt!");
                 return null;
             }
 
             if (aSepaOrderBuilder.FindSepaFormat(m_aSepaDoc.MessageInfo.PainIdentifier) == null)
             {
-                ConsoleXX.Error.WriteLine("SEPA-Format " + m_aSepaDoc.MessageInfo.PainIdentifier + " von Bank nicht unterstützt!");
+                Io.Error.WriteLine("SEPA-Format " + m_aSepaDoc.MessageInfo.PainIdentifier + " von Bank nicht unterstützt!");
                 return null;
             }
 
