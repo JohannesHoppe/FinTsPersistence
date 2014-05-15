@@ -63,6 +63,8 @@ namespace FinTsPersistenceTests
             date.Setup(m => m.Now).Returns(today);
 
             var io = new Mock<IInputOutput>();
+            io.Setup(m => m.Error).Returns(new Mock<IOutputError>().Object);
+            io.Setup(m => m.Info).Returns(new Mock<IOutputInfo>().Object);
 
             service = new LazyTransactionService(repository.Object, finTsService.Object, date.Object, io.Object);
         };
