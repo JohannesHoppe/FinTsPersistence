@@ -1,11 +1,11 @@
 ﻿using System;
 using FinTsPersistence.Model;
 
-namespace FinTsPersistence.Code
+namespace FinTsPersistence.Code.DbLoggerInputOutput
 {
     /// <summary>
     /// Non-Interactive replacement for the console, loggs everything to DB
-    /// Is not capable to do a ReadLine
+    /// Is not capable to do a Read
     /// Default MessageSeverity: Notice 
     /// </summary>
     public class DbLogger : IInputOutput
@@ -24,14 +24,14 @@ namespace FinTsPersistence.Code
 
         public IOutputInfo Info { get; private set; }
 
-        public void WriteLine(string value)
+        public void Write(string value)
         {
             WriteToDB(value);
         }
 
-        public string ReadLine()
+        public string Read()
         {
-            WriteToDB("DbLogger is not capable to do a ReadLine!", MessageSeverity.Error);
+            WriteToDB("DbLogger is not capable to do a Read!", MessageSeverity.Error);
             throw new NotImplementedException();
         }
 

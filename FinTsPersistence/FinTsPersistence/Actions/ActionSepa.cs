@@ -19,12 +19,12 @@ namespace FinTsPersistence.Actions
             string sFileName = arguments["-xmlfile"];
             if (sFileName == null)
             {
-                Io.Error.WriteLine("Argument -xmlfile muss angegeben werden!");
+                Io.Error.Write("Argument -xmlfile muss angegeben werden!");
                 return false;
             }
             if (!File.Exists(sFileName))
             {
-                Io.Error.WriteLine("SEPA Datei {0} nicht gefunden!", sFileName);
+                Io.Error.Write("SEPA Datei {0} nicht gefunden!", sFileName);
                 return false;
             }
 
@@ -82,18 +82,18 @@ namespace FinTsPersistence.Actions
 
             if (aSepaOrderBuilder == null)
             {
-                Io.Error.WriteLine("Keine HBCI-Auftragsart für SEPA-Dokument bekannt!");
+                Io.Error.Write("Keine HBCI-Auftragsart für SEPA-Dokument bekannt!");
                 return null;
             }
             if (!aSepaOrderBuilder.IsSupported)
             {
-                Io.Error.WriteLine("HBCI-Auftragsart " + m_aSepaDoc.HbciSegmentType + " von Bank nicht unterstützt!");
+                Io.Error.Write("HBCI-Auftragsart " + m_aSepaDoc.HbciSegmentType + " von Bank nicht unterstützt!");
                 return null;
             }
 
             if (aSepaOrderBuilder.FindSepaFormat(m_aSepaDoc.MessageInfo.PainIdentifier) == null)
             {
-                Io.Error.WriteLine("SEPA-Format " + m_aSepaDoc.MessageInfo.PainIdentifier + " von Bank nicht unterstützt!");
+                Io.Error.Write("SEPA-Format " + m_aSepaDoc.MessageInfo.PainIdentifier + " von Bank nicht unterstützt!");
                 return null;
             }
 

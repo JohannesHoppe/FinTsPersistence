@@ -45,14 +45,14 @@ namespace FinTsPersistence.Actions
 
             if (result == FinServiceResult.NeedTanMediaName)
             {
-                Io.WriteLine("Bezeichnung des TAN-Mediums erforderlich!");
+                Io.Write("Bezeichnung des TAN-Mediums erforderlich!");
                 FinTanMedia[] vTanMedias = service.TanMedias;
                 if (vTanMedias != null)
                 {
-                    Io.WriteLine("Bitte geben Sie einen der folgenden Parameter an:");
+                    Io.Write("Bitte geben Sie einen der folgenden Parameter an:");
                     foreach (FinTanMedia t in vTanMedias)
                     {
-                        Io.WriteLine("-tanmedianame \"" + t.TanMediaName + "\"");
+                        Io.Write("-tanmedianame \"" + t.TanMediaName + "\"");
                     }
                 }
 

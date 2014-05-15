@@ -121,7 +121,7 @@ namespace FinTsPersistence.TanSources
                 }
             }
 
-            io.WriteLine("Keine TAN für " + sChallenge + "in TAN-Datei gefunden!");
+            io.Write("Keine TAN für " + sChallenge + "in TAN-Datei gefunden!");
             return null;
         }
 

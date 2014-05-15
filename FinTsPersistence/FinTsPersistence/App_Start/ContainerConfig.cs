@@ -2,6 +2,8 @@
 using Autofac;
 using FinTsPersistence.Actions;
 using FinTsPersistence.Code;
+using FinTsPersistence.Code.ConsoleInputOutput;
+using FinTsPersistence.Code.DbLoggerInputOutput;
 using FinTsPersistence.Model;
 using FinTsPersistence.TanSources;
 

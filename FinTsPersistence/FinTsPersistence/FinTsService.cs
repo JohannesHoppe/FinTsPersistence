@@ -116,14 +116,14 @@ namespace FinTsPersistence
 
                 // Auftrag ausgeführt. Zuerst geben wir den gesammelten Laufzettel aus,
                 // danach die Antwortdaten, sofern welche vorhanden sind.
-                io.WriteLine(service.Docket);
+                io.Write(service.Docket);
 
                 if (result.Status != Status.CouldNotLogOn)
                 {
                     ResponseData responseData = cmd.GetResponseData(service);
                     if (responseData.Formatted != null)
                     {
-                        io.WriteLine(responseData.Formatted);
+                        io.Write(responseData.Formatted);
                     }
                     result.Response = responseData;
                 }

@@ -85,47 +85,47 @@ namespace FinTsPersistence
             aReader.Close();
             aStream.Close();
 
-            io.Error.WriteLine(sUsage);
+            io.Error.Write(sUsage);
         }
 
         public void DisplayShortException(Exception ex)
         {
-            io.Error.WriteLine("Exception: {0}", ex.GetType());
-            io.Error.WriteLine("Message: {0}", ex.Message);
-            io.Error.WriteLine("-----------------------------");
+            io.Error.Write("Exception: {0}", ex.GetType());
+            io.Error.Write("Message: {0}", ex.Message);
+            io.Error.Write("-----------------------------");
         }
 
         public void DisplayActionException(ActionException ex)
         {
-            io.Error.WriteLine("Exception: {0}", ex.GetType());
-            io.Error.WriteLine("Message: {0}", ex.Message);
-            io.Error.WriteLine("-----------------------------");
-            io.Error.WriteLine(ex.ToString());
-            io.Error.WriteLine("-----------------------------");
+            io.Error.Write("Exception: {0}", ex.GetType());
+            io.Error.Write("Message: {0}", ex.Message);
+            io.Error.Write("-----------------------------");
+            io.Error.Write(ex.ToString());
+            io.Error.Write("-----------------------------");
 
             if (ex.InnerException != null)
             {
-                io.Error.WriteLine("Inner Exception: {0}", ex.InnerException.GetType());
-                io.Error.WriteLine("Inner Message: {0}", ex.InnerException.Message);
+                io.Error.Write("Inner Exception: {0}", ex.InnerException.GetType());
+                io.Error.Write("Inner Message: {0}", ex.InnerException.Message);
             }
-            io.Error.WriteLine("-----------------------------");
-            io.Error.WriteLine("FinTS Trace:");
+            io.Error.Write("-----------------------------");
+            io.Error.Write("FinTS Trace:");
         }
 
         public void DisplayException(Exception ex)
         {
-            io.Error.WriteLine("Exception: {0}", ex.GetType());
-            io.Error.WriteLine("Message: {0}", ex.Message);
-            io.Error.WriteLine("-----------------------------");
-            io.Error.WriteLine(ex.ToString());
-            io.Error.WriteLine("-----------------------------");
+            io.Error.Write("Exception: {0}", ex.GetType());
+            io.Error.Write("Message: {0}", ex.Message);
+            io.Error.Write("-----------------------------");
+            io.Error.Write(ex.ToString());
+            io.Error.Write("-----------------------------");
         }
 
         public void WaitForEnterOnDebug()
         {
             #if DEBUG
-            io.WriteLine("Please press enter to exit.");
-            io.ReadLine();
+            io.Write("Please press enter to exit.");
+            io.Read();
             #endif
         }
     }

@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using FinTsPersistence;
 using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
+using FinTsPersistence.Code;
 using FinTsPersistence.Model;
 using FluentAssertions;
 using Machine.Specifications;
@@ -47,7 +48,9 @@ namespace FinTsPersistenceTests
             var date = new Mock<IDate>();
             date.Setup(m => m.Now).Returns(today);
 
-            service = new LazyTransactionService(repository.Object, finTsService.Object, date.Object);
+            var io = new Mock<IInputOutput>();
+
+            service = new LazyTransactionService(repository.Object, finTsService.Object, date.Object, io.Object);
         };
 
         Because of = () => result = service.DoPersistence(new StringDictionary());                                                       

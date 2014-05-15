@@ -23,12 +23,12 @@ namespace FinTsPersistence.Actions
             string sFileName = arguments["-xmlfile"];
             if (sFileName == null)
             {
-                Io.Error.WriteLine("Argument -xmlfile muss angegeben werden!");
+                Io.Error.Write("Argument -xmlfile muss angegeben werden!");
                 return false;
             }
             if (!File.Exists(sFileName))
             {
-                Io.Error.WriteLine("XML Datei {0} nicht gefunden!", sFileName);
+                Io.Error.Write("XML Datei {0} nicht gefunden!", sFileName);
                 return false;
             }
 

@@ -22,13 +22,13 @@ namespace FinTsPersistence.TanSources
 
             if ((tanProcess != null) && (aChallengeInfo != null))
             {
-                io.WriteLine(tanProcess.ChallengeLabel + ": ");
-                io.WriteLine(aChallengeInfo.Challenge);
+                io.Write(tanProcess.ChallengeLabel + ": ");
+                io.Write(aChallengeInfo.Challenge);
             }
 
-            io.WriteLine("TAN:");
+            io.Write("TAN:");
 
-            string sTAN = io.ReadLine();
+            string sTAN = io.Read();
             return !string.IsNullOrEmpty(sTAN) ? sTAN : null;
         }
     }

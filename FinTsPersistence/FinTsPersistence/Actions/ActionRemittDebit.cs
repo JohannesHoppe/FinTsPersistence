@@ -18,21 +18,21 @@ namespace FinTsPersistence.Actions
             string sPayeeName = arguments["-payeename"];
             if (string.IsNullOrEmpty(sPayeeName))
             {
-                Io.Error.WriteLine("Parameter -payeename fehlt!");
+                Io.Error.Write("Parameter -payeename fehlt!");
                 return false;
             }
 
             string sPayeeAcctNo = arguments["-payeeacctno"];
             if (string.IsNullOrEmpty(sPayeeAcctNo))
             {
-                Io.Error.WriteLine("Parameter -payeeacctno fehlt!");
+                Io.Error.Write("Parameter -payeeacctno fehlt!");
                 return false;
             }
 
             string sPayeeBankCode = arguments["-payeebankcode"];
             if (string.IsNullOrEmpty(sPayeeBankCode))
             {
-                Io.Error.WriteLine("Parameter -payeebankcode fehlt!");
+                Io.Error.Write("Parameter -payeebankcode fehlt!");
                 return false;
             }
 
@@ -44,7 +44,7 @@ namespace FinTsPersistence.Actions
             catch { /* IGNORE */ }
             if (dAmount == 0M)
             {
-                Io.Error.WriteLine("Parameter -amount fehlt oder fehlerhaft!");
+                Io.Error.Write("Parameter -amount fehlt oder fehlerhaft!");
                 return false;
             }
 

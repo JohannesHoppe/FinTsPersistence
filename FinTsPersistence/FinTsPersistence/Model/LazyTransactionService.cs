@@ -32,18 +32,22 @@ namespace FinTsPersistence.Model
         private readonly IFinTsService finTsService;
         private readonly IDate date;
         private readonly ITransactionRepository transactionRepository;
+        private readonly IInputOutput io;
 
         public LazyTransactionService(ITransactionRepository transactionRepository, IFinTsService finTsService, IDate date, IInputOutput io)
         {
             this.finTsService = finTsService;
             this.transactionRepository = transactionRepository;
             this.date = date;
+            this.io = io;
         }
 
         public IActionResult DoPersistence(StringDictionary arguments)
         {
+            io.Info.Write("Starting new persistence run.");
+
             var lastStoredTransaction = transactionRepository.GetLastTransaction();
-            
+          
             var nextDayToPersist = lastStoredTransaction.IsNoTransaction() ?
                 new DateTime(date.Now.Year, 1, 1) : 
                 lastStoredTransaction.EntryDate.AddDays(1);
@@ -52,6 +56,8 @@ namespace FinTsPersistence.Model
 
             arguments = arguments.NewCopy();
             arguments.Add(Arguments.FromDate, nextDayToPersist.ToIsoDate());
+
+            io.Info.Write("Next day to persist: {0}", nextDayToPersist.ToIsoDate());
 
             IActionResult result = finTsService.DoAction(ActionPersist.ActionName, arguments);
 
@@ -67,7 +73,12 @@ namespace FinTsPersistence.Model
 
             if (filteredTransactions.Any())
             {
+                io.Info.Write("Found {0} new transactions to persist.", filteredTransactions.Count);
                 transactionRepository.SaveTransactions(filteredTransactions);
+            }
+            else
+            {
+                io.Info.Write("Found no new transactions to persist.");
             }
 
             return result;

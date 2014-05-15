@@ -133,21 +133,15 @@
     <Compile Include="App_Start\ICommandLineHelper.cs">
       <DependentUpon>CommandLineHelper.cs</DependentUpon>
     </Compile>
-    <Compile Include="Code\ConsoleOutputError.cs" />
-    <Compile Include="Code\Console.cs" />
-    <Compile Include="Code\ConsoleOutputInfo.cs" />
-    <Compile Include="Code\DbLoggerInfo.cs" />
-    <Compile Include="Code\IOutputInfo.cs">
-      <DependentUpon>ConsoleOutputInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Code\DbLoggerError.cs" />
-    <Compile Include="Code\DbLogger.cs" />
-    <Compile Include="Code\IOutputError.cs">
-      <DependentUpon>ConsoleOutputError.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Code\IInputOutput.cs">
-      <DependentUpon>Console.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Code\ConsoleInputOutput\ConsoleOutputError.cs" />
+    <Compile Include="Code\ConsoleInputOutput\Console.cs" />
+    <Compile Include="Code\ConsoleInputOutput\ConsoleOutputInfo.cs" />
+    <Compile Include="Code\DbLoggerInputOutput\DbLoggerInfo.cs" />
+    <Compile Include="Code\IInputOutput.cs" />
+    <Compile Include="Code\IOutputError.cs" />
+    <Compile Include="Code\DbLoggerInputOutput\DbLoggerError.cs" />
+    <Compile Include="Code\DbLoggerInputOutput\DbLogger.cs" />
+    <Compile Include="Code\IOutputInfo.cs" />
     <Compile Include="Code\StringDictionaryExtension.cs" />
     <Compile Include="Code\TransactionLog.cs" />
     <Compile Include="Code\MessageSeverity.cs" />
