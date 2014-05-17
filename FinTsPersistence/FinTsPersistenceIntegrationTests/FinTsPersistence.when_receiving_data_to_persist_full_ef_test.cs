@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Linq;
 using FinTsPersistence;
 using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
+using FinTsPersistence.Model;
 using FinTsPersistenceIntegrationTests.Helper;
 using FluentAssertions;
 using Machine.Specifications;
+using Machine.Specifications.Model;
 using Status = FinTsPersistence.Actions.Result.Status;
 
 namespace FinTsPersistenceIntegrationTests
@@ -18,14 +21,16 @@ namespace FinTsPersistenceIntegrationTests
     {
         static string contactfileLocation;
         static CmdArguments cmdArguments;
-        static DateTime fromDate;
         static IActionResult result;
 
         Establish context = () =>
         {
             contactfileLocation = IntegrationTestData.GetContacfileLocation();
             cmdArguments = IntegrationTestData.GetCmdArguments();
-            fromDate = DateTime.Now.AddDays(-7).Date;
+
+            ITransactionContext ctx = ContainerConfig.Resolve<ITransactionContext>();
+            ctx.Transactions.ToList().ForEach(t => ctx.Transactions.Remove(t));
+            ctx.SaveChanges();
         };
 
         Because of = () => result = Start.DoAction(new[]
@@ -41,10 +46,9 @@ namespace FinTsPersistenceIntegrationTests
         It should_return_a_list_of_transactions = () => result.Response.Transactions.Should().NotBeEmpty();
         It should_not_return_formatted_output = () => result.Response.Formatted.Should().BeNull();
 
-        //It should_return_transactions_with_entrydates_of_the_right_time = () => result.Response.Transactions.ForEach(x => x.EntryDate.Should().BeOnOrAfter(fromDate));
-        //It should_return_transactions_valuedates_of_the_right_time = () => result.Response.Transactions.ForEach(x => x.ValueDate.Should().BeOnOrAfter(fromDate));
-        It should_return_transactions_with_a_name = () => result.Response.Transactions.ForEach(x => x.Name.Should().NotBeNullOrWhiteSpace());
-        It should_return_transactions_with_a_payment_purpose = () => result.Response.Transactions.ForEach(x => x.PaymentPurpose.Should().NotBeNullOrWhiteSpace());
-        It should_return_transactions_with_an_amount = () => result.Response.Transactions.ForEach(x => x.Value.Should().NotBe(0));
+        // for my bank there are transactions with no name, payment purpose and zero value (e.g. 'payments' with only informational text)
+        //It should_return_transactions_with_a_name = () => result.Response.Transactions.ForEach(x => x.Name.Should().NotBeNullOrWhiteSpace());
+        //It should_return_transactions_with_a_payment_purpose = () => result.Response.Transactions.ForEach(x => x.PaymentPurpose.Should().NotBeNullOrWhiteSpace());
+        //It should_return_transactions_with_an_amount = () => result.Response.Transactions.ForEach(x => x.Value.Should().NotBe(0));
     }
 }
