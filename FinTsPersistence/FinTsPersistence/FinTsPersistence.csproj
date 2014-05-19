@@ -128,10 +128,12 @@
     <Compile Include="App_Start\ICommandLineHelper.cs">
       <DependentUpon>CommandLineHelper.cs</DependentUpon>
     </Compile>
+    <Compile Include="Code\AppConfig.cs" />
     <Compile Include="Code\ConsoleInputOutput\ConsoleOutputError.cs" />
     <Compile Include="Code\ConsoleInputOutput\Console.cs" />
     <Compile Include="Code\ConsoleInputOutput\ConsoleOutputInfo.cs" />
     <Compile Include="Code\DbLoggerInputOutput\DbLoggerInfo.cs" />
+    <Compile Include="Code\FolderSearch.cs" />
     <Compile Include="Code\IInputOutput.cs" />
     <Compile Include="Code\IOutputError.cs" />
     <Compile Include="Code\DbLoggerInputOutput\DbLoggerError.cs" />
