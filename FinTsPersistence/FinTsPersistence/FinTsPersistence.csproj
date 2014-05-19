@@ -94,6 +94,10 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Subsembly.Crypto, Version=2.7.0.4763, Culture=neutral, PublicKeyToken=edd3d552e0d54e33, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\Subsembly.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Subsembly.FinTS">
       <HintPath>..\Assemblies\Subsembly.FinTS.dll</HintPath>
     </Reference>
