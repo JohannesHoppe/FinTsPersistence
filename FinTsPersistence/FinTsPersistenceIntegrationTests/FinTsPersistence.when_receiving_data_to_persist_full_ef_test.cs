@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using FinTsPersistence;
 using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
@@ -7,7 +6,6 @@ using FinTsPersistence.Model;
 using FinTsPersistenceIntegrationTests.Helper;
 using FluentAssertions;
 using Machine.Specifications;
-using Machine.Specifications.Model;
 using Status = FinTsPersistence.Actions.Result.Status;
 
 namespace FinTsPersistenceIntegrationTests

@@ -1,7 +1,9 @@
 using System;
 using FinTsPersistence.Actions;
 using FinTsPersistence.Actions.Result;
+using FinTsPersistence.Code;
 using FinTsPersistence.Model;
+using CC = FinTsPersistence.ContainerConfig;
 
 namespace FinTsPersistence
 {   
@@ -22,8 +24,14 @@ namespace FinTsPersistence
         /// <return>Return Code: -1 for an exception, otherwise the internal status code</return>   
         public static int Main(string[] args)
         {
+            var message = AppConfig.Setup();
+            if (message != null)
+            {
+                CC.Resolve<IInputOutput>().Write(message);
+            }
+
             int returnCode = -1;
-            var commandLineHelper = ContainerConfig.Resolve<ICommandLineHelper>();
+            var commandLineHelper = CC.Resolve<ICommandLineHelper>();
 
             try
             {
@@ -54,7 +62,12 @@ namespace FinTsPersistence
         /// </summary>
         public static IActionResult DoAction(string[] args)
         {
-            var commandLineHelper = ContainerConfig.Resolve<ICommandLineHelper>();
+            var message = AppConfig.Setup();
+            if (message != null) {
+                CC.Resolve<IInputOutput>().Write(message);
+            }
+
+            var commandLineHelper = CC.Resolve<ICommandLineHelper>();
             commandLineHelper.CheckAmountOfParameters(args);
 
             var extractedArguments = commandLineHelper.ExtractArguments(args);
@@ -62,12 +75,12 @@ namespace FinTsPersistence
 
             if (extractedArguments.Action == ActionPersist.ActionName)
             {
-                var transactionService = ContainerConfig.Resolve<ITransactionService>();
+                var transactionService = CC.Resolve<ITransactionService>();
                 return transactionService.DoPersistence(extractedArguments.Arguments);
             }
             
             // 'old' FinCMD code without any special workflow
-            var finTsService = ContainerConfig.Resolve<IFinTsService>();
+            var finTsService = CC.Resolve<IFinTsService>();
             return finTsService.DoAction(extractedArguments.Action, extractedArguments.Arguments);
         }
     }
