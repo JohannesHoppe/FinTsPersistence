@@ -34,6 +34,5 @@ namespace FinTsPersistence
         void DisplayShortException(Exception ex);
         void DisplayActionException(ActionException ex);
         void DisplayException(Exception ex);
-        void WaitForEnterOnDebug();
     }
 }

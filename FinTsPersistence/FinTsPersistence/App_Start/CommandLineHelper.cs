@@ -120,13 +120,5 @@ namespace FinTsPersistence
             io.Error.Write(ex.ToString());
             io.Error.Write("-----------------------------");
         }
-
-        public void WaitForEnterOnDebug()
-        {
-            #if DEBUG
-            io.Write("Please press enter to exit.");
-            io.Read();
-            #endif
-        }
     }
 }

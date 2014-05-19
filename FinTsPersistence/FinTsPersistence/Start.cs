@@ -52,7 +52,6 @@ namespace FinTsPersistence
                 commandLineHelper.DisplayException(ex);
             }
 
-            commandLineHelper.WaitForEnterOnDebug();
             return returnCode;
         }
 
