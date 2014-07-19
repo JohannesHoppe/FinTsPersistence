@@ -25,6 +25,6 @@ namespace FinTsPersistence.Model
         /// <summary>
         /// Example how to add own fields to the table
         /// </summary>
-        public SpecialCase SpecialCase { get; set; }
+        public SpecialCase SpecialCaseId { get; set; }
     }
 }
