@@ -72,12 +72,6 @@ namespace FinTsPersistence.Actions
 
             foreach (SwiftStatementLine aStmtLine in aStmt.StatementLines)
             {
-                string paymentPurpose = null;
-                if (aStmtLine.PaymtPurpose != null)
-                {
-                    paymentPurpose = String.Join(Environment.NewLine, aStmtLine.PaymtPurpose);
-                }
-
                 result.Add(new FinTsTransaction(
                     aStmtLine.EntryDate.ToDateTime(),
                     aStmtLine.ValueDate.ToDateTime(),
@@ -85,7 +79,7 @@ namespace FinTsPersistence.Actions
                     aStmtLine.PayeePayerAcctNo,
                     aStmtLine.PayeePayerBankCode,
                     aStmtLine.PayeePayerName,
-                    paymentPurpose,
+                    aStmtLine.SepaPaymtPurpose,  // Reflector: this has a fallback to PaymtPurpose, if no "SVWZ+" was found
                     aStmtLine.EntryText,
                     aStmtLine.PrimaNotaNo,
                     aStmtLine.TranTypeIdCode,
